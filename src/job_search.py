@@ -33,12 +33,16 @@ def build_queries():
         qs.append(f'"{role}" Pakistan after:2026-09-01')
         qs.append(f'site:pk.indeed.com "{role}" Pakistan after:2026-09-01')
         qs.append(f'site:rozee.pk "{role}" Pakistan after:2026-09-01')
+        qs.append(f'site:glassdoor.com/Job "{role}" Pakistan after:2026-09-01')
     for role in roles[:10]:
         qs.append(f'"{role}" ("visa sponsorship" OR relocation OR "overseas applicants") after:2026-09-01')
     qs += [
         'site:mustakbil.com "graphic designer" Pakistan after:2026-09-01',
         'site:brightspyre.com "graphic designer" Pakistan after:2026-09-01',
         'site:careerjoin.com "graphic designer" Pakistan after:2026-09-01',
+        'site:glassdoor.com/Job "graphic designer" Pakistan after:2026-09-01',
+        'site:glassdoor.com/Job "sales coordinator" Pakistan after:2026-09-01',
+        'site:glassdoor.com/Job "computer operator" Pakistan after:2026-09-01',
         '"graphic designer" Pakistan WhatsApp vacancy after:2026-09-01',
         '"graphic designer" Pakistan email vacancy after:2026-09-01',
         '"computer operator" Pakistan WhatsApp job after:2026-09-01',
