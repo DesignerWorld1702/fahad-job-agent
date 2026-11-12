@@ -31,14 +31,12 @@ def parse_rss(data):
 def build_queries():
     qs=[]
     roles=PREF["graphic_roles"]+PREF["business_roles"]
-    # Google News date filters are intentionally broad; recent_enough() is the
-    # authoritative local 20-day cutoff so the workflow stays maintainable.
-    for role in roles[:12]:
+    for role in roles[:16]:
         qs.append(f'"{role}" Pakistan')
         qs.append(f'site:pk.indeed.com "{role}" Pakistan')
         qs.append(f'site:rozee.pk "{role}" Pakistan')
         qs.append(f'site:glassdoor.com/Job "{role}" Pakistan')
-    for role in roles[:10]:
+    for role in roles[:12]:
         qs.append(f'"{role}" ("visa sponsorship" OR relocation OR "overseas applicants")')
     qs += [
         'site:mustakbil.com "graphic designer" Pakistan',
@@ -49,9 +47,19 @@ def build_queries():
         'site:glassdoor.com/Job "computer operator" Pakistan',
         '"graphic designer" Pakistan WhatsApp vacancy',
         '"graphic designer" Pakistan email vacancy',
+        '"graphic designer" Pakistan Facebook hiring',
+        '"graphic designer" Pakistan Instagram hiring',
+        '"graphic designer" Pakistan LinkedIn hiring',
+        '"graphic designer" Lahore "60,000"',
+        '"graphic designer" Lahore "60000"',
+        '"graphic designer" Pakistan "60,000"',
+        '"graphic designer" Pakistan "70,000"',
+        '"graphic designer" Pakistan "80,000"',
+        '"graphic designer" Pakistan "100,000"',
         '"computer operator" Pakistan WhatsApp job',
         '"data entry" Pakistan WhatsApp job',
-        '"business coordinator" Pakistan email job'
+        '"business coordinator" Pakistan email job',
+        '"sales coordinator" Pakistan "60,000"'
     ]
     return qs
 
@@ -70,28 +78,52 @@ def recent_enough(published):
 def looks_like_job(row):
     title=(row["title"]+" "+row["description"]).lower()
 
-    # Reject salary pages, generic search/result pages and career-content pages.
+    # Reject career content and clearly closed/expired vacancies.
     bad_phrases=[
         "how a ", "how to ", "salary guide", "career advice", "course",
         "training", "tips for", "interview questions", "resume tips",
-        "salary", "salaries", "yearly salaries", "monthly salaries",
         "job search", "jobs in ", "jobs near ", "job openings in ",
-        "find jobs", "search jobs", "browse jobs", "25+ jobs", "50+ jobs",
-        "75+ jobs", "100+ jobs", "300+ jobs", "500+ jobs",
-        "expired", "closed", "position filled", "no longer accepting",
+        "find jobs", "search jobs", "browse jobs",
+        "expired", "position filled", "no longer accepting",
         "applications closed", "job expired", "vacancy closed"
     ]
     if any(x in title for x in bad_phrases):
+        return False
+
+    # Salary itself is NOT a reason to reject a listing. A salary page is rejected
+    # only when it is clearly a salary-only article/page.
+    if any(x in title for x in ["monthly salaries", "yearly salaries", "salary comparison", "salary report"]):
         return False
 
     # Reject pages that are clearly aggregators/listicles rather than one vacancy.
     if re.search(r'\b\d+\+\s+(?:urgent\s+)?(?:graphic|creative|design|sales|data|computer|office|admin|business)?\s*jobs?\b', title):
         return False
 
-    role_terms=PREF["graphic_roles"]+PREF["business_roles"]
-    return any(r.lower() in title for r in role_terms) or any(x in title for x in [
+    role_terms=[r.lower() for r in PREF["graphic_roles"]+PREF["business_roles"]]
+    role_hit=any(r in title for r in role_terms) or any(x in title for x in [
         "data entry","computer operator","office assistant","administrative assistant"
     ])
+    hiring_signal=any(x in title for x in [
+        "hiring","vacancy","vacancies","job","career","apply","recruiting",
+        "opening","position","required","needed","walk in","walk-in"
+    ])
+    return role_hit and hiring_signal
+
+def salary_boost(row):
+    text=(row["title"]+" "+row["description"]).lower().replace(",","")
+    amounts=[]
+    # PKR amounts such as 60,000, 60000, 60k, 80k.
+    for m in re.finditer(r'(?:(?:rs.?|pkr)\s*)?(\d{2,3})(?:000|\s*k)\b', text):
+        try:
+            n=int(m.group(1))
+            if n < 1000:
+                n*=1000
+            amounts.append(n)
+        except ValueError:
+            pass
+    if re.search(r'(?:rs\.?|pkr)\s*60(?:000|\s*k)\b', text):
+        amounts.append(60000)
+    return 5 if any(n >= PREF.get("salary_priority",{}).get("preferred_minimum",60000) for n in amounts) else 0
 
 def main():
     seen=set()
@@ -104,6 +136,7 @@ def main():
                     continue
                 seen.add(key)
                 score,cv=score_job(row["title"],row["description"])
+                score=min(100,score+salary_boost(row))
                 if score >= PREF["min_match_score"]:
                     row.update({"match_score":score,"cv":cv,"query":q})
                     jobs.append(row)
@@ -113,7 +146,13 @@ def main():
     jobs.sort(key=lambda x:(x["match_score"],x["published"]),reverse=True)
     out=ROOT/"data"
     out.mkdir(exist_ok=True)
-    payload={"generated_at":datetime.now(timezone.utc).isoformat(),"recent_window_days":RECENT_DAYS,"jobs":jobs[:100]}
+    payload={
+        "generated_at":datetime.now(timezone.utc).isoformat(),
+        "recent_window_days":RECENT_DAYS,
+        "salary_preference_pkr":PREF.get("salary_priority",{}).get("preferred_minimum",60000),
+        "company_size_policy":PREF.get("company_size_policy"),
+        "jobs":jobs[:100]
+    }
     (out/"jobs.json").write_text(json.dumps(payload,indent=2,ensure_ascii=False))
     print(f"Collected {len(jobs)} recent matched listings from the last {RECENT_DAYS} days.")
 
