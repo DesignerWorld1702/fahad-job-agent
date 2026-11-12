@@ -1,11 +1,10 @@
 import json, re, time, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 ROOT=Path(__file__).resolve().parents[1]
 PREF=json.loads((ROOT/"config/job_preferences.json").read_text())
-PROFILE=json.loads((ROOT/"config/profile.json").read_text())
 from job_matcher import score_job
 
 def google_news_rss(query):
@@ -30,24 +29,45 @@ def parse_rss(data):
 def build_queries():
     qs=[]
     roles=PREF["graphic_roles"]+PREF["business_roles"]
-    # Pakistan and international searches; include contact-method terms to catch public listings.
     for role in roles[:12]:
-        qs.append(f'"{role}" Pakistan (email OR WhatsApp OR apply)')
-        qs.append(f'site:pk.indeed.com "{role}" Pakistan')
-        qs.append(f'site:rozee.pk "{role}" Pakistan')
+        qs.append(f'"{role}" Pakistan after:2026-09-01')
+        qs.append(f'site:pk.indeed.com "{role}" Pakistan after:2026-09-01')
+        qs.append(f'site:rozee.pk "{role}" Pakistan after:2026-09-01')
     for role in roles[:10]:
-        qs.append(f'"{role}" ("visa sponsorship" OR relocation OR "overseas applicants")')
+        qs.append(f'"{role}" ("visa sponsorship" OR relocation OR "overseas applicants") after:2026-09-01')
     qs += [
-        'site:mustakbil.com "graphic designer" Pakistan',
-        'site:brightspyre.com "graphic designer" Pakistan',
-        'site:careerjoin.com "graphic designer" Pakistan',
-        '"graphic designer" Pakistan WhatsApp vacancy',
-        '"graphic designer" Pakistan email vacancy',
-        '"computer operator" Pakistan WhatsApp job',
-        '"data entry" Pakistan WhatsApp job',
-        '"business coordinator" Pakistan email job'
+        'site:mustakbil.com "graphic designer" Pakistan after:2026-09-01',
+        'site:brightspyre.com "graphic designer" Pakistan after:2026-09-01',
+        'site:careerjoin.com "graphic designer" Pakistan after:2026-09-01',
+        '"graphic designer" Pakistan WhatsApp vacancy after:2026-09-01',
+        '"graphic designer" Pakistan email vacancy after:2026-09-01',
+        '"computer operator" Pakistan WhatsApp job after:2026-09-01',
+        '"data entry" Pakistan WhatsApp job after:2026-09-01',
+        '"business coordinator" Pakistan email job after:2026-09-01'
     ]
     return qs
+
+def recent_enough(published):
+    if not published:
+        return True
+    try:
+        from email.utils import parsedate_to_datetime
+        dt=parsedate_to_datetime(published)
+        return dt >= datetime.now(timezone.utc)-timedelta(days=75)
+    except Exception:
+        return True
+
+def looks_like_job(row):
+    title=(row["title"]+" "+row["description"]).lower()
+    if any(x in title for x in [
+        "how a ", "how to ", "salary guide", "career advice", "course",
+        "training", "tips for", "interview questions", "resume tips"
+    ]):
+        return False
+    role_terms=PREF["graphic_roles"]+PREF["business_roles"]
+    return any(r.lower() in title for r in role_terms) or any(x in title for x in [
+        "data entry","computer operator","office assistant","administrative assistant"
+    ])
 
 def main():
     seen=set()
@@ -56,7 +76,7 @@ def main():
         try:
             for row in parse_rss(google_news_rss(q)):
                 key=row["url"] or row["title"]
-                if key in seen:
+                if key in seen or not recent_enough(row["published"]) or not looks_like_job(row):
                     continue
                 seen.add(key)
                 score,cv=score_job(row["title"],row["description"])
@@ -69,9 +89,9 @@ def main():
     jobs.sort(key=lambda x:(x["match_score"],x["published"]),reverse=True)
     out=ROOT/"data"
     out.mkdir(exist_ok=True)
-    payload={"generated_at":datetime.now(timezone.utc).isoformat(),"jobs":jobs[:150]}
+    payload={"generated_at":datetime.now(timezone.utc).isoformat(),"jobs":jobs[:100]}
     (out/"jobs.json").write_text(json.dumps(payload,indent=2,ensure_ascii=False))
-    print(f"Collected {len(jobs)} matched listings.")
+    print(f"Collected {len(jobs)} recent matched listings.")
 
 if __name__=="__main__":
     main()
