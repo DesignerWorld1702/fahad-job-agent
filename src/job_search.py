@@ -53,7 +53,7 @@ def recent_enough(published):
     try:
         from email.utils import parsedate_to_datetime
         dt=parsedate_to_datetime(published)
-        return dt >= datetime.now(timezone.utc)-timedelta(days=75)
+        return dt >= datetime.now(timezone.utc)-timedelta(days=14)
     except Exception:
         return True
 
@@ -61,7 +61,9 @@ def looks_like_job(row):
     title=(row["title"]+" "+row["description"]).lower()
     if any(x in title for x in [
         "how a ", "how to ", "salary guide", "career advice", "course",
-        "training", "tips for", "interview questions", "resume tips"
+        "training", "tips for", "interview questions", "resume tips",
+        "expired", "closed", "position filled", "no longer accepting",
+        "applications closed", "job expired", "vacancy closed"
     ]):
         return False
     role_terms=PREF["graphic_roles"]+PREF["business_roles"]
