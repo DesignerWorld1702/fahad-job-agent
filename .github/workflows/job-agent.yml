@@ -21,6 +21,12 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install PDF dependency
+        run: pip install reportlab
+
+      - name: Generate tailored CVs
+        run: python src/generate_cvs.py
+
       - name: Search jobs
         run: python src/job_search.py
 
@@ -88,6 +94,8 @@ jobs:
             data/jobs.json
             data/applications.json
             data/application_queue.json
+            cvs/graphic_designer_cv.pdf
+            cvs/business_computer_cv.pdf
 
       - name: Commit latest results
         run: |
