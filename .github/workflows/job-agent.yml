@@ -15,31 +15,76 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Search jobs
         run: python src/job_search.py
+
       - name: Prepare applications
         run: python src/application_generator.py
+
+      - name: Build compliant application queue
+        run: python src/application_queue.py
+
       - name: Build report
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          jobs=json.loads(Path("data/jobs.json").read_text())["jobs"]
-          lines=["# Fahad Job Agent Report","","Generated job matches: **%d**"%len(jobs),"","| Score | CV | Job | Source | Link |","|---:|---|---|---|---|"]
-          for j in jobs[:100]:
-              title=j["title"].replace("|","/")
-              src=j.get("source","").replace("|","/")
-              lines.append(f'| {j["match_score"]} | {j["cv"]} | {title} | {src} | [Open]({j["url"]}) |')
-          Path("JOB_REPORT.md").write_text("\n".join(lines),encoding="utf-8")
+
+          jobs = json.loads(Path("data/jobs.json").read_text())["jobs"]
+          queue = json.loads(Path("data/application_queue.json").read_text())["queue"]
+
+          lines = [
+              "# Fahad Job Agent Report",
+              "",
+              "Generated matches: **%d**" % len(jobs),
+              "",
+              "## Application modes",
+              "",
+              "| Mode | Meaning |",
+              "|---|---|",
+              "| EMAIL_READY | Employer email found; ready for permitted email automation |",
+              "| WHATSAPP_READY | WhatsApp number found; click-to-chat message prepared |",
+              "| PHONE_ACTION | Phone number found; call details prepared |",
+              "| WEB_APPLICATION | Direct application URL; protected steps may require you |",
+              "| REVIEW | Needs review |",
+              "",
+              "## Top matches",
+              "",
+              "| Score | CV | Mode | Job | Source | Link |",
+              "|---:|---|---|---|---|---|"
+          ]
+
+          for j in queue[:100]:
+              title = (j.get("title") or "").replace("|", "/")
+              src = (j.get("source") or "").replace("|", "/")
+              lines.append(
+                  f'| {j.get("score","")} | {j.get("cv","")} | {j.get("mode","")} | '
+                  f'{title} | {src} | [Open]({j.get("url","")}) |'
+              )
+
+          Path("JOB_REPORT.md").write_text("\n".join(lines), encoding="utf-8")
           PY
+
+      - name: Upload job report
+        uses: actions/upload-artifact@v4
+        with:
+          name: fahad-job-agent-report
+          path: |
+            JOB_REPORT.md
+            data/jobs.json
+            data/applications.json
+            data/application_queue.json
+
       - name: Commit latest results
         run: |
           git config user.name "Fahad Job Agent"
           git config user.email "actions@users.noreply.github.com"
-          git add data/jobs.json data/applications.json JOB_REPORT.md
+          git add data/jobs.json data/applications.json data/application_queue.json JOB_REPORT.md
           git diff --cached --quiet || git commit -m "Update job matches and application queue"
           git push
