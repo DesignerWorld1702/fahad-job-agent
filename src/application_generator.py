@@ -6,8 +6,8 @@ PROFILE=json.loads((ROOT/"config/profile.json").read_text())
 JOBS=json.loads((ROOT/"data/jobs.json").read_text()).get("jobs",[]) if (ROOT/"data/jobs.json").exists() else []
 
 def contact_method(text):
-    emails=re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",text)
-    phones=re.findall(r"(?:\\+?92|0)\\s?3\\d{2}[-\\s]?\\d{3}[-\\s]?\\d{4}",text)
+    emails=re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)
+    phones=re.findall(r"(?:\+?92|0)\s?3\d{2}[-\s]?\d{3}[-\s]?\d{4}", text)
     return emails,phones
 
 def make_record(job):
