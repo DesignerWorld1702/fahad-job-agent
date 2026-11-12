@@ -1,0 +1,32 @@
+{
+  "priority_order": [
+    "Pakistan jobs",
+    "International relocation jobs",
+    "Visa sponsorship jobs",
+    "Relocation assistance jobs",
+    "International jobs accepting overseas applicants",
+    "Remote jobs as a secondary option"
+  ],
+  "countries": ["Pakistan","United Arab Emirates","Saudi Arabia","Qatar","Oman","Bahrain","Kuwait","United Kingdom","Germany","Netherlands","Ireland","Australia","Canada","New Zealand"],
+  "graphic_roles": [
+    "Graphic Designer","Visual Designer","Creative Designer","Social Media Designer",
+    "Marketing Designer","Brand Designer","Packaging Designer","Digital Designer"
+  ],
+  "business_roles": [
+    "Business Coordinator","Sales Coordinator","Marketing Coordinator","Operations Coordinator",
+    "Administrative Assistant","Office Assistant","Business Support Executive","Commercial Coordinator",
+    "Data Entry Operator","Data Entry Clerk","Computer Operator","Computer Assistant",
+    "Data Processing Assistant","Document Controller","Records/Data Assistant","Back Office Executive",
+    "MIS/Data Assistant","Customer Support Executive","Client Support Assistant","Sales Support",
+    "Administrative Support","Business Assistant","Commercial Assistant","Sales Executive",
+    "Business Executive","Operations Assistant","Procurement/Office Support"
+  ],
+  "exclude_roles": ["Accountant","Senior Accountant","Accounts Manager","Auditor","Tax Accountant"],
+  "sources": [
+    "Indeed Pakistan","Rozee.pk","LinkedIn","Company Career Pages",
+    "Google Jobs/Search results","Pakistani job boards/apps","Social-media job advertisements"
+  ],
+  "application_methods": ["application_url","email","whatsapp","phone","walk_in"],
+  "min_match_score": 65,
+  "auto_apply_policy": "Never bypass CAPTCHA, 2FA, login walls, platform restrictions or employer controls. Auto-send email only when configured and permitted; WhatsApp/phone are prepared for human action unless a compliant integration is explicitly configured."
+}
