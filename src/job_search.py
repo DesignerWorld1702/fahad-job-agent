@@ -36,8 +36,13 @@ def build_queries():
         qs.append(f'site:pk.indeed.com "{role}" Pakistan')
         qs.append(f'site:rozee.pk "{role}" Pakistan')
         qs.append(f'site:glassdoor.com/Job "{role}" Pakistan')
-    for role in roles[:12]:
-        qs.append(f'"{role}" ("visa sponsorship" OR relocation OR "overseas applicants")')
+    # International search across the configured target countries.
+    for country in PREF.get("countries", []):
+        if country == "Pakistan":
+            continue
+        for role in roles[:12]:
+            qs.append(f'"{role}" "{country}"')
+            qs.append(f'"{role}" "{country}" ("visa sponsorship" OR relocation OR "overseas applicants")')
     qs += [
         # Pakistan job boards and social/direct-employer sources
         'site:mustakbil.com "graphic designer" Pakistan',
