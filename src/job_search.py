@@ -145,8 +145,9 @@ def recent_enough(published):
 
 def looks_like_job(row):
     title=(row["title"]+" "+row["description"]).lower()
+    headline=row["title"].lower().strip()
 
-    # Reject career content and clearly closed/expired vacancies.
+    # Reject career content, search/result pages, listicles, and clearly closed vacancies.
     bad_phrases=[
         "how a ", "how to ", "salary guide", "career advice", "course",
         "training", "tips for", "interview questions", "resume tips",
@@ -163,8 +164,16 @@ def looks_like_job(row):
     if any(x in title for x in ["monthly salaries", "yearly salaries", "salary comparison", "salary report"]):
         return False
 
-    # Reject pages that are clearly aggregators/listicles rather than one vacancy.
-    if re.search(r'\b\d+\+\s+(?:urgent\s+)?(?:graphic|creative|design|sales|data|computer|office|admin|business)?\s*jobs?\b', title):
+    # Reject pages that are clearly aggregators/listicles/search-result pages.
+    if re.search(r'\b\d+(?:\+|\s+)?\s+(?:urgent\s+)?(?:graphic|creative|design|digital|sales|data|computer|office|admin|business|administrative)?\s*jobs?\b', headline):
+        return False
+    if any(x in headline for x in [
+        "jobs, employment", "jobs employment", "job search results",
+        "search results for", "results for", "all jobs", "job listings",
+        "job opportunities", "jobs available", "jobs hiring"
+    ]):
+        return False
+    if re.search(r'\b\d+\+?\s+.*\bjobs?\b.*\b(?:indeed|glassdoor|rozee|mustakbil)\b', headline):
         return False
 
     role_terms=[r.lower() for r in PREF["graphic_roles"]+PREF["business_roles"]]
@@ -193,13 +202,27 @@ def salary_boost(row):
         amounts.append(60000)
     return 5 if any(n >= PREF.get("salary_priority",{}).get("preferred_minimum",60000) for n in amounts) else 0
 
+def canonical_url(url):
+    if not url:
+        return ""
+    try:
+        p=urllib.parse.urlsplit(url)
+        return urllib.parse.urlunsplit((p.scheme,p.netloc,p.path.rstrip("/"),"", ""))
+    except Exception:
+        return url.split("#",1)[0].split("?",1)[0]
+
+def dedupe_key(row):
+    url_key=canonical_url(row.get("url",""))
+    headline=re.sub(r"\s+"," ",re.sub(r"[^a-z0-9 ]+"," ",row.get("title","").lower())).strip()
+    return url_key or (headline+"|"+row.get("source","").lower())
+
 def main():
     seen=set()
     jobs=[]
     for q in build_queries():
         try:
             for row in parse_rss(google_news_rss(q)):
-                key=row["url"] or row["title"]
+                key=dedupe_key(row)
                 if key in seen or not recent_enough(row["published"]) or not looks_like_job(row):
                     continue
                 seen.add(key)
