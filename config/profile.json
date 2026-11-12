@@ -1,0 +1,30 @@
+{
+  "name": "Fahad Asif",
+  "email": "Fahadasif77@yahoo.com",
+  "phone": "+92 340 7301498",
+  "location": "Lahore, Pakistan",
+  "linkedin": "",
+  "behance": "https://www.behance.net/zubairkhan1",
+  "portfolio_strategy": "Curated professional portfolio; prioritize strongest social media, branding, packaging, print and AI-assisted work.",
+  "languages": ["English", "Urdu", "Punjabi"],
+  "education": [
+    "B.Com (2 Years), University of the Punjab",
+    "Graphic Designing – 1 Year Vocational Training",
+    "F.Sc (Pre-Engineering), Government College Township",
+    "Matric, Sacred Heart High School"
+  ],
+  "experience": [
+    {"company":"Tech Troops","role":"Graphic Designer","from":"2025-01","to":"Present"},
+    {"company":"ODR Foods","role":"Graphic Designer","from":"2024-01","to":"2025-01"},
+    {"company":"Zahid Packages (Pvt) Ltd","role":"Graphic Designer","from":"2021-09","to":"2024-01"},
+    {"company":"Zahid Packages (Pvt) Ltd","role":"Sales Coordinator","from":"2021-03","to":"2021-08"},
+    {"company":"Cresset Technologies","role":"Photo Editor","from":"2020-02","to":"2020-12"}
+  ],
+  "skills": {
+    "design": ["Adobe Photoshop","Adobe Illustrator","CorelDRAW","InPage"],
+    "marketing": ["Branding","Social Media Graphics","Marketing Collateral","Packaging","Print Design","Meta Business Suite"],
+    "content": ["Photo Editing","Retouching","Compositing","Content Creation"],
+    "ai": ["ChatGPT","Midjourney","Leonardo AI","Kling AI","Hailuo AI","PixVerse"],
+    "additional": ["Figma (Basic)","Blender (Basic)","Clipchamp"]
+  }
+}
