@@ -1,6 +1,8 @@
 {
-  "generated_at": "2026-11-12T22:01:29.136466+00:00",
+  "generated_at": "2026-11-12T22:19:43.008914+00:00",
   "recent_window_days": 20,
+  "salary_preference_pkr": 60000,
+  "company_size_policy": "Do not reject small, local, startup, newly established, or lesser-known employers merely because of company size. Also actively target established national companies and international multinationals.",
   "jobs": [
     {
       "title": "Latency Studio hiring Graphic Designer (Social Media & Brand) Job in Lahore - Glassdoor",
@@ -23,6 +25,16 @@
       "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
     },
     {
+      "title": "200+ Digital Marketing Coordinator Jobs, Employment 12 November, 2026 - Indeed",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQRHhmNkZ0a1dCdWJzcU40SnFkZVQtaFl1c3U3Z0JUM0l2a09rcmMtcUFlMG9tbjJYOVV0WHo4MDJuZFpFWkZFazlOM0R0XzNjaHpHQS1DN3B2aG9wbzdFVW1kNnU3NDBNZ3ZmMnlzWURZa1Z5UFRKejg3M2lMT0ZGQg?oc=5",
+      "published": "Wed, 11 Nov 2026 19:53:53 GMT",
+      "description": "200+ Digital Marketing Coordinator Jobs, Employment 12 November, 2026 &nbsp;&nbsp; Indeed",
+      "source": "Indeed",
+      "match_score": 65,
+      "cv": "business_computer_cv",
+      "query": "site:pk.indeed.com \"Marketing Coordinator\" Pakistan"
+    },
+    {
       "title": "Graphic Designer Job In Lahore, Pakistan (Onsite) in Lahore - Profyd - Mustakbil",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBLYUpQa1RIYXlIWHNlSkJXbV8yNWhaY1pkaHluTEUwNDcyb0dGNkh3NUlZTk5CZ0M2d3RFTVRSYkdkdUNmSzlfNTJuM0t5MDRsNzNQXw?oc=5",
       "published": "Wed, 11 Nov 2026 19:41:56 GMT",
@@ -31,6 +43,16 @@
       "match_score": 65,
       "cv": "graphic_designer_cv",
       "query": "site:mustakbil.com \"graphic designer\" Pakistan"
+    },
+    {
+      "title": "Data Entry & Administrative Assistant Job, Faisalabad, Hwits - Rozee.pk",
+      "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPMFJEc0ltWHpLdk9uZjQ0T19FMVdEMWJGZmd2U19GZU5aMy11UzZrZUhKMzhBV3hTVHZ4QzB6THFncHZFemt4S2RrYTUzVGdDbWtmUXhaOUNMMVEzbWxXam9KOUJ5WFN6TkRoc3ExNy1rRDliMW9kb1ZWZ3RiSGNMYjdHLWxrMU8xOEhya0pKMWtPUUN6UlN2RWVCUTJPVmhlUkZ1V21UYlZ6U3c2LU52R0lzendoWDJuaWZxdWNQNzM1QkRFVWQ3WGhkX01CalAtU25KUUNOQXp6Q2Uza3Jxb0VHMHRCSEZROXdLSzhRejhoWERVRGkzYlJUZG1tbVUwV2xVeFlrMDlqZw?oc=5",
+      "published": "Wed, 11 Nov 2026 15:50:53 GMT",
+      "description": "Data Entry & Administrative Assistant Job, Faisalabad, Hwits &nbsp;&nbsp; Rozee.pk",
+      "source": "Rozee.pk",
+      "match_score": 65,
+      "cv": "business_computer_cv",
+      "query": "site:rozee.pk \"Administrative Assistant\" Pakistan"
     },
     {
       "title": "Express Media Group Jobs Graphic Designer - Careerjoin",
@@ -63,6 +85,16 @@
       "query": "site:pk.indeed.com \"Brand Designer\" Pakistan"
     },
     {
+      "title": "Graphic Designer - 12 months FTC - fticonsulting.wd108.myworkdayjobs.com",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNR0pSbUtXY0VKTjlYY1htc1QtdWpyb3VoM2RmcUxfdGtBZDBUdENrX1NrNG05R2xEUUlZdkJSdzMxSzFxbjlKbUVRUFdBNTRobGt3dHBseVdBYWh3U3h2N1FTeUZ1ZENzV3lGWUZDLWg0WGNBY1pyOWppcWdyM2NwN25oc2xqZ3hnMzVDcVFNd056Mk5iMHdVRy0zR1hlaUxRSjhBYm8wdGZnZU5weGRxd3NrdlhvQm5sNEE?oc=5",
+      "published": "Tue, 27 Oct 2026 10:48:45 GMT",
+      "description": "Graphic Designer - 12 months FTC &nbsp;&nbsp; fticonsulting.wd108.myworkdayjobs.com",
+      "source": "fticonsulting.wd108.myworkdayjobs.com",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:myworkdayjobs.com \"graphic designer\" UK"
+    },
+    {
       "title": "Junior Graphic Designer Job, Lahore, Scaleup Connect - Rozee.pk",
       "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOMjkyU1l6d05iMjJ0NlpnT1Z5RzZCWDZ2cDgzQTZlYTRVdlYxc2w2bHkxS1BNbnRqMm5IX1BjcTRXYnJ6UWFOQWxfekdCaUw1ajFURnpxYWQzbEQ4Y3U0ZlpWRTF1TnJHYVhiMmVmLUI5S1N0RDlEU3M5TnRjNERjTi1tR0t2Sm5sX3Jibm1BWkNTd29qcko5LTNQWDA0enBsdHFzLXFLbnNPb0Z6ZFZmN0d2a01WMXN4T2pVSmwtaEVZalJjZ05XTUZuZ1J4alVXeS1pa09Nd0x0eHhJWVlwQ2lmRU9EUmswNVNNMWNGSEJzTWh0VXBUdVFWdU1WeTVLUzU0ODE0LVlFb1VP?oc=5",
       "published": "Tue, 27 Oct 2026 07:00:00 GMT",
@@ -71,6 +103,16 @@
       "match_score": 65,
       "cv": "graphic_designer_cv",
       "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
+    },
+    {
+      "title": "Junior Graphic Designer Job, Lahore, Scaleup Connect - Rozee.pk",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1LTmNnQThvbDhzRlFXM1d3ZzJsOERaVUw5WjRUVmVtd1JWUWlGUGp0WXlSQWtDVl84VzVLYS1HdjluTUJLeGN3QzNCdl9zQnVqaWtrUzRjeUJMeF82NklRZWlqYkt2Qy1jbjNPTkpOOHZHU2MzdDVuOUZGRzdTZw?oc=5",
+      "published": "Tue, 27 Oct 2026 07:00:00 GMT",
+      "description": "Junior Graphic Designer Job, Lahore, Scaleup Connect &nbsp;&nbsp; Rozee.pk",
+      "source": "Rozee.pk",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:rozee.pk \"Graphic Design\" Pakistan"
     },
     {
       "title": "Plumbing & Heating Operations Coordinator Job, Recruit AI - Rozee.pk",
@@ -163,16 +205,6 @@
       "query": "site:pk.indeed.com \"Creative Designer\" Pakistan"
     },
     {
-      "title": "Marketing Coordinator - Davis Pharmaceuticals - Indeed",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE42X0lDYW10c0ctMkhJYnlQOXQtQnQ3ZVpQaHZ6UU00WGU4SVpUNFVnQ3l6LU0xa0puMnB6LWdCZEJQc0xGU2pCdUFDbHV4YlI4NVpPcnhyWHZGeXd0MVE?oc=5",
-      "published": "Sat, 07 Nov 2026 05:19:24 GMT",
-      "description": "Marketing Coordinator - Davis Pharmaceuticals &nbsp;&nbsp; Indeed",
-      "source": "Indeed",
-      "match_score": 65,
-      "cv": "business_computer_cv",
-      "query": "site:pk.indeed.com \"Marketing Coordinator\" Pakistan"
-    },
-    {
       "title": "Social Media Manager Graphic Designer and Video Editor Job, Infa - Rozee.pk",
       "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxPd3p4X1I2UHNOUmkwLWZtNGtSdW83OGNsdFZUdUR3eDZSUU9kWTFvWUlwMG9fZkpMSEN5WEJGOGpHSDh1dmN1cGhYeG5sQlJfaFlUM19LZWNHUW9KcmlFNTZveGIwcVFrS25YalI2QlNWenhoR19TQk9VUElaeGNrRzdNeHRuek85bFU3REtoUFd2bmQtOVp3cmhmV0tmZTZERGtPSUNIbW5SRDZZTFItOGlCWVZuc2hwbFMtVmpZeVJ6MGZueUhMb1NxV0ZCZlhYWTRidW9TdHBETFVjUTc3ODQwdzgwS1hkYkJsdkd0dmNXVWdFUUUtem5BMzIzNU5NSGxTa1E0SVBBZkJtVXRSNUpCQ3FLdTJkRHFsdk1nVV9haHdLTlE4?oc=5",
       "published": "Mon, 26 Oct 2026 07:00:00 GMT",
@@ -181,6 +213,26 @@
       "match_score": 65,
       "cv": "graphic_designer_cv",
       "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
+    },
+    {
+      "title": "Female Receptionist & Office Assistant Job, Faisalabad, Orbit Internet Service Provider Pvt Ltd - Rozee.pk",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPLWVST2Y0c1d4SW80elVoU3JDbmhodURfcmJTcHhUU3lzTzB1bTY0UzM4QjdJNTJGVFlGZWVSbHJyWURablRkN1p3WjlsSDRBNGRJc3BiWDJsVm9nX0FvMndXM0pZc21KQUdVYWUzbFNvdTNTaGlMQkJZcVFCU1BRUEx4WV85Ui1YdmxtaUFfR05FNjQ1dVVqS1BDMldlVGhRTTdjdlpFampUdDY2bHJj?oc=5",
+      "published": "Mon, 26 Oct 2026 07:00:00 GMT",
+      "description": "Female Receptionist & Office Assistant Job, Faisalabad, Orbit Internet Service Provider Pvt Ltd &nbsp;&nbsp; Rozee.pk",
+      "source": "Rozee.pk",
+      "match_score": 65,
+      "cv": "business_computer_cv",
+      "query": "site:rozee.pk \"Administrative Assistant\" Pakistan"
+    },
+    {
+      "title": "Graphic Designer - parsons.wd5.myworkdayjobs.com",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOY0xOUFZtYnpRbDV3dWs2WHA5ME9mVkIxN2RqaERQSUp1UVM2a3VSNjFoUkNPczE1dTc0akN2UFZSLW1IcGVCZXYybFNCM1ZfMlFpazZBMnM1TGZfYjljVW5vYzFkektNNElDOFpGYkMtS1dPMWt6aHh4b0dKaWIzZTdHR19YbGJITlZwUm9uR2lSUFNBZ3NrazVxSXIzQzMxeU9QbjhXV2ZGX2NMSXFQYUc0WQ?oc=5",
+      "published": "Mon, 09 Nov 2026 21:17:26 GMT",
+      "description": "Graphic Designer &nbsp;&nbsp; parsons.wd5.myworkdayjobs.com",
+      "source": "parsons.wd5.myworkdayjobs.com",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:myworkdayjobs.com \"graphic designer\" UAE"
     },
     {
       "title": "Graphic Designer (PS, Illustrator) job in Rawalpindi - Mustakbil",
@@ -213,6 +265,16 @@
       "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
     },
     {
+      "title": "100+ Entry Level Administrative Assistant Jobs, Employment 30 October, 2026 - Indeed",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1FcTRpdHc4YUJpbEk1RWg1UWk2SjVPelVpN2FUT0ZnVGcyM3Y1VHNWZzFwRzl1ZjJERHhzQTJOOE93dUE2S0U3c0ZDaUNicXc3SkZrWGNWTEJYemg1M3hfTEdoaFBwWUVmVTVvQk9jMlF0X2ZQWW80WDF3?oc=5",
+      "published": "Fri, 30 Oct 2026 17:59:02 GMT",
+      "description": "100+ Entry Level Administrative Assistant Jobs, Employment 30 October, 2026 &nbsp;&nbsp; Indeed",
+      "source": "Indeed",
+      "match_score": 65,
+      "cv": "business_computer_cv",
+      "query": "site:pk.indeed.com \"Administrative Assistant\" Pakistan"
+    },
+    {
       "title": "Lead Graphic Designer Job, Islamabad, Lahore, Rawalpindi, The BKRY - Rozee.pk",
       "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQeVYwVDJLWmlpaURzVlFETmpaZXc1Y3pUbFhIZmdkUnRFekthQ25wbFNkYWNYOWVJV0JTQU1sb3ltR0MzMHdfUDU0Q2pUVm82VGpEaXNtNjJHdF9hbzI1T0RhOUYwZkdVR1NuSE5aX3RoekdHOFhTSDlZMnNQZkZmazJWOThGOE5MVzdvMjNESzU4eXhheVVsZloyVHZiSTJpUmtLSEVWZEI3Q1BadEFJRTBXa3pQMnctemZjWkxrUDUtM3RsRzMwTzJIa3NwSlIxVWRnMGQ2c1pwdFhHTkM3YmJPdDVxMFBmd01JT3pmbHRyNmoyNG8weFUwc29pVHM?oc=5",
       "published": "Fri, 30 Oct 2026 07:00:00 GMT",
@@ -241,6 +303,56 @@
       "match_score": 65,
       "cv": "graphic_designer_cv",
       "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
+    },
+    {
+      "title": "Jobgether - Graphic Designer - Lever",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFAyTDJ0WTMyd1dpRDlvTkd4aFZmaUdzSWx0WkVVbnJqb1BIMDhRM2FnLVctSGpVdE04LUF3TTdWeHp5SDVfaUJtRWo4dkhaYzQ3djhHZ1hyUGRWelhhTENZODBqNjJMbktBYm9CRkpNanhDSnEwREFv?oc=5",
+      "published": "Fri, 06 Nov 2026 01:31:09 GMT",
+      "description": "Jobgether - Graphic Designer &nbsp;&nbsp; Lever",
+      "source": "Lever",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:jobs.lever.co \"graphic designer\" UK"
+    },
+    {
+      "title": "Graphic Designer - parsons.wd5.myworkdayjobs.com",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPdEswOWRPVHhYSTdSeVZySEtSbTMzZ1pHeS1LRWdhQk1GREJqSThKYTQyUmF6SE91VnkwVFVvQ1AwTFFON2dLRjJKYmYtM3RGMVdIN2p3LXNqYUl6NTVrZ2RYWE1DaUdZaEIyMFRLeDhrVzhlWFBWSmdTY2UtVjAzNlQ4MlVEdw?oc=5",
+      "published": "Fri, 06 Nov 2026 01:30:48 GMT",
+      "description": "Graphic Designer &nbsp;&nbsp; parsons.wd5.myworkdayjobs.com",
+      "source": "parsons.wd5.myworkdayjobs.com",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:myworkdayjobs.com \"graphic designer\" UAE"
+    },
+    {
+      "title": "[Vacancy] Dentsu Creative Amsterdam has a position for Senior Digital Designer - https://marketingreport.one/",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPcWNjWWdpRkVYS2RMN3lvTDZpdU5uTy1IUm1ReV9TLWUzWFVYWktuRG0tVHZQMkh6M0pqV3lVRGRmQzBLUmd2V0VfV0s5eDdpazBGRVlNTlF1bFBsZlNtU3FJVURrekVMNDQwenoyWV9sV0x2dldvTU0zYkVxc19GTGh2alBMWmNaNU1relVabmpZMEltRGhFb0dqd3poNE1JaVFmVTJFOThyR0FrWDVuNE0xTkUzeDNFS2Zn?oc=5",
+      "published": "Mon, 26 Oct 2026 09:18:16 GMT",
+      "description": "[Vacancy] Dentsu Creative Amsterdam has a position for Senior Digital Designer &nbsp;&nbsp; https://marketingreport.one/",
+      "source": "https://marketingreport.one/",
+      "match_score": 60,
+      "cv": "graphic_designer_cv",
+      "query": "\"Digital Designer\" \"Netherlands\""
+    },
+    {
+      "title": "SZABIST University Jobs Assistant Marketing Designer - Careerjoin",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdTEyd1BkeFI5Qlg2MzhsUnFGWU9RSmVZcVVQLXdJb3VLV2F0MmZmQ2dxejBoNUtqSWE5WWF5dDlMTGxLWW4xdjBiVEdLM3Q4bWlQbFNYeFg4Y09yQVRqclZDd0R4b3ZtdXhwQllXWDRjY3RrV1BLZndfZHBfdFV0WThQdnE2Yk0?oc=5",
+      "published": "Thu, 12 Nov 2026 05:11:06 GMT",
+      "description": "SZABIST University Jobs Assistant Marketing Designer &nbsp;&nbsp; Careerjoin",
+      "source": "Careerjoin",
+      "match_score": 55,
+      "cv": "graphic_designer_cv",
+      "query": "site:careerjoin.com \"graphic designer\" Pakistan"
+    },
+    {
+      "title": "100+ Logo & Brand Designer Jobs, Employment 9 November, 2026 - Indeed",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9JVFh2NXhhYVpRZnVwdEdJVkpQU3BTZU9GS1A4M2ZDNWdjVnk5MVFHSFBOVmo0cThXQjFiNExERDZQemw3S2hYR2NCYmZrdzIySGtfdERhWENJWnVBNFRFS0hlenlEZw?oc=5",
+      "published": "Mon, 09 Nov 2026 06:31:43 GMT",
+      "description": "100+ Logo & Brand Designer Jobs, Employment 9 November, 2026 &nbsp;&nbsp; Indeed",
+      "source": "Indeed",
+      "match_score": 55,
+      "cv": "graphic_designer_cv",
+      "query": "site:pk.indeed.com \"Brand Designer\" Pakistan"
     }
   ]
 }
