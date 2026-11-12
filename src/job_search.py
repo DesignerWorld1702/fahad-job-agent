@@ -39,6 +39,7 @@ def build_queries():
     for role in roles[:12]:
         qs.append(f'"{role}" ("visa sponsorship" OR relocation OR "overseas applicants")')
     qs += [
+        # Pakistan job boards and social/direct-employer sources
         'site:mustakbil.com "graphic designer" Pakistan',
         'site:brightspyre.com "graphic designer" Pakistan',
         'site:careerjoin.com "graphic designer" Pakistan',
@@ -59,7 +60,69 @@ def build_queries():
         '"computer operator" Pakistan WhatsApp job',
         '"data entry" Pakistan WhatsApp job',
         '"business coordinator" Pakistan email job',
-        '"sales coordinator" Pakistan "60,000"'
+        '"sales coordinator" Pakistan "60,000"',
+
+        # Google-indexed company career sites: national Pakistani employers
+        'site:careers.systemsltd.com graphic designer Pakistan',
+        'site:systemsltd.com careers graphic designer Pakistan',
+        'site:netsoltech.com careers graphic designer Pakistan',
+        'site:arbisoft.com careers graphic designer Pakistan',
+        'site:careers.jazz.com.pk graphic designer',
+        'site:jazz.com.pk careers graphic designer',
+        'site:ptcl.com.pk careers graphic designer',
+        'site:engro.com careers graphic designer Pakistan',
+        'site:packages.com.pk careers graphic designer Pakistan',
+        'site:careers.hbl.com graphic designer Pakistan',
+        'site:ubldigital.com careers graphic designer Pakistan',
+        'site:meezanbank.com careers marketing coordinator Pakistan',
+        'site:daraz.pk careers graphic designer Pakistan',
+        'site:foodpanda.pk careers graphic designer Pakistan',
+
+        # Google-indexed company career sites: multinational employers
+        'site:careers.unilever.com graphic designer Pakistan',
+        'site:jobs.nestle.com graphic designer Pakistan',
+        'site:pepsicojobs.com graphic designer Pakistan',
+        'site:careers.coca-colacompany.com graphic designer Pakistan',
+        'site:careers.pandg.com graphic designer Pakistan',
+        'site:jobs.dhl.com graphic designer Pakistan',
+        'site:careers.emiratesgroupcareers.com graphic designer UAE',
+        'site:careers.ibm.com graphic designer Pakistan',
+        'site:careers.microsoft.com graphic designer Pakistan',
+        'site:careers.adobe.com graphic designer',
+        'site:careers.unilever.com marketing coordinator Pakistan',
+        'site:jobs.nestle.com marketing coordinator Pakistan',
+
+        # International employers and ATS career platforms indexed by Google
+        'site:jobs.lever.co "graphic designer" Pakistan',
+        'site:boards.greenhouse.io "graphic designer" Pakistan',
+        'site:myworkdayjobs.com "graphic designer" Pakistan',
+        'site:smartrecruiters.com "graphic designer" Pakistan',
+        'site:jobs.ashbyhq.com "graphic designer" Pakistan',
+        'site:icims.com "graphic designer" Pakistan',
+        'site:jobs.lever.co "graphic designer" UAE',
+        'site:boards.greenhouse.io "graphic designer" UAE',
+        'site:myworkdayjobs.com "graphic designer" UAE',
+        'site:jobs.lever.co "graphic designer" Saudi Arabia',
+        'site:boards.greenhouse.io "graphic designer" Saudi Arabia',
+        'site:myworkdayjobs.com "graphic designer" Saudi Arabia',
+        'site:jobs.lever.co "graphic designer" UK',
+        'site:boards.greenhouse.io "graphic designer" UK',
+        'site:myworkdayjobs.com "graphic designer" UK',
+
+        # Google web-search discovery for employer career pages and direct applications
+        '"graphic designer" Pakistan "careers" "apply"',
+        '"graphic designer" Pakistan "career" "apply now"',
+        '"graphic designer" Pakistan "jobs" "apply now" -indeed -rozee',
+        '"business coordinator" Pakistan "careers" "apply"',
+        '"sales coordinator" Pakistan "careers" "apply"',
+        '"computer operator" Pakistan "careers" "apply"',
+        '"graphic designer" UAE "visa sponsorship" "apply"',
+        '"graphic designer" Saudi Arabia "visa sponsorship" "apply"',
+        '"graphic designer" UK "visa sponsorship" "apply"',
+        '"graphic designer" Germany "relocation" "apply"',
+        '"graphic designer" Netherlands "relocation" "apply"',
+        '"graphic designer" Australia "relocation" "apply"',
+        '"graphic designer" Canada "relocation" "apply"'
     ]
     return qs
 
