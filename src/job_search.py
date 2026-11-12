@@ -7,6 +7,8 @@ ROOT=Path(__file__).resolve().parents[1]
 PREF=json.loads((ROOT/"config/job_preferences.json").read_text())
 from job_matcher import score_job
 
+RECENT_DAYS=20
+
 def google_news_rss(query):
     url="https://news.google.com/rss/search?"+urllib.parse.urlencode({"q":query,"hl":"en-PK","gl":"PK","ceid":"PK:en"})
     req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
@@ -29,25 +31,27 @@ def parse_rss(data):
 def build_queries():
     qs=[]
     roles=PREF["graphic_roles"]+PREF["business_roles"]
+    # Google News date filters are intentionally broad; recent_enough() is the
+    # authoritative local 20-day cutoff so the workflow stays maintainable.
     for role in roles[:12]:
-        qs.append(f'"{role}" Pakistan after:2026-09-01')
-        qs.append(f'site:pk.indeed.com "{role}" Pakistan after:2026-09-01')
-        qs.append(f'site:rozee.pk "{role}" Pakistan after:2026-09-01')
-        qs.append(f'site:glassdoor.com/Job "{role}" Pakistan after:2026-09-01')
+        qs.append(f'"{role}" Pakistan')
+        qs.append(f'site:pk.indeed.com "{role}" Pakistan')
+        qs.append(f'site:rozee.pk "{role}" Pakistan')
+        qs.append(f'site:glassdoor.com/Job "{role}" Pakistan')
     for role in roles[:10]:
-        qs.append(f'"{role}" ("visa sponsorship" OR relocation OR "overseas applicants") after:2026-09-01')
+        qs.append(f'"{role}" ("visa sponsorship" OR relocation OR "overseas applicants")')
     qs += [
-        'site:mustakbil.com "graphic designer" Pakistan after:2026-09-01',
-        'site:brightspyre.com "graphic designer" Pakistan after:2026-09-01',
-        'site:careerjoin.com "graphic designer" Pakistan after:2026-09-01',
-        'site:glassdoor.com/Job "graphic designer" Pakistan after:2026-09-01',
-        'site:glassdoor.com/Job "sales coordinator" Pakistan after:2026-09-01',
-        'site:glassdoor.com/Job "computer operator" Pakistan after:2026-09-01',
-        '"graphic designer" Pakistan WhatsApp vacancy after:2026-09-01',
-        '"graphic designer" Pakistan email vacancy after:2026-09-01',
-        '"computer operator" Pakistan WhatsApp job after:2026-09-01',
-        '"data entry" Pakistan WhatsApp job after:2026-09-01',
-        '"business coordinator" Pakistan email job after:2026-09-01'
+        'site:mustakbil.com "graphic designer" Pakistan',
+        'site:brightspyre.com "graphic designer" Pakistan',
+        'site:careerjoin.com "graphic designer" Pakistan',
+        'site:glassdoor.com/Job "graphic designer" Pakistan',
+        'site:glassdoor.com/Job "sales coordinator" Pakistan',
+        'site:glassdoor.com/Job "computer operator" Pakistan',
+        '"graphic designer" Pakistan WhatsApp vacancy',
+        '"graphic designer" Pakistan email vacancy',
+        '"computer operator" Pakistan WhatsApp job',
+        '"data entry" Pakistan WhatsApp job',
+        '"business coordinator" Pakistan email job'
     ]
     return qs
 
@@ -57,19 +61,33 @@ def recent_enough(published):
     try:
         from email.utils import parsedate_to_datetime
         dt=parsedate_to_datetime(published)
-        return dt >= datetime.now(timezone.utc)-timedelta(days=14)
+        if dt.tzinfo is None:
+            dt=dt.replace(tzinfo=timezone.utc)
+        return dt >= datetime.now(timezone.utc)-timedelta(days=RECENT_DAYS)
     except Exception:
         return True
 
 def looks_like_job(row):
     title=(row["title"]+" "+row["description"]).lower()
-    if any(x in title for x in [
+
+    # Reject salary pages, generic search/result pages and career-content pages.
+    bad_phrases=[
         "how a ", "how to ", "salary guide", "career advice", "course",
         "training", "tips for", "interview questions", "resume tips",
+        "salary", "salaries", "yearly salaries", "monthly salaries",
+        "job search", "jobs in ", "jobs near ", "job openings in ",
+        "find jobs", "search jobs", "browse jobs", "25+ jobs", "50+ jobs",
+        "75+ jobs", "100+ jobs", "300+ jobs", "500+ jobs",
         "expired", "closed", "position filled", "no longer accepting",
         "applications closed", "job expired", "vacancy closed"
-    ]):
+    ]
+    if any(x in title for x in bad_phrases):
         return False
+
+    # Reject pages that are clearly aggregators/listicles rather than one vacancy.
+    if re.search(r'\b\d+\+\s+(?:urgent\s+)?(?:graphic|creative|design|sales|data|computer|office|admin|business)?\s*jobs?\b', title):
+        return False
+
     role_terms=PREF["graphic_roles"]+PREF["business_roles"]
     return any(r.lower() in title for r in role_terms) or any(x in title for x in [
         "data entry","computer operator","office assistant","administrative assistant"
@@ -95,9 +113,9 @@ def main():
     jobs.sort(key=lambda x:(x["match_score"],x["published"]),reverse=True)
     out=ROOT/"data"
     out.mkdir(exist_ok=True)
-    payload={"generated_at":datetime.now(timezone.utc).isoformat(),"jobs":jobs[:100]}
+    payload={"generated_at":datetime.now(timezone.utc).isoformat(),"recent_window_days":RECENT_DAYS,"jobs":jobs[:100]}
     (out/"jobs.json").write_text(json.dumps(payload,indent=2,ensure_ascii=False))
-    print(f"Collected {len(jobs)} recent matched listings.")
+    print(f"Collected {len(jobs)} recent matched listings from the last {RECENT_DAYS} days.")
 
 if __name__=="__main__":
     main()
