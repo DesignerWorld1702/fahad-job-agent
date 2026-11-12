@@ -30,8 +30,7 @@ def parse_rss(data):
 def build_queries():
     qs=[]
     roles=PREF["graphic_roles"]+PREF["business_roles"]
-    countries=PREF["countries"]
-    # Pakistan and international searches; include contact-method terms to catch social/ad style listings.
+    # Pakistan and international searches; include contact-method terms to catch public listings.
     for role in roles[:12]:
         qs.append(f'"{role}" Pakistan (email OR WhatsApp OR apply)')
         qs.append(f'site:pk.indeed.com "{role}" Pakistan')
@@ -39,14 +38,14 @@ def build_queries():
     for role in roles[:10]:
         qs.append(f'"{role}" ("visa sponsorship" OR relocation OR "overseas applicants")')
     qs += [
-        '"site:mustakbil.com" graphic designer Pakistan',
-        '"site:brightspyre.com" graphic designer Pakistan',
-        '"site:careerjoin.com" graphic designer Pakistan',
+        'site:mustakbil.com "graphic designer" Pakistan',
+        'site:brightspyre.com "graphic designer" Pakistan',
+        'site:careerjoin.com "graphic designer" Pakistan',
         '"graphic designer" Pakistan WhatsApp vacancy',
         '"graphic designer" Pakistan email vacancy',
-        '"computer operator Pakistan WhatsApp job',
-        '"data entry Pakistan WhatsApp job',
-        '"business coordinator Pakistan email job'
+        '"computer operator" Pakistan WhatsApp job',
+        '"data entry" Pakistan WhatsApp job',
+        '"business coordinator" Pakistan email job'
     ]
     return qs
 
@@ -57,7 +56,8 @@ def main():
         try:
             for row in parse_rss(google_news_rss(q)):
                 key=row["url"] or row["title"]
-                if key in seen: continue
+                if key in seen:
+                    continue
                 seen.add(key)
                 score,cv=score_job(row["title"],row["description"])
                 if score >= PREF["min_match_score"]:
@@ -67,7 +67,8 @@ def main():
         except Exception as e:
             print("Search failed:",q,e)
     jobs.sort(key=lambda x:(x["match_score"],x["published"]),reverse=True)
-    out=ROOT/"data"; out.mkdir(exist_ok=True)
+    out=ROOT/"data"
+    out.mkdir(exist_ok=True)
     payload={"generated_at":datetime.now(timezone.utc).isoformat(),"jobs":jobs[:150]}
     (out/"jobs.json").write_text(json.dumps(payload,indent=2,ensure_ascii=False))
     print(f"Collected {len(jobs)} matched listings.")
