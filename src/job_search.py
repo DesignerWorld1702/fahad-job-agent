@@ -34,9 +34,14 @@ def build_queries():
     # Pakistan and international searches; include contact-method terms to catch social/ad style listings.
     for role in roles[:12]:
         qs.append(f'"{role}" Pakistan (email OR WhatsApp OR apply)')
+        qs.append(f'site:pk.indeed.com "{role}" Pakistan')
+        qs.append(f'site:rozee.pk "{role}" Pakistan')
     for role in roles[:10]:
         qs.append(f'"{role}" ("visa sponsorship" OR relocation OR "overseas applicants")')
     qs += [
+        '"site:mustakbil.com" graphic designer Pakistan',
+        '"site:brightspyre.com" graphic designer Pakistan',
+        '"site:careerjoin.com" graphic designer Pakistan',
         '"graphic designer" Pakistan WhatsApp vacancy',
         '"graphic designer" Pakistan email vacancy',
         '"computer operator Pakistan WhatsApp job',
