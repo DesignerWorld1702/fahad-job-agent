@@ -30,7 +30,7 @@ jobs:
       - name: Build compliant application queue
         run: python src/application_queue.py
 
-      - name: Build report
+      - name: Optional Yahoo email delivery\n        env:\n          AUTO_EMAIL_ENABLED: "false"\n          YAHOO_EMAIL: ${{ secrets.YAHOO_EMAIL }}\n          YAHOO_APP_PASSWORD: ${{ secrets.YAHOO_APP_PASSWORD }}\n          AUTO_EMAIL_MIN_SCORE: "85"\n        run: python src/email_sender.py\n\n      - name: Build report
         run: |
           python - <<'PY'
           import json
