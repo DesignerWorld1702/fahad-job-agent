@@ -176,6 +176,11 @@ def looks_like_job(row):
     if re.search(r'\b\d+\+?\s+.*\bjobs?\b.*\b(?:indeed|glassdoor|rozee|mustakbil)\b', headline):
         return False
 
+    # Avoid roles explicitly restricted by gender when the restriction excludes Fahad.
+    # This is intentionally conservative: only reject clear female-only wording.
+    if re.search(r'\b(?:female|women|woman|ladies|lady)\b', title) and not re.search(r'\b(?:male|men|man)\b', title):
+        return False
+
     role_terms=[r.lower() for r in PREF["graphic_roles"]+PREF["business_roles"]]
     role_hit=any(r in title for r in role_terms) or any(x in title for x in [
         "data entry","computer operator","office assistant","administrative assistant"
@@ -212,9 +217,13 @@ def canonical_url(url):
         return url.split("#",1)[0].split("?",1)[0]
 
 def dedupe_key(row):
-    url_key=canonical_url(row.get("url",""))
+    # Google News often gives the same listing different RSS wrapper URLs.
+    # Prefer a normalized title/source key so duplicate discoveries collapse.
     headline=re.sub(r"\s+"," ",re.sub(r"[^a-z0-9 ]+"," ",row.get("title","").lower())).strip()
-    return url_key or (headline+"|"+row.get("source","").lower())
+    source=re.sub(r"\s+"," ",(row.get("source") or "").lower()).strip()
+    if headline:
+        return headline+"|"+source
+    return canonical_url(row.get("url",""))
 
 def main():
     seen=set()
