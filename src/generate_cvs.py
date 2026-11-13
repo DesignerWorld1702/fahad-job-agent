@@ -70,7 +70,7 @@ def cover(c,role,accent,paras):
     y=T(c,38,y,"Dear Hiring Manager,",9,12,DARK,False,100)-9
     for q in paras: y=T(c,38,y,q,8.8,12.2,DARK,False,100)-8
     y=T(c,38,y,"Sincerely,",8.8,12,DARK,False,100)-18
-    T(c,38,y,"Fahad Asif",9,NAVY,False,True,100); footer(c,accent); c.showPage()
+    T(c,38,y,"Fahad Asif",9,10,NAVY,True,100); footer(c,accent); c.showPage()
 
 def cv(c,title,accent,profile,skills,target):
     header(c,title,accent); y=H-116
@@ -93,7 +93,7 @@ def cv(c,title,accent,profile,skills,target):
     y=T(c,38,y,"Interests: Travel • Music • Writing",8,10,DARK,False,106)-7
     y=section(c,y,"Target Roles",accent); y=T(c,38,y,target,7.8,10,DARK,False,106)-8
     c.setFillColor(LIGHT); c.roundRect(38,y-48,W-76,50,5,fill=1,stroke=0)
-    T(c,48,y-14,"OPEN TO",8,NAVY,True,False,106)
+    T(c,48,y-14,"OPEN TO",8,10,NAVY,True,106)
     T(c,48,y-25,"Pakistan • UAE • Saudi Arabia • Qatar • Oman • Bahrain • Kuwait • UK • Germany • Netherlands • Ireland • Australia • Canada • New Zealand",7.1,9,DARK,False,108)
     footer(c,accent); c.showPage()
 
