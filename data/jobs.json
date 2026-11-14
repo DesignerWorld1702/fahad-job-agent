@@ -1,19 +1,9 @@
 {
-  "generated_at": "2026-11-13T14:09:36.316502+00:00",
+  "generated_at": "2026-11-14T05:42:24.017328+00:00",
   "recent_window_days": 20,
   "salary_preference_pkr": 60000,
   "company_size_policy": "Do not reject small, local, startup, newly established, or lesser-known employers merely because of company size. Also actively target established national companies and international multinationals.",
   "jobs": [
-    {
-      "title": "Latency Studio hiring Graphic Designer (Social Media & Brand) Job in Lahore - Glassdoor",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPdjQwcEZpTUxUNzBsR01YYzNXOFQyY29pQndtOVVzSExjX3Q2THpQNm1SRXQ2SmtoWHZ4TkFHUnVPVHNpbmVsZXRhSXRLbjFCdEdMSFFLN2draGwzMjdMblhpaXJkRGtMbVdGZVVzVkpmMzViMW01ZnB1LXpyRDRBZDZoOW1vZGR3dERGU0lZZVVaRVdkWlQtOFppaER3QjFHS0FKbHR6SWVNbm05MXNOcGk1UHdTc3F0aTIxOUFiWksxY1B5dGhhdTVXRmNKTTNzZUI4?oc=5",
-      "published": "Wed, 28 Oct 2026 09:45:10 GMT",
-      "description": "Latency Studio hiring Graphic Designer (Social Media & Brand) Job in Lahore &nbsp;&nbsp; Glassdoor",
-      "source": "Glassdoor",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "site:glassdoor.com/Job \"Graphic Designer\" Pakistan"
-    },
     {
       "title": "Graphic Designer Job, Kasha Nutrition - Rozee.pk",
       "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPRk90aFZyRTNjcUR3c1lfZHkzZXh0ZWR2czJja2QzS01tZGpKLTVBTTlBbVFHZGc2NFJ4ZUxMd29TczFEeldHV2dLSEwzaE91NnIzWGdVcllldWZZV1ZWSHlzS1Q4X240R1NGZGdLN0t4bGFSRUZUZG9sSzlWdy1uSHpBUHppdXp1RE5oSWM3eUtPQTZyMGFka1RnbFNSQVpVdzFlbklVcFdGVHczeEJRZldSemstT3A2eHVjLTNEakIyR2lBQy05dGQ5QW1IdkFlN0NacjJzU2hOWmpaSXk2VXRXdWZqOVowamF1VkVRQlJWWG1lQVFrZWtYampFdw?oc=5",
@@ -56,7 +46,7 @@
     },
     {
       "title": "Junior Graphic Designer Job, Lahore, Scaleup Connect - Rozee.pk",
-      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOMjkyU1l6d05iMjJ0NlpnT1Z5RzZCWDZ2cDgzQTZlYTRVdlYxc2w2bHkxS1BNbnRqMm5IX1BjcTRXYnJ6UWFOQWxfekdCaUw1ajFURnpxYWQzbEQ4Y3U0ZlpWRTF1TnJHYVhiMmVmLUI5S1N0RDlEU3M5TnRjNERjTi1tR0t2Sm5sX3Jibm1BWkNTd29qcko5LTNQWDA0enBsdHFzLXFLbnNPb0Z6ZFZmN0d2a01WMXN4T2pVSmwtaEVZalJjZ05XTUZuZ1J4alVXeS1pa09Nd0x0eHhJWVlwQ2lmRU9EUmswNVNNMWNGSEJzTWh0VXBUdVFWdU1WeTVLUzU0ODE0LVlFb1VP?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1LTmNnQThvbDhzRlFXM1d3ZzJsOERaVUw5WjRUVmVtd1JWUWlGUGp0WXlSQWtDVl84VzVLYS1HdjluTUJLeGN3QzNCdl9zQnVqaWtrUzRjeUJMeF82NklRZWlqYkt2Qy1jbjNPTkpOOHZHU2MzdDVuOUZGRzdTZw?oc=5",
       "published": "Tue, 27 Oct 2026 07:00:00 GMT",
       "description": "Junior Graphic Designer Job, Lahore, Scaleup Connect &nbsp;&nbsp; Rozee.pk",
       "source": "Rozee.pk",
@@ -73,6 +63,16 @@
       "match_score": 65,
       "cv": "business_computer_cv",
       "query": "site:rozee.pk \"Operations Coordinator\" Pakistan"
+    },
+    {
+      "title": "Computer Operator With Graphic Designer Basic job in Rawalpindi - Mustakbil",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBCS3JSUHdrMGxiOUFkVXJxYjNFREFaTl8wY05KREJqdzNPSUh1M1JKSkxjbWYxY0ZtWVVCVlVydnRHWjhoZy1GOXotYk1tNHQ1UHQ3TA?oc=5",
+      "published": "Tue, 03 Nov 2026 00:23:59 GMT",
+      "description": "Computer Operator With Graphic Designer Basic job in Rawalpindi &nbsp;&nbsp; Mustakbil",
+      "source": "Mustakbil",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:mustakbil.com \"graphic designer\" Pakistan"
     },
     {
       "title": "Graphic Designer Job, Lahore, Nest9 - Rozee.pk",
@@ -155,6 +155,16 @@
       "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
     },
     {
+      "title": "Graphic Designer Job, Islamabad, Logix Consultants - Rozee.pk",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQdml2cmhJbllKdHc1UUNWUXNOakFSUmdydXJUUU9BTTY5WkRldjdZTGhqY0R2OUVkNnl1cy1INERwV3EzU0QxZElReGZKdlY3aTV4NVJVVmpRaVJQLUtxTmFBaGkzZGFaMFNOOVllV1BuSkNPcjdPT2ZULTk1TUpWc21yWXlqUFdDSnFaSUVSM0t3LUh4MWFmLWFqMC1oSmdIYXRWX3ItMHA3Tl9mbF9vbUtpQlFmT3l6eUhyLW5yTk5FMlh3VEtTbzV2dFZ5V2d4LUdQWUJxRGN1ZTl0OERsTmdiR2pVZVVycHBaTFZINExQVHVGTTQ4SU9Sdk11NzlT?oc=5",
+      "published": "Sun, 08 Nov 2026 08:00:00 GMT",
+      "description": "Graphic Designer Job, Islamabad, Logix Consultants &nbsp;&nbsp; Rozee.pk",
+      "source": "Rozee.pk",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
+    },
+    {
       "title": "Remote Graphic Designer Job, Toronto, Verdica - Rozee.pk",
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBGZTROc21HQ2lhNnVUT3M3QUhUMkF4NExMdWZYRUtGWlMxWGJhaGg4NE1DYnVZTHlXTmxhWEhWWXV5VHNhd3JBTkRXTHdDQ2l1MDd3WFZxc0c5Q1dneVJvRlZRN2ZzZkNDQlJLZ1lQRmlUZms?oc=5",
       "published": "Sat, 31 Oct 2026 07:00:00 GMT",
@@ -175,34 +185,14 @@
       "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
     },
     {
-      "title": "Graphic Designer (PS, Illustrator) job in Rawalpindi - Mustakbil",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9aU3dEUkZNUktMQVdiZkFsWHJzWHQ0dWhIRVhYaVJFMUNJMXZNRDM4aXI1UnlrWGR4YUduZ3Q4RUFtMHZLS0Z3b1NnZ3lQZ1p6UDBiaQ?oc=5",
-      "published": "Mon, 09 Nov 2026 16:13:55 GMT",
-      "description": "Graphic Designer (PS, Illustrator) job in Rawalpindi &nbsp;&nbsp; Mustakbil",
-      "source": "Mustakbil",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "site:mustakbil.com \"graphic designer\" Pakistan"
-    },
-    {
       "title": "Graphic Designer and Video Editor Job, Karachi, Innovative Ducks - Rozee.pk",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQTF95LTVFYzZhaVpyNjNuV3ZXSk5RNUI2cXdhYXhGc0ZrWW94Q1M3cG9KeUNPcS1ERVExdDV5QVduQmV6YXNSMVBZTktyd2pwSDBYdEI3dGotTFZ0U25sc3prNWRTZnRHUnl5bVhMWUtXX21XekxESUpkWDY2VW50RDdpQXJub1d6R3hMYg?oc=5",
-      "published": "Mon, 02 Nov 2026 19:35:24 GMT",
+      "published": "Mon, 02 Nov 2026 08:00:00 GMT",
       "description": "Graphic Designer and Video Editor Job, Karachi, Innovative Ducks &nbsp;&nbsp; Rozee.pk",
       "source": "Rozee.pk",
       "match_score": 65,
       "cv": "graphic_designer_cv",
       "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
-    },
-    {
-      "title": "Computer Operator With Graphic Designer Basic job in Rawalpindi - Mustakbil",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBCS3JSUHdrMGxiOUFkVXJxYjNFREFaTl8wY05KREJqdzNPSUh1M1JKSkxjbWYxY0ZtWVVCVlVydnRHWjhoZy1GOXotYk1tNHQ1UHQ3TA?oc=5",
-      "published": "Mon, 02 Nov 2026 12:26:04 GMT",
-      "description": "Computer Operator With Graphic Designer Basic job in Rawalpindi &nbsp;&nbsp; Mustakbil",
-      "source": "Mustakbil",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "site:mustakbil.com \"graphic designer\" Pakistan"
     },
     {
       "title": "Lead Graphic Designer Job, Islamabad, Lahore, Rawalpindi, The BKRY - Rozee.pk",
@@ -213,6 +203,16 @@
       "match_score": 65,
       "cv": "graphic_designer_cv",
       "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
+    },
+    {
+      "title": "Sales Coordinator Job, Lahore, Business Oxide - Rozee.pk",
+      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNN1A0TkY5dmZBWmwtekM0UU1mR1pGcG11UzJJV1dIWk9oUmtSemdNdjFqVUZFOXdBaWhtc2x1b0ZTQWZhOWFLM3hYWlRBRERKZUZwWUV3S0xxc3dGZDdGYXhNYjRLaDc3amZaZktfdWxnYUhma1FfQmxCYWdkV2FKMkxtLWhEclZXUXE1LU5TZmh0dFl1Q3dtaU9MREZjampDZk55TzFWbGNtLV9rd3VZWnpHanJPNDVnQXBLUF9vVERkTldkTHNDcDVDTnJfWFdYSE9oclNBanI5VHNwVUQ3bnM2bHZwU1lvSTlhWjdLdDI0UmtWMm5PdXZWQTB1dEM5T0NmNEh5VQ?oc=5",
+      "published": "Fri, 13 Nov 2026 17:13:33 GMT",
+      "description": "Sales Coordinator Job, Lahore, Business Oxide &nbsp;&nbsp; Rozee.pk",
+      "source": "Rozee.pk",
+      "match_score": 65,
+      "cv": "business_computer_cv",
+      "query": "site:rozee.pk \"Sales Coordinator\" Pakistan"
     },
     {
       "title": "Graphic Designer Job, Pakpattan, Computer House - Rozee.pk",
