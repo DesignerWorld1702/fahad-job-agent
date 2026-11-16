@@ -1,6 +1,11 @@
 # Fahad Job Agent Report
 
-Generated matches: **24**
+Generated matches: **22**
+
+## CVs in use
+
+- Graphic Designer: `cvs/graphic_designer_cv.pdf`
+- Business Support: `cvs/business_computer_cv.pdf`
 
 ## Application modes
 
@@ -21,8 +26,6 @@ Generated matches: **24**
 | 65 | graphic_designer_cv | WEB_APPLICATION | Express Media Group Jobs Graphic Designer - Careerjoin | Careerjoin | [Open](https://news.google.com/rss/articles/CBMieEFVX3lxTFBYVjNxSHd1WWxRWUd1R0xyYmo3TFo2V3FlWlQ4ZnpwMGZtT2VPdWVITXdzQVdiTlF1anFZMU9PTDN3ZkpEcWdDV0M4VERuY3AwYWhiOF9wbXBObVN2Y2tRR3J2T0tKdDdnVUFseGpHVDRSYU13OWNXQQ?oc=5) |
 | 65 | graphic_designer_cv | WEB_APPLICATION | Graphic Designer Job, Lahore, Standard Salts - Rozee.pk | Rozee.pk | [Open](https://news.google.com/rss/articles/CBMic0FVX3lxTE5FV2piU2tyekNWdXhnclUwT3JMSTFqakctRzBCRXE5MEVaSy01U0prWWJTOHk5MmRIM0NvWWpLbS15alFXVDRXdHNManlCdUlpQ29QbGZ6VVVQQmZMQ0N1ZTUxRERCTzl0OXdnLXMycWQyZXc?oc=5) |
 | 65 | business_computer_cv | WEB_APPLICATION | Operations Coordinator Job, Wesecure - Rozee.pk | Rozee.pk | [Open](https://news.google.com/rss/articles/CBMi_AFBVV95cUxPby1KdmIwck9LdGc0aWZYY0VSRjNNSGR2algzVF9rWTJlTG1RdGZGaDV2TkhTRkVTWFgtZXJUcVRxMHlEdXF5aXNvTlNXTkhULUYwdVpwOHhhMnNuMncwTDc3cXBzdnpkUjR6UFZ3ZnBZVEJPUzhycFdkQlY4QUV4b3ZMcUxQT29hWUpXT3JTUlkzSk9FRWRxSWYyU1h4Y0FyZDlJZ1hvQ3VmUzc3Y0NfNFBPOUIxeXlFNGZVVEduWHgzUi0yVG9mYnhCaWhvdV9QUVhzLXhBMnFWUXBMbExxRWtpRUtiM0k1bElhZkRHdldkTk9UUHNFLWVzcDE?oc=5) |
-| 65 | graphic_designer_cv | WEB_APPLICATION | Junior Graphic Designer Job, Lahore, Scaleup Connect - Rozee.pk | Rozee.pk | [Open](https://news.google.com/rss/articles/CBMifkFVX3lxTE1LTmNnQThvbDhzRlFXM1d3ZzJsOERaVUw5WjRUVmVtd1JWUWlGUGp0WXlSQWtDVl84VzVLYS1HdjluTUJLeGN3QzNCdl9zQnVqaWtrUzRjeUJMeF82NklRZWlqYkt2Qy1jbjNPTkpOOHZHU2MzdDVuOUZGRzdTZw?oc=5) |
-| 65 | business_computer_cv | WEB_APPLICATION | Plumbing & Heating Operations Coordinator Job, Recruit AI - Rozee.pk | Rozee.pk | [Open](https://news.google.com/rss/articles/CBMijAFBVV95cUxOQXVreEstSHFOazJrMkpKc2VyR3BvYlUxbktlakhuMHZod0ZjNUotbmJIOG9kdWJYa0FLMTV5U3llalZJek5KbTI3ZEYxQWRiWXBjOGRFQ01wYWZWRzdZMzRrYnVieVVONVRjSkp3WF9VTGJ6aUtLMHBlc1c1X1dSZTFZZlpaQVBrb1BqVw?oc=5) |
 | 65 | graphic_designer_cv | WEB_APPLICATION | Easy apply - Senior Graphic Designer - Watu Credit Ltd - SmartRecruiters | SmartRecruiters | [Open](https://news.google.com/rss/articles/CBMimwFBVV95cUxNM1ZqblhGWWhpREFaaXJXNXhpalh6WTlNRkFrVmtsS1g4Zm1fVFJBcFE0THYzdkJxSi1KME1menBGNWlzdlM3V3ZkV1JSaEVnMjNXUmdTZlkxSTZPdE42V3BhMTJPUy1RU0RhcXNGeTlPUjZnZ0pNelpSLUlkekcycDF3LV9NWHoyb1dwM1dBLWJDMzVHdy1UWVJTQQ?oc=5) |
 | 65 | graphic_designer_cv | WEB_APPLICATION | Graphic Designer Job, Lahore, Nest9 - Rozee.pk | Rozee.pk | [Open](https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBERWhyNlNzaHJ0RjhvalllNUtma2F2ekVPYUFLUnA4cGZJX0xDVHFYczBna09seXplWWthTXRsd2lYTHdVZ1ZCeVZhSDN5b214aVk5d1hUMG1zYS0xUC15Y1JJS2hJXzA?oc=5) |
 | 65 | business_computer_cv | WEB_APPLICATION | Platform Operations Coordinator Job, Legal Lens Solutions - Rozee.pk | Rozee.pk | [Open](https://news.google.com/rss/articles/CBMimAJBVV95cUxQVnRlUjFZV0U3akhta0VKdGtuWTNLX0djN29QREpKZnNUTWtwdmNkdHZwbmh0SDNBLTJjWi1DQnhGczFub1BKVnZHNl9wdWpka0pZRVRfWm5SbmpiWVEwVEltdHdDTHdsNVNIWV9Ja2FOUjY3M1FhY0xKVVZCdDZXblFSaVBDQ3Q5TUxBYll6Y0Uxc2NlbTNRT1lLOU0zS0plcXpfTXJvMk5zYzRvVjIxZk1LOENqa2o0U1dxVzZWdUdKRVlBREVaNnp2aEpwbnFYUFVLWllFVVVVZ0RDWVRuVmxKN0huOG5TMlhhU3hZVGJPZUhBaVcwbTBTYUZFVEZsOFA1R3VZQ1NQZDNlUHVuQnItY0FvT19U?oc=5) |
