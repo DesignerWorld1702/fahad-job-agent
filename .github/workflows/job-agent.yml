@@ -6,6 +6,7 @@ on:
     paths:
       - "src/**"
       - "config/**"
+      - "cvs/**"
       - ".github/workflows/job-agent.yml"
   schedule:
     - cron: "0 5 * * *"
@@ -26,11 +27,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install PDF dependency
-        run: pip install reportlab
-
-      - name: Generate tailored CVs
-        run: python src/generate_cvs.py
+      - name: Validate final CVs
+        run: |
+          test -s cvs/graphic_designer_cv.pdf
+          test -s cvs/business_computer_cv.pdf
+          echo "Final CVs found:"
+          ls -lh cvs/graphic_designer_cv.pdf cvs/business_computer_cv.pdf
 
       - name: Search jobs
         run: python src/job_search.py
@@ -63,6 +65,11 @@ jobs:
               "",
               "Generated matches: **%d**" % len(jobs),
               "",
+              "## CVs in use",
+              "",
+              "- Graphic Designer: `cvs/graphic_designer_cv.pdf`",
+              "- Business Support: `cvs/business_computer_cv.pdf`",
+              "",
               "## Application modes",
               "",
               "| Mode | Meaning |",
@@ -90,7 +97,7 @@ jobs:
           Path("JOB_REPORT.md").write_text("\n".join(lines), encoding="utf-8")
           PY
 
-      - name: Upload job report
+      - name: Upload job report and application data
         uses: actions/upload-artifact@v4
         with:
           name: fahad-job-agent-report
