@@ -14,6 +14,7 @@ waba_id = os.getenv("WHATSAPP_WABA_ID", "").strip()
 api_version = os.getenv("WHATSAPP_API_VERSION", "v24.0").strip()
 template_name = os.getenv("WHATSAPP_APPLICATION_TEMPLATE_NAME", "").strip()
 template_language = os.getenv("WHATSAPP_TEMPLATE_LANGUAGE", "en_US").strip()
+template_variables = item.get("whatsapp_template_variables", [])
 max_score = int(os.getenv("WHATSAPP_MIN_SCORE", "65"))
 
 STATUS_PATH = ROOT / "data" / "sent_applications.json"
@@ -83,7 +84,14 @@ for item in QUEUE:
             "type": "template",
             "template": {
                 "name": template_name,
-                "language": {"code": template_language}
+                "language": {"code": template_language},
+                "components": [{
+                    "type": "body",
+                    "parameters": [
+                        {"type": "text", "text": str(value)}
+                        for value in template_variables
+                    ]
+                }]
             }
         }
 
