@@ -16,14 +16,19 @@ for job in jobs:
     url = job.get("url", "")
     description = (job.get("description") or "").lower()
 
+    has_whatsapp_signal = any(
+        marker in description
+        for marker in ("whatsapp", "wa.me", "whatsapp.com")
+    )
+
     if emails:
         mode = "EMAIL_READY"
         priority = "automatic when Yahoo SMTP is configured"
         action = "Send tailored email with selected CV after email-sending secrets are configured."
-    elif "whatsapp" in description and phones:
+    elif phones and has_whatsapp_signal:
         mode = "WHATSAPP_READY"
-        priority = "one-click"
-        action = "Open WhatsApp with the prepared message; user presses Send unless an approved WhatsApp Business integration is configured."
+        priority = "automatic when WhatsApp Cloud API is configured"
+        action = "Send through the configured WhatsApp Business/Cloud API using an approved message template."
     elif phones:
         mode = "PHONE_ACTION"
         priority = "manual"
