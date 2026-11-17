@@ -56,7 +56,7 @@ skipped = 0
 failed = 0
 
 for item in QUEUE:
-    if item.get("mode") != "WHATSAPP_READY":
+    if not item.get("whatsapp_ready"):
         continue
     if (item.get("score") or 0) < max_score:
         continue
