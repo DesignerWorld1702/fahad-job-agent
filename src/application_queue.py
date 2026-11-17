@@ -57,6 +57,13 @@ for job in jobs:
         "email_subject": app.get("email_subject"),
         "email_body": app.get("email_body"),
         "whatsapp_message": app.get("whatsapp_message"),
+        "portfolio_url": app.get("portfolio_url"),
+        "cv_url": app.get("cv_url"),
+        "whatsapp_template_variables": [
+            job.get("title") or "",
+            app.get("portfolio_url") or "",
+            app.get("cv_url") or ""
+        ],
         "whatsapp_links": [
             "https://wa.me/" + "".join(ch for ch in p if ch.isdigit()) + "?text=" + quote(app.get("whatsapp_message", ""))
             for p in phones
