@@ -60,6 +60,7 @@ jobs:
           WHATSAPP_API_VERSION: "v24.0"
           WHATSAPP_APPLICATION_TEMPLATE_NAME: ${{ secrets.WHATSAPP_APPLICATION_TEMPLATE_NAME }}
           WHATSAPP_TEMPLATE_LANGUAGE: "en_US"
+          WHATSAPP_TEMPLATE_DOCUMENT_HEADER: "true"
           WHATSAPP_MIN_SCORE: "65"
         run: python src/whatsapp_sender.py
 
