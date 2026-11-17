@@ -49,6 +49,7 @@ for job in jobs:
         "score": job.get("match_score"),
         "cv": job.get("cv"),
         "mode": mode,
+        "whatsapp_ready": bool(phones and has_whatsapp_signal),
         "priority": priority,
         "action": action,
         "emails": emails,
