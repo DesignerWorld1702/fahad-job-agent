@@ -14,8 +14,8 @@ waba_id = os.getenv("WHATSAPP_WABA_ID", "").strip()
 api_version = os.getenv("WHATSAPP_API_VERSION", "v24.0").strip()
 template_name = os.getenv("WHATSAPP_APPLICATION_TEMPLATE_NAME", "").strip()
 template_language = os.getenv("WHATSAPP_TEMPLATE_LANGUAGE", "en_US").strip()
-template_variables = item.get("whatsapp_template_variables", [])
 max_score = int(os.getenv("WHATSAPP_MIN_SCORE", "65"))
+require_document_header = os.getenv("WHATSAPP_TEMPLATE_DOCUMENT_HEADER", "true").lower() == "true"
 
 STATUS_PATH = ROOT / "data" / "sent_applications.json"
 if STATUS_PATH.exists():
@@ -69,6 +69,12 @@ for item in QUEUE:
 
     for raw_phone in dict.fromkeys(recipients):
         recipient = "".join(ch for ch in raw_phone if ch.isdigit())
+        if recipient.startswith("03") and len(recipient) == 11:
+            recipient = "92" + recipient[1:]
+        elif recipient.startswith("92") and len(recipient) == 12:
+            pass
+        elif recipient.startswith("+92"):
+            recipient = recipient[1:]
         if not recipient:
             skipped += 1
             continue
@@ -78,6 +84,37 @@ for item in QUEUE:
             skipped += 1
             continue
 
+        app = item.get("application", {}) or {}
+        cv_url = item.get("cv_url") or app.get("cv_url") or ""
+        portfolio_url = item.get("portfolio_url") or app.get("portfolio_url") or ""
+        job_title = item.get("title") or ""
+        if not cv_url:
+            print(f"WhatsApp skipped for {recipient}: no CV URL for this application.")
+            skipped += 1
+            continue
+
+        components = []
+        if require_document_header:
+            components.append({
+                "type": "header",
+                "parameters": [{
+                    "type": "document",
+                    "document": {
+                        "link": cv_url,
+                        "filename": "Fahad_Asif_CV.pdf"
+                    }
+                }]
+            })
+
+        components.append({
+            "type": "body",
+            "parameters": [
+                {"type": "text", "text": job_title},
+                {"type": "text", "text": portfolio_url},
+                {"type": "text", "text": cv_url}
+            ]
+        })
+
         payload = {
             "messaging_product": "whatsapp",
             "to": recipient,
@@ -85,13 +122,7 @@ for item in QUEUE:
             "template": {
                 "name": template_name,
                 "language": {"code": template_language},
-                "components": [{
-                    "type": "body",
-                    "parameters": [
-                        {"type": "text", "text": str(value)}
-                        for value in template_variables
-                    ]
-                }]
+                "components": components
             }
         }
 
