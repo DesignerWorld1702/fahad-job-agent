@@ -45,11 +45,23 @@ jobs:
 
       - name: Optional Yahoo email delivery
         env:
-          AUTO_EMAIL_ENABLED: "false"
+          AUTO_EMAIL_ENABLED: "true"
           YAHOO_EMAIL: ${{ secrets.YAHOO_EMAIL }}
           YAHOO_APP_PASSWORD: ${{ secrets.YAHOO_APP_PASSWORD }}
           AUTO_EMAIL_MIN_SCORE: "85"
         run: python src/email_sender.py
+
+      - name: WhatsApp Cloud API delivery
+        env:
+          WHATSAPP_ENABLED: "true"
+          WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
+          WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
+          WHATSAPP_WABA_ID: ${{ secrets.WHATSAPP_WABA_ID }}
+          WHATSAPP_API_VERSION: "v24.0"
+          WHATSAPP_APPLICATION_TEMPLATE_NAME: ${{ secrets.WHATSAPP_APPLICATION_TEMPLATE_NAME }}
+          WHATSAPP_TEMPLATE_LANGUAGE: "en_US"
+          WHATSAPP_MIN_SCORE: "65"
+        run: python src/whatsapp_sender.py
 
       - name: Build report
         run: |
@@ -106,6 +118,7 @@ jobs:
             data/jobs.json
             data/applications.json
             data/application_queue.json
+            data/sent_applications.json
             cvs/graphic_designer_cv.pdf
             cvs/business_computer_cv.pdf
 
@@ -113,6 +126,6 @@ jobs:
         run: |
           git config user.name "Fahad Job Agent"
           git config user.email "actions@users.noreply.github.com"
-          git add data/jobs.json data/applications.json data/application_queue.json JOB_REPORT.md
+          git add data/jobs.json data/applications.json data/application_queue.json data/sent_applications.json JOB_REPORT.md
           git diff --cached --quiet || git commit -m "Update job matches and application queue"
           git push
