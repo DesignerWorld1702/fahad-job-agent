@@ -1,6 +1,6 @@
 # Fahad Job Agent Report
 
-Generated matches: **22**
+Generated matches: **21**
 
 ## CVs in use
 
@@ -24,7 +24,6 @@ Generated matches: **22**
 | 65 | graphic_designer_cv | WEB_APPLICATION | Graphic Designer – & Social Media Design Job, Hamza World - Rozee.pk | Rozee.pk | [Open](https://news.google.com/rss/articles/CBMioAJBVV95cUxNd0pmcnBWSVFicHRqbF9ONEtUX0hYNnVmdzVMUTdPU2V5bUNsVWVtQXQtSno3YnZrVm1IN0tGWXJJYl9tWjBOeE1jUmhPSXVLblJRVGVfOGVDRmhsVDRvRkJpRkZOcW5YQjZ3TXZrR3ktbjJrYW9kcERiWG5lTHltYWFlNDFTRDRWbWp2cDd0VzVtTEN6VEVBeFhCejV3cVhmaU1HSzZFcEZER252U3RLdHZTaGRLdGg0UVY2UEpxbE9OMk9HU3c3S2xMQTF0QTh6N1ItdDBWWjBJbUJqSFd3cFljRVVKX28zbGdmcDBtVVVHWFZ2SzBBLW8wbTdKV2dRSmtvYmwwYTU4S0NvUDdoV0d0UnFoSDhEdlh1UHJJdHg?oc=5) |
 | 65 | graphic_designer_cv | WEB_APPLICATION | Graphic Designer Job In Lahore, Pakistan (Onsite) in Lahore - Profyd - Mustakbil | Mustakbil | [Open](https://news.google.com/rss/articles/CBMiVEFVX3lxTFBLYUpQa1RIYXlIWHNlSkJXbV8yNWhaY1pkaHluTEUwNDcyb0dGNkh3NUlZTk5CZ0M2d3RFTVRSYkdkdUNmSzlfNTJuM0t5MDRsNzNQXw?oc=5) |
 | 65 | business_computer_cv | WEB_APPLICATION | Data Entry & Administrative Assistant Job, Faisalabad, Hwits - Rozee.pk | Rozee.pk | [Open](https://news.google.com/rss/articles/CBMigAFBVV95cUxOT29GMnpnU2w3VFU0Ulppa3lmQ0VWUU5xeGF3eDZvbWpwV2xjX05hazhrWXZmLUxaeVpNNTRDNl9JZkpYTzl4dnJEVV9RTDM4NEYyQ29ZTDlEcGJKREp5V0Q3OFIyWWhHc3UzZlJULUJHYmVwSlhodjV1MWNnNU5oWA?oc=5) |
-| 65 | graphic_designer_cv | WEB_APPLICATION | Express Media Group Jobs Graphic Designer - Careerjoin | Careerjoin | [Open](https://news.google.com/rss/articles/CBMieEFVX3lxTFBYVjNxSHd1WWxRWUd1R0xyYmo3TFo2V3FlWlQ4ZnpwMGZtT2VPdWVITXdzQVdiTlF1anFZMU9PTDN3ZkpEcWdDV0M4VERuY3AwYWhiOF9wbXBObVN2Y2tRR3J2T0tKdDdnVUFseGpHVDRSYU13OWNXQQ?oc=5) |
 | 65 | graphic_designer_cv | WEB_APPLICATION | Graphic Designer Job, Lahore, Standard Salts - Rozee.pk | Rozee.pk | [Open](https://news.google.com/rss/articles/CBMic0FVX3lxTE5FV2piU2tyekNWdXhnclUwT3JMSTFqakctRzBCRXE5MEVaSy01U0prWWJTOHk5MmRIM0NvWWpLbS15alFXVDRXdHNManlCdUlpQ29QbGZ6VVVQQmZMQ0N1ZTUxRERCTzl0OXdnLXMycWQyZXc?oc=5) |
 | 65 | business_computer_cv | WEB_APPLICATION | Operations Coordinator Job, Wesecure - Rozee.pk | Rozee.pk | [Open](https://news.google.com/rss/articles/CBMi_AFBVV95cUxPby1KdmIwck9LdGc0aWZYY0VSRjNNSGR2algzVF9rWTJlTG1RdGZGaDV2TkhTRkVTWFgtZXJUcVRxMHlEdXF5aXNvTlNXTkhULUYwdVpwOHhhMnNuMncwTDc3cXBzdnpkUjR6UFZ3ZnBZVEJPUzhycFdkQlY4QUV4b3ZMcUxQT29hWUpXT3JTUlkzSk9FRWRxSWYyU1h4Y0FyZDlJZ1hvQ3VmUzc3Y0NfNFBPOUIxeXlFNGZVVEduWHgzUi0yVG9mYnhCaWhvdV9QUVhzLXhBMnFWUXBMbExxRWtpRUtiM0k1bElhZkRHdldkTk9UUHNFLWVzcDE?oc=5) |
 | 65 | business_computer_cv | WEB_APPLICATION | Executive Officer- Business Coordinator Job, Karachi, EFU Life Assurance Ltd. - Rozee.pk | Rozee.pk | [Open](https://news.google.com/rss/articles/CBMimwFBVV95cUxOWEM3aHdIWHdyWFRNRFUzNlRMTDg1dk5lSlhzUUdnZGM2NE1UUnlGWGNmRnlldjBmNEVzR09NTkQ3NEZ3WDZPV0c0UXZHXy1yRkF1Q1NXdV9hRG1pSmM4SlJQbG0wN3RsR1ZmRVNGOWRMT3MyNFVsZ29iQTZLSzk3MUx4d1doVmJwSDRjUV9IZHVNU1Bva1V5dW9Cbw?oc=5) |
