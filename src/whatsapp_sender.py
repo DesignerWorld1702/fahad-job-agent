@@ -58,7 +58,19 @@ sent = 0
 skipped = 0
 failed = 0
 
-eligible_items = [item for item in QUEUE if item.get("whatsapp_ready") and (item.get("score") or 0) >= max_score]
+if test_mode:
+    # A safe test uses the configured test recipient, so it does not require
+    # the sample job listing itself to publish a WhatsApp contact number.
+    eligible_items = [
+        item for item in QUEUE
+        if (item.get("score") or 0) >= max_score
+        and (item.get("cv_url") or (item.get("application", {}) or {}).get("cv_url"))
+    ]
+else:
+    eligible_items = [
+        item for item in QUEUE
+        if item.get("whatsapp_ready") and (item.get("score") or 0) >= max_score
+    ]
 if test_mode and not test_recipient:
     print("WHATSAPP_TEST_MODE is true but WHATSAPP_TEST_RECIPIENT is empty; no messages sent.")
     raise SystemExit(0)
