@@ -45,7 +45,7 @@ jobs:
 
       - name: Optional Yahoo email delivery
         env:
-          AUTO_EMAIL_ENABLED: "true"
+          AUTO_EMAIL_ENABLED: "false"
           YAHOO_EMAIL: ${{ secrets.YAHOO_EMAIL }}
           YAHOO_APP_PASSWORD: ${{ secrets.YAHOO_APP_PASSWORD }}
           AUTO_EMAIL_MIN_SCORE: "85"
