@@ -35,11 +35,16 @@ jobs:
               "cv": "graphic_designer_cv",
               "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
               "portfolio_url": "https://www.behance.net/zubairkhan1",
-              "email_subject": "[TEST] Fahad Job Agent delivery test",
+              "email_subject": "[TEST] Application – Graphic Designer – Fahad Asif",
               "email_body": (
-                  "This is a delivery test only. No employer is being contacted.\n\n"
-                  "The attached PDF is the Graphic Designer CV selected by the agent.\n"
-                  "Behance portfolio: https://www.behance.net/zubairkhan1"
+                  "Dear Hiring Manager,\\n\\n"
+                  "I’m interested in the Graphic Designer opportunity and would love to bring my "
+                  "4+ years of experience in branding, social media design, packaging, and marketing "
+                  "creatives to your team.\\n\\n"
+                  "I’ve attached my CV for your consideration. You can view my work here:\\n"
+                  "Portfolio: https://www.behance.net/zubairkhan1\\n\\n"
+                  "I’d be happy to discuss how I can contribute to your team.\\n\\n"
+                  "Best regards,\\nFahad Asif\\n+92 340 7301498\\nFahadasif77@yahoo.com"
               ),
               "emails": [],
               "phones": [],
@@ -71,7 +76,7 @@ jobs:
         env:
           WHATSAPP_ENABLED: "true"
           WHATSAPP_TEST_MODE: "true"
-          WHATSAPP_TEST_RECIPIENT: "923407301498"
+          WHATSAPP_TEST_RECIPIENT: "923164165657"
           WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
           WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
           WHATSAPP_WABA_ID: ${{ secrets.WHATSAPP_WABA_ID }}
