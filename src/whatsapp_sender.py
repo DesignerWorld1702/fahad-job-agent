@@ -133,7 +133,7 @@ for item in eligible_items:
             "parameters": [
                 {"type": "text", "text": job_title},
                 {"type": "text", "text": portfolio_url},
-                {"type": "text", "text": cv_url}
+                {"type": "text", "text": "My CV is attached for your consideration."}
             ]
         })
 
