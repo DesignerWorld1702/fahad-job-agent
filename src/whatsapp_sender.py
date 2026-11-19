@@ -16,6 +16,8 @@ template_name = os.getenv("WHATSAPP_APPLICATION_TEMPLATE_NAME", "").strip()
 template_language = os.getenv("WHATSAPP_TEMPLATE_LANGUAGE", "en_US").strip()
 max_score = int(os.getenv("WHATSAPP_MIN_SCORE", "65"))
 require_document_header = os.getenv("WHATSAPP_TEMPLATE_DOCUMENT_HEADER", "true").lower() == "true"
+test_mode = os.getenv("WHATSAPP_TEST_MODE", "false").lower() == "true"
+test_recipient = os.getenv("WHATSAPP_TEST_RECIPIENT", "").strip()
 
 STATUS_PATH = ROOT / "data" / "sent_applications.json"
 if STATUS_PATH.exists():
@@ -56,13 +58,21 @@ sent = 0
 skipped = 0
 failed = 0
 
-for item in QUEUE:
+eligible_items = [item for item in QUEUE if item.get("whatsapp_ready") and (item.get("score") or 0) >= max_score]
+if test_mode and not test_recipient:
+    print("WHATSAPP_TEST_MODE is true but WHATSAPP_TEST_RECIPIENT is empty; no messages sent.")
+    raise SystemExit(0)
+if test_mode:
+    eligible_items = eligible_items[:1]
+    print(f"WhatsApp TEST MODE: only the top eligible application will be sent to {test_recipient}.")
+
+for item in eligible_items:
     if not item.get("whatsapp_ready"):
         continue
     if (item.get("score") or 0) < max_score:
         continue
 
-    recipients = item.get("phones") or []
+    recipients = [test_recipient] if test_mode else (item.get("phones") or [])
     if not recipients:
         skipped += 1
         continue
@@ -79,7 +89,7 @@ for item in QUEUE:
             skipped += 1
             continue
 
-        key = f"whatsapp|{item.get('url','')}|{recipient}"
+        key = (f"whatsapp-test|{item.get('url','')}|{recipient}" if test_mode else f"whatsapp|{item.get('url','')}|{recipient}")
         if key in sent_keys:
             skipped += 1
             continue
@@ -146,7 +156,7 @@ for item in QUEUE:
             )
             status["sent"].append({
                 "key": key,
-                "channel": "whatsapp",
+                "channel": "whatsapp_test" if test_mode else "whatsapp",
                 "recipient": recipient,
                 "url": item.get("url"),
                 "title": item.get("title"),
