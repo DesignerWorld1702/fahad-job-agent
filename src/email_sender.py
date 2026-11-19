@@ -32,6 +32,32 @@ def save_status():
         encoding="utf-8"
     )
 
+def connect_yahoo():
+    """Authenticate with Yahoo using SSL/465, then STARTTLS/587 as fallback."""
+    errors = []
+    try:
+        smtp = smtplib.SMTP_SSL("smtp.mail.yahoo.com", 465, timeout=30)
+        smtp.login(sender, app_password)
+        print("Yahoo SMTP authentication successful on port 465 (SSL).")
+        return smtp
+    except Exception as exc:
+        errors.append(f"465/SSL: {type(exc).__name__}: {exc}")
+        try:
+            smtp = smtplib.SMTP("smtp.mail.yahoo.com", 587, timeout=30)
+            smtp.ehlo()
+            smtp.starttls()
+            smtp.ehlo()
+            smtp.login(sender, app_password)
+            print("Yahoo SMTP authentication successful on port 587 (STARTTLS).")
+            return smtp
+        except Exception as fallback_exc:
+            errors.append(f"587/STARTTLS: {type(fallback_exc).__name__}: {fallback_exc}")
+    raise RuntimeError(
+        "Yahoo SMTP authentication failed on both supported connection methods. "
+        "Check YAHOO_EMAIL and regenerate YAHOO_APP_PASSWORD in Yahoo Account Security. "
+        "Details: " + " | ".join(errors)
+    )
+
 if not enabled:
     print("AUTO_EMAIL_ENABLED is false; email sending skipped safely.")
     raise SystemExit(0)
@@ -78,8 +104,7 @@ if test_mode:
     msg.set_content(body)
     cv_path = cv_paths[item.get("cv")]
     msg.add_attachment(cv_path.read_bytes(), maintype="application", subtype="pdf", filename=cv_path.name)
-    with smtplib.SMTP_SSL("smtp.mail.yahoo.com", 465, timeout=30) as smtp:
-        smtp.login(sender, app_password)
+    with connect_yahoo() as smtp:
         smtp.send_message(msg)
     status["sent"].append({
         "key": key, "channel": "email_test", "recipient": recipient,
@@ -92,8 +117,7 @@ if test_mode:
 
 sent = 0
 skipped = 0
-with smtplib.SMTP_SSL("smtp.mail.yahoo.com", 465, timeout=30) as smtp:
-    smtp.login(sender, app_password)
+with connect_yahoo() as smtp:
     for item in QUEUE:
         if item.get("mode") not in ("EMAIL_READY", "EMAIL_AND_WHATSAPP_READY") or (item.get("score") or 0) < max_score:
             continue
