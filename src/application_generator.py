@@ -44,7 +44,6 @@ def make_record(job):
     email_body = f"""{short_cover}
 
 Portfolio: {PORTFOLIO}
-CV: {CV_LINKS.get(cv, "")}
 
 Phone: {PROFILE["phone"]}
 Email: {PROFILE["email"]}
