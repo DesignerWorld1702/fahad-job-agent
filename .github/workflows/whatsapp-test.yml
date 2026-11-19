@@ -22,11 +22,11 @@ jobs:
         run: python src/application_generator.py
       - name: Build application queue
         run: python src/application_queue.py
-      - name: Send ONE WhatsApp test to Fahad
+      - name: Send ONE WhatsApp test to alternate recipient
         env:
           WHATSAPP_ENABLED: "true"
           WHATSAPP_TEST_MODE: "true"
-          WHATSAPP_TEST_RECIPIENT: "923407301498"
+          WHATSAPP_TEST_RECIPIENT: "923164165657"
           WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
           WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
           WHATSAPP_WABA_ID: ${{ secrets.WHATSAPP_WABA_ID }}
