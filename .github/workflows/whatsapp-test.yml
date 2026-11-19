@@ -35,7 +35,7 @@ jobs:
         env:
           WHATSAPP_ENABLED: "true"
           WHATSAPP_TEST_MODE: "true"
-          WHATSAPP_TEST_RECIPIENT: "923164165657"
+          WHATSAPP_TEST_RECIPIENT: "923407301498"
           WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
           WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
           WHATSAPP_WABA_ID: ${{ secrets.WHATSAPP_WABA_ID }}
