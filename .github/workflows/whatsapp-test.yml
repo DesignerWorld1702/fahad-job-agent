@@ -22,6 +22,15 @@ jobs:
         run: python src/application_generator.py
       - name: Build application queue
         run: python src/application_queue.py
+      - name: Send ONE Yahoo email test to Fahad's test inbox
+        env:
+          AUTO_EMAIL_ENABLED: "true"
+          EMAIL_TEST_MODE: "true"
+          EMAIL_TEST_RECIPIENT: "zk9783647@gmail.com"
+          YAHOO_EMAIL: ${{ secrets.YAHOO_EMAIL }}
+          YAHOO_APP_PASSWORD: ${{ secrets.YAHOO_APP_PASSWORD }}
+          AUTO_EMAIL_MIN_SCORE: "55"
+        run: python src/email_sender.py
       - name: Send ONE WhatsApp test to alternate recipient
         env:
           WHATSAPP_ENABLED: "true"
