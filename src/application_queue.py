@@ -21,7 +21,11 @@ for job in jobs:
         for marker in ("whatsapp", "wa.me", "whatsapp.com")
     )
 
-    if emails:
+    if emails and phones and has_whatsapp_signal:
+        mode = "EMAIL_AND_WHATSAPP_READY"
+        priority = "automatic when Yahoo SMTP and WhatsApp Cloud API are configured"
+        action = "Send the tailored application by email and WhatsApp when both channels are configured."
+    elif emails:
         mode = "EMAIL_READY"
         priority = "automatic when Yahoo SMTP is configured"
         action = "Send tailored email with selected CV after email-sending secrets are configured."
