@@ -97,8 +97,7 @@ if test_mode:
     body = (
         "This is a test email from Fahad's Job Agent. It is sent only to the configured test recipient, "
         "not to the employer. The attached PDF is the CV selected for the sample job below.\n\n"
-        f"Sample job: {item.get('title','')}\n"
-        f"Job listing: {item.get('url','')}\n\n"
+        f"Sample job: {item.get('title','')}\n\n"
         + (item.get("email_body") or "")
     )
     msg.set_content(body)
