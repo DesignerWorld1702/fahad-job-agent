@@ -79,7 +79,7 @@ if test_mode:
     print(f"WhatsApp TEST MODE: only the top eligible application will be sent to {test_recipient}.")
 
 for item in eligible_items:
-    if not item.get("whatsapp_ready"):
+    if not test_mode and not item.get("whatsapp_ready"):
         continue
     if (item.get("score") or 0) < max_score:
         continue
