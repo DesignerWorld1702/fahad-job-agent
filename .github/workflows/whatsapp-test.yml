@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   whatsapp-test:
@@ -12,16 +12,51 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Search jobs
-        run: python src/job_search.py
-      - name: Prepare applications
-        run: python src/application_generator.py
-      - name: Build application queue
-        run: python src/application_queue.py
+
+      - name: Create deterministic delivery test queue
+        env:
+          TEST_RUN_ID: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          run_id = os.environ["TEST_RUN_ID"]
+          queue = [{
+              "title": "TEST – Graphic Designer",
+              "url": f"https://example.com/fahad-job-agent-test/{run_id}",
+              "score": 65,
+              "cv": "graphic_designer_cv",
+              "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
+              "portfolio_url": "https://www.behance.net/zubairkhan1",
+              "email_subject": "[TEST] Fahad Job Agent delivery test",
+              "email_body": (
+                  "This is a delivery test only. No employer is being contacted.\n\n"
+                  "The attached PDF is the Graphic Designer CV selected by the agent.\n"
+                  "Behance portfolio: https://www.behance.net/zubairkhan1"
+              ),
+              "emails": [],
+              "phones": [],
+              "whatsapp_ready": False,
+              "mode": "REVIEW"
+          }]
+
+          Path("data/application_queue.json").write_text(
+              json.dumps({"queue": queue}, indent=2, ensure_ascii=False),
+              encoding="utf-8"
+          )
+          Path("data/sent_applications.json").write_text(
+              json.dumps({"sent": []}, indent=2),
+              encoding="utf-8"
+          )
+          print(f"Created one deterministic test application for run {run_id}.")
+
       - name: Send ONE Yahoo email test to Fahad's test inbox
         env:
           AUTO_EMAIL_ENABLED: "true"
@@ -31,7 +66,8 @@ jobs:
           YAHOO_APP_PASSWORD: ${{ secrets.YAHOO_APP_PASSWORD }}
           AUTO_EMAIL_MIN_SCORE: "55"
         run: python src/email_sender.py
-      - name: Send ONE WhatsApp test to alternate recipient
+
+      - name: Send ONE WhatsApp test to Fahad's own WhatsApp
         env:
           WHATSAPP_ENABLED: "true"
           WHATSAPP_TEST_MODE: "true"
@@ -45,6 +81,7 @@ jobs:
           WHATSAPP_TEMPLATE_DOCUMENT_HEADER: "true"
           WHATSAPP_MIN_SCORE: "55"
         run: python src/whatsapp_sender.py
+
       - name: Upload test result
         uses: actions/upload-artifact@v4
         with:
