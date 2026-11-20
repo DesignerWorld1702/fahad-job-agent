@@ -190,7 +190,7 @@ def main():
         return
     daily_counts = {"pakistan": 0, "international": 0}
     for record in STATUS.get("sent", []):
-        if record.get("channel") in ("web_form", "email", "whatsapp") and record.get("sent_date") == TODAY:
+        if record.get("channel") in ("web_form", "web_form_attempt", "email", "whatsapp") and record.get("sent_date") == TODAY:
             region = record.get("region", "international")
             daily_counts[region if region in daily_counts else "international"] += 1
     done = {x.get("key") for x in STATUS.get("sent", []) if x.get("key")}
