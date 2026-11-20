@@ -12,6 +12,9 @@ GitHub Actions (runs while the PC is off)
 → Graphic Designer CV vs Business/Computer CV selection
 → application generation
 → application-method queue
+→ public employer-page inspection
+→ supported web-form filling + submission
+→ tailored email with CV attachment when explicitly invited
 → report + downloadable artifact
 
 ## Sources currently configured
@@ -29,15 +32,15 @@ GitHub Actions (runs while the PC is off)
 
 ## Application modes
 
-- **EMAIL_READY** — employer email detected; email content is prepared. Yahoo sending is enabled for high-match jobs when the configured secrets are available.
-- **WHATSAPP_READY** — a WhatsApp contact and message are prepared. Production WhatsApp sending remains disabled until recipient opt-in and Meta production requirements are verified; a number appearing in a job advertisement alone is not treated as permission.
-- **PHONE_ACTION** — phone number and application details are prepared.
-- **WEB_APPLICATION** — direct URL is saved; login/CAPTCHA/2FA steps remain manual when required.
-- **REVIEW** — listing needs review.
+- **EMAIL_READY** — the agent sends a tailored email with the selected CV attached when the employer explicitly invites email applications and Yahoo secrets are available.
+- **WHATSAPP_READY** — a WhatsApp contact and approved-template message are prepared. A public phone number alone is not consent; opt-in and Meta template requirements remain enforced.
+- **PHONE_ACTION** — phone number and application details are prepared for a call.
+- **WEB_APPLICATION** — Playwright opens public employer pages, follows clear Apply links, fills known profile fields, uploads the selected CV, and submits when all required fields are safely answerable.
+- **REVIEW** — unknown required questions, unsupported fields, or an inaccessible form are queued for manual completion.
 
 ## Security / platform rules
 
-FlexJobs listings are discovered where publicly indexed; the agent does not claim to access paid/member-only listings or submit applications behind FlexJobs login. The agent does not bypass CAPTCHA, 2FA, anti-bot systems, login walls, rate limits, or platform restrictions. Remote roles are checked for location eligibility; 'remote' does not necessarily mean worldwide. It automates everything around those protected steps and places protected applications into a clear action queue.
+FlexJobs listings are discovered where publicly indexed; the agent does not claim to access paid/member-only listings or submit applications behind FlexJobs login. The agent does not bypass CAPTCHA, 2FA, anti-bot systems, login walls, paid memberships, rate limits, or platform restrictions. It will not invent answers about work authorization, salary expectations, sponsorship eligibility, or other unknown personal facts. If a form requires information not present in the verified profile, it stops before submission and records the missing fields for review. After a submit click, it records a submission only when the page shows a confirmation; ambiguous outcomes are flagged so it does not blindly submit again. Remote roles are checked for location eligibility; 'remote' does not necessarily mean worldwide.
 
 ## Yahoo email
 
@@ -46,7 +49,7 @@ When the two CV PDFs are present, Yahoo delivery can be enabled with GitHub Acti
 - `YAHOO_EMAIL`
 - `YAHOO_APP_PASSWORD`
 
-Production email is enabled for relevant listings with a match score of 85 or higher. The sender attaches the selected CV, avoids a separate CV download link in the email, deduplicates previously sent applications, and enforces daily caps of up to 30 Pakistan and 20 international emails. These are maximums, not guaranteed daily counts: actual volume depends on fresh suitable vacancies, published employer email addresses, and available CV-matched listings.
+Production email is enabled for relevant listings with a match score of 65 or higher, but only when the job post or employer page explicitly invites candidates to apply by email. The sender attaches the selected CV, avoids a separate CV download link in the email, deduplicates previously sent applications, and enforces daily caps of up to 30 Pakistan and 20 international emails. These are maximums, not guaranteed daily counts: actual volume depends on fresh suitable vacancies, published employer email addresses, and available CV-matched listings.
 
 Never put a Yahoo password directly in repository files.
 
@@ -68,6 +71,7 @@ The workflow runs automatically twice daily (10:00 AM and 6:00 PM Pakistan time)
 - `src/application_generator.py` — tailored application content
 - `src/application_queue.py` — compliant action routing
 - `src/email_sender.py` — optional Yahoo SMTP delivery
+- `src/web_apply.py` — public application-page inspection, form filling and permitted submission
 - `.github/workflows/job-agent.yml` — scheduled execution
 - `data/application_queue.json` — current application action queue
 - `JOB_REPORT.md` — latest human-readable report
