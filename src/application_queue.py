@@ -8,6 +8,8 @@ def explicit_whatsapp_application_invitation(text):
     text = re.sub(r"\s+", " ", (text or "").lower())
     invitation_patterns = [
         r"whatsapp\s+(?:your\s+)?(?:cv|resume|application)",
+        r"whatsapp\s+(?:contact|number|no\.?)",
+        r"whatsapp\s*[:\-]\s*\+?\d[\d\s().-]{7,}",
         r"(?:send|share|submit)\s+(?:your\s+)?(?:cv|resume|application)\s+(?:on|via|through|to)\s+whatsapp",
         r"(?:apply|application)\s+(?:via|through|on|by)\s+whatsapp",
         r"whatsapp\s+(?:us|me|hr|the\s+hr|to\s+apply|for\s+application)",
