@@ -1,4 +1,4 @@
-import json, re, time, urllib.parse, urllib.request
+import json, re, time, urllib.parse, urllib.request, urllib.error
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
@@ -10,10 +10,25 @@ from job_matcher import score_job
 RECENT_DAYS=20
 
 def google_news_rss(query):
-    url="https://news.google.com/rss/search?"+urllib.parse.urlencode({"q":query,"hl":"en-PK","gl":"PK","ceid":"PK:en"})
-    req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
-    with urllib.request.urlopen(req,timeout=25) as r:
-        return r.read()
+    params = {"q": query, "hl": "en-PK", "gl": "PK", "ceid": "PK:en"}
+    headers = {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126.0 Safari/537.36",
+        "Accept": "application/rss+xml, application/xml, text/xml, */*"
+    }
+    for attempt in range(2):
+        url = "https://news.google.com/rss/search?" + urllib.parse.urlencode(params)
+        req = urllib.request.Request(url, headers=headers)
+        try:
+            with urllib.request.urlopen(req, timeout=20) as response:
+                return response.read()
+        except urllib.error.HTTPError as exc:
+            if exc.code == 429 and attempt == 0:
+                time.sleep(3)
+                # Retry with the global English feed; country-specific terms remain in the query.
+                params = {"q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"}
+                continue
+            raise
+    raise RuntimeError("Google News RSS request failed after retry")
 
 def parse_rss(data):
     root=ET.fromstring(data)
