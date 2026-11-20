@@ -2,12 +2,6 @@ name: Fahad Job Agent
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "src/**"
-      - "config/**"
-      - "cvs/**"
-      - ".github/workflows/job-agent.yml"
   schedule:
     - cron: "0 5 * * *"
     - cron: "0 13 * * *"
