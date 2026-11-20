@@ -15,6 +15,8 @@ for job in jobs:
     phones = app.get("phones", [])
     url = job.get("url", "")
     description = (job.get("description") or "").lower()
+    search_context = (job.get("query") or "").lower()
+    region = "pakistan" if "pakistan" in search_context else "international"
 
     has_whatsapp_signal = any(
         marker in description
@@ -48,6 +50,7 @@ for job in jobs:
 
     queue.append({
         "title": job.get("title"),
+        "region": region,
         "source": job.get("source"),
         "url": url,
         "score": job.get("match_score"),
