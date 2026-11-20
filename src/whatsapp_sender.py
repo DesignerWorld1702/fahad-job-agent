@@ -62,7 +62,7 @@ failed = 0
 today = datetime.now(timezone.utc).date().isoformat()
 daily_counts = {"pakistan": 0, "international": 0}
 for record in status.get("sent", []):
-    if record.get("channel") in ("email", "web_form", "whatsapp") and record.get("sent_date") == today:
+    if record.get("channel") in ("email", "web_form", "web_form_attempt", "whatsapp") and record.get("sent_date") == today:
         region = record.get("region", "international")
         daily_counts[region if region in daily_counts else "international"] += 1
 
