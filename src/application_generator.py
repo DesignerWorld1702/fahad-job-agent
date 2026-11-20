@@ -14,8 +14,17 @@ CV_LINKS = {
 
 def contact_method(text):
     emails = re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)
-    phones = re.findall(r"(?:\+?92|0)\s?3\d{2}[-\s]?\d{3}[-\s]?\d{4}", text)
-    return list(dict.fromkeys(emails)), list(dict.fromkeys(phones))
+    phones = re.findall(
+        r"(?<!\w)(?:\+\d{1,3}|00\d{1,3})[\s().-]?(?:\d[\s().-]?){7,14}(?!\w)|"
+        r"(?<!\w)(?:\+?92|0)\s?3\d{2}[-\s]?\d{3}[-\s]?\d{4}(?!\w)",
+        text
+    )
+    normalized = []
+    for phone in phones:
+        digits = re.sub(r"\D", "", phone)
+        if 10 <= len(digits) <= 15 and digits not in normalized:
+            normalized.append(digits)
+    return list(dict.fromkeys(emails)), normalized
 
 def make_record(job):
     body = job.get("description", "")
