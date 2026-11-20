@@ -42,6 +42,10 @@ def is_blocked(page):
     ]
     if any(page.locator(s).count() for s in selectors):
         return "captcha_or_bot_check"
+    if page.locator('input[type="password"]').count():
+        return "login_or_password_required"
+    if page.locator('input[autocomplete="one-time-code"], input[name*="otp" i], input[name*="verification" i]').count():
+        return "two_factor_or_verification_required"
     if any(x in text for x in ("verify you are human", "security check", "unusual traffic", "complete the captcha", "robot check")):
         return "captcha_or_bot_check"
     return ""
@@ -284,6 +288,13 @@ def main():
                 filled, unknown = fill_form(application_form, cv_path, cover)
                 item["form_fields_filled"] = filled
                 item["form_fields_requiring_review"] = unknown
+
+                # Re-check for challenges injected after initial page load.
+                block = is_blocked(page)
+                if block:
+                    item["web_apply_status"] = block
+                    review += 1
+                    continue
 
                 # Submit only when all required visible fields are answerable from verified profile data.
                 if unknown:
