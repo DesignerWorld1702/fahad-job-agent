@@ -28,7 +28,7 @@ GitHub Actions (runs while the PC is off)
 ## Application modes
 
 - **EMAIL_READY** — employer email detected; email content is prepared. Actual Yahoo sending is disabled by default.
-- **WHATSAPP_READY** — WhatsApp number and ready-to-send message are prepared. The agent does not bypass WhatsApp controls.
+- **WHATSAPP_READY** — a WhatsApp contact and message are prepared. Production WhatsApp sending remains disabled until recipient opt-in and Meta production requirements are verified; a number appearing in a job advertisement alone is not treated as permission.
 - **PHONE_ACTION** — phone number and application details are prepared.
 - **WEB_APPLICATION** — direct URL is saved; login/CAPTCHA/2FA steps remain manual when required.
 - **REVIEW** — listing needs review.
@@ -44,7 +44,7 @@ When the two CV PDFs are present, Yahoo delivery can be enabled with GitHub Acti
 - `YAHOO_EMAIL`
 - `YAHOO_APP_PASSWORD`
 
-The workflow currently keeps `AUTO_EMAIL_ENABLED=false` until the user explicitly enables sending. The sender also requires the appropriate CV attachment and uses a minimum match score.
+Production email is enabled for relevant listings with a match score of 85 or higher. The sender attaches the selected CV, avoids a separate CV download link in the email, deduplicates previously sent applications, and enforces daily caps of up to 30 Pakistan and 20 international emails. These are maximums, not guaranteed daily counts: actual volume depends on fresh suitable vacancies, published employer email addresses, and available CV-matched listings.
 
 Never put a Yahoo password directly in repository files.
 
@@ -55,7 +55,7 @@ In GitHub:
 2. Open **Fahad Job Agent**
 3. Click **Run workflow**
 
-The workflow also runs automatically twice daily.
+The workflow runs automatically twice daily (10:00 AM and 6:00 PM Pakistan time) and can also be started manually. Code changes alone do not trigger a live application run.
 
 ## Main files
 
