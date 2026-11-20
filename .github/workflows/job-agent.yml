@@ -32,6 +32,9 @@ jobs:
           echo "Final CVs found:"
           ls -lh cvs/graphic_designer_cv.pdf cvs/business_computer_cv.pdf
 
+      - name: Validate Python syntax
+        run: python -m py_compile src/*.py
+
       - name: Search jobs
         run: python src/job_search.py
 
@@ -102,7 +105,7 @@ jobs:
               "| EMAIL_READY | Employer email found; ready for permitted email automation |",
               "| WHATSAPP_READY | WhatsApp number found; click-to-chat message prepared |",
               "| PHONE_ACTION | Phone number found; call details prepared |",
-              "| WEB_APPLICATION | Direct application URL; protected steps may require you |",
+              "| WEB_APPLICATION | Public forms are inspected and submitted when all required answers are known; protected steps remain manual |",
               "| REVIEW | Needs review |",
               "",
               "## Top matches",
