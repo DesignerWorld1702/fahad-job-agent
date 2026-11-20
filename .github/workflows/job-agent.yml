@@ -45,7 +45,7 @@ jobs:
 
       - name: Optional Yahoo email delivery
         env:
-          AUTO_EMAIL_ENABLED: "false"
+          AUTO_EMAIL_ENABLED: "true"
           YAHOO_EMAIL: ${{ secrets.YAHOO_EMAIL }}
           YAHOO_APP_PASSWORD: ${{ secrets.YAHOO_APP_PASSWORD }}
           AUTO_EMAIL_MIN_SCORE: "85"
@@ -53,13 +53,13 @@ jobs:
 
       - name: WhatsApp Cloud API delivery
         env:
-          WHATSAPP_ENABLED: "true"
+          WHATSAPP_ENABLED: "false"
           WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
           WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
           WHATSAPP_WABA_ID: ${{ secrets.WHATSAPP_WABA_ID }}
           WHATSAPP_API_VERSION: "v24.0"
           WHATSAPP_APPLICATION_TEMPLATE_NAME: ${{ secrets.WHATSAPP_APPLICATION_TEMPLATE_NAME }}
-          WHATSAPP_TEMPLATE_LANGUAGE: "en_US"
+          WHATSAPP_TEMPLATE_LANGUAGE: "en"
           WHATSAPP_TEMPLATE_DOCUMENT_HEADER: "true"
           WHATSAPP_MIN_SCORE: "65"
         run: python src/whatsapp_sender.py
