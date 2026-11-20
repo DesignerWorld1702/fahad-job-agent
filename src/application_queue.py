@@ -37,7 +37,7 @@ for job in jobs:
 
     combined_post_text = (job.get("title") or "") + " " + (job.get("description") or "")
     has_whatsapp_signal = any(
-        marker in description
+        marker in combined_post_text.lower()
         for marker in ("whatsapp", "wa.me", "whatsapp.com")
     )
     # A public phone number alone is not permission to initiate WhatsApp.
