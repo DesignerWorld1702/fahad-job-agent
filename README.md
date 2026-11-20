@@ -49,7 +49,7 @@ When the two CV PDFs are present, Yahoo delivery can be enabled with GitHub Acti
 - `YAHOO_EMAIL`
 - `YAHOO_APP_PASSWORD`
 
-Production email is enabled for relevant listings with a match score of 65 or higher, but only when the job post or employer page explicitly invites candidates to apply by email. The sender attaches the selected CV, avoids a separate CV download link in the email, deduplicates previously sent applications, and enforces daily caps of up to 30 Pakistan and 20 international emails. These are maximums, not guaranteed daily counts: actual volume depends on fresh suitable vacancies, published employer email addresses, and available CV-matched listings.
+Production email is enabled for relevant listings with a match score of 65 or higher, but only when the job post or employer page explicitly invites candidates to apply by email. The sender attaches the selected CV, avoids a separate CV download link in the email, deduplicates previously sent applications, and shares daily maximums of 30 Pakistan and 20 international applications across web forms, email and WhatsApp. These are ceilings, not targets: the agent continues searching and processing even when fewer suitable jobs are available.
 
 Never put a Yahoo password directly in repository files.
 
@@ -60,7 +60,7 @@ In GitHub:
 2. Open **Fahad Job Agent**
 3. Click **Run workflow**
 
-The workflow runs automatically twice daily (10:00 AM and 6:00 PM Pakistan time) and can also be started manually. Code changes alone do not trigger a live application run.
+The workflow runs automatically twice daily (10:00 AM and 6:00 PM Pakistan time), after relevant code/configuration/CV changes, and can also be started manually. Data/report commits do not retrigger the workflow.
 
 ## Main files
 
