@@ -248,6 +248,19 @@ def main():
 
                 # Capture employer-published application contacts from the public page.
                 body_text = page.locator("body").inner_text(timeout=5000)
+                body_lower = norm(body_text)
+                ineligible_phrases = (
+                    "us residents only", "u.s. residents only", "must be based in the united states",
+                    "must reside in the united states", "remote within the united states only",
+                    "only applicants located in the united states", "must already have the right to work",
+                    "no visa sponsorship available", "unable to provide visa sponsorship",
+                    "cannot sponsor work visas", "must have existing work authorization"
+                )
+                if any(phrase in body_lower for phrase in ineligible_phrases):
+                    item["web_apply_status"] = "location_or_work_authorization_restriction"
+                    review += 1
+                    continue
+
                 emails = re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", body_text)
                 relevant = []
                 for email in emails:
