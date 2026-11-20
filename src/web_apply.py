@@ -82,10 +82,26 @@ def field_context(locator):
         pass
     return " ".join(bits)
 
-def fill_form(page, cv_path, cover_letter):
+def choose_application_form(page):
+    forms = page.locator("form")
+    best = None
+    best_score = -1
+    for i in range(forms.count()):
+        form = forms.nth(i)
+        try:
+            context = norm(form.inner_text(timeout=500))
+            fields = form.locator("input, textarea, select").count()
+            score = fields + (12 if any(x in context for x in ("apply", "application", "resume", "cv", "candidate", "job")) else 0)
+            if score > best_score:
+                best, best_score = form, score
+        except Exception:
+            continue
+    return best
+
+def fill_form(form, cv_path, cover_letter):
     filled = []
     unknown_required = []
-    inputs = page.locator("input, textarea, select")
+    inputs = form.locator("input, textarea, select")
     for i in range(min(inputs.count(), 100)):
         el = inputs.nth(i)
         try:
@@ -107,7 +123,7 @@ def fill_form(page, cv_path, cover_letter):
                 continue
 
             if tag == "input" and typ in ("checkbox", "radio"):
-                if required and any(k in ctx for k in ("privacy", "terms", "consent", "data protection")):
+                if required and any(k in ctx for k in ("privacy", "terms", "data protection", "acknowledge")):
                     el.check()
                     filled.append("terms_consent")
                 elif required and not el.is_checked():
@@ -119,12 +135,12 @@ def fill_form(page, cv_path, cover_letter):
                 value = PROFILE.get("email")
             elif any(k in ctx for k in ("phone", "mobile", "telephone")):
                 value = PROFILE.get("phone")
-            elif any(k in ctx for k in ("full name", "your name", "candidate name", "name")) and not any(k in ctx for k in ("company", "school", "reference")):
-                value = PROFILE.get("name")
             elif "first name" in ctx or "given name" in ctx:
                 value = PROFILE.get("name", "").split(" ")[0]
             elif "last name" in ctx or "surname" in ctx or "family name" in ctx:
                 value = " ".join(PROFILE.get("name", "").split(" ")[1:])
+            elif any(k in ctx for k in ("full name", "your name", "candidate name", "name")) and not any(k in ctx for k in ("company", "school", "reference")):
+                value = PROFILE.get("name")
             elif any(k in ctx for k in ("city", "location", "current address", "address")):
                 value = PROFILE.get("location")
             elif any(k in ctx for k in ("portfolio", "behance", "website", "personal site")):
@@ -168,10 +184,11 @@ def main():
     if not ENABLED:
         log("WEB_AUTO_APPLY_ENABLED=false; skipped.")
         return
-    sent_today = sum(
-        1 for x in STATUS.get("sent", [])
-        if x.get("channel") == "web_form" and x.get("sent_date") == TODAY
-    )
+    daily_counts = {"pakistan": 0, "international": 0}
+    for record in STATUS.get("sent", []):
+        if record.get("channel") == "web_form" and record.get("sent_date") == TODAY:
+            region = record.get("region", "international")
+            daily_counts[region if region in daily_counts else "international"] += 1
     done = {x.get("key") for x in STATUS.get("sent", []) if x.get("key")}
     attempted = 0
     submitted = 0
@@ -185,8 +202,13 @@ def main():
         )
         page = context.new_page()
         for item in sorted(QUEUE, key=lambda x: x.get("score") or 0, reverse=True):
-            if attempted >= MAX_PER_RUN or sent_today >= 30:
+            if attempted >= MAX_PER_RUN:
                 break
+            region = item.get("region", "international")
+            if region not in ("pakistan", "international"):
+                region = "international"
+            if daily_counts[region] >= (30 if region == "pakistan" else 20):
+                continue
             if (item.get("score") or 0) < MIN_SCORE or not item.get("url"):
                 continue
             if item.get("mode") not in ("WEB_APPLICATION", "REVIEW", "PHONE_ACTION", "EMAIL_READY", "EMAIL_AND_WHATSAPP_READY"):
@@ -232,9 +254,9 @@ def main():
                         relevant.append(e)
                 item["page_emails"] = list(dict.fromkeys(relevant))[:5]
                 email_invite = re.search(
-                    r"(?:send|email|submit|share)\\s+(?:your\\s+)?(?:cv|resume|application)|"
-                    r"(?:apply|application)\\s+(?:by|via|through|to)\\s+email|"
-                    r"email\\s+(?:your\\s+)?(?:cv|resume|application)",
+                    r"(?:send|email|submit|share)\s+(?:your\s+)?(?:cv|resume|application)|"
+                    r"(?:apply|application)\s+(?:by|via|through|to)\s+email|"
+                    r"email\s+(?:your\s+)?(?:cv|resume|application)",
                     body_text, re.I
                 )
                 if email_invite and item.get("page_emails"):
@@ -251,7 +273,12 @@ def main():
                     ". My experience and skills are relevant to this opportunity. Please find my CV attached.\n\n" +
                     "Portfolio: " + PORTFOLIO + "\n\nKind regards,\n" + PROFILE.get("name", "")
                 )
-                filled, unknown = fill_form(page, cv_path, cover)
+                application_form = choose_application_form(page)
+                if application_form is None:
+                    item["web_apply_status"] = "application_form_not_identified"
+                    review += 1
+                    continue
+                filled, unknown = fill_form(application_form, cv_path, cover)
                 item["form_fields_filled"] = filled
                 item["form_fields_requiring_review"] = unknown
 
@@ -261,9 +288,9 @@ def main():
                     review += 1
                     continue
 
-                submit = page.get_by_role("button", name=re.compile(r"(submit application|submit|send application|apply now|apply for this job)", re.I))
+                submit = application_form.get_by_role("button", name=re.compile(r"(submit application|submit|send application|apply now|apply for this job)", re.I))
                 if submit.count() == 0:
-                    submit = page.locator('button[type="submit"], input[type="submit"]')
+                    submit = application_form.locator('button[type="submit"], input[type="submit"]')
                 if submit.count() == 0:
                     item["web_apply_status"] = "form_filled_submit_control_not_found"
                     review += 1
@@ -279,11 +306,11 @@ def main():
                         "key": key, "channel": "web_form", "sent_date": TODAY,
                         "url": item.get("url"), "application_url": page.url,
                         "title": item.get("title"), "score": item.get("score"),
-                        "cv": item.get("cv"), "confirmation": "page_text"
+                        "cv": item.get("cv"), "region": region, "confirmation": "page_text"
                     })
                     done.add(key)
                     submitted += 1
-                    sent_today += 1
+                    daily_counts[region] += 1
                 else:
                     item["web_apply_status"] = "submitted_unconfirmed_check_manually"
                     review += 1
@@ -299,7 +326,7 @@ def main():
         browser.close()
 
     QUEUE_PATH.write_text(json.dumps({"queue": QUEUE}, indent=2, ensure_ascii=False), encoding="utf-8")
-    log(f"inspected={attempted}, submitted_confirmed={submitted}, manual_review={review}, daily_web_cap=30")
+    log(f"inspected={attempted}, submitted_confirmed={submitted}, manual_review={review}, today_Pakistan={daily_counts['pakistan']}/30, international={daily_counts['international']}/20")
 
 if __name__ == "__main__":
     main()
