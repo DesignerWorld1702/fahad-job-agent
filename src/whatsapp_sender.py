@@ -15,6 +15,7 @@ api_version = os.getenv("WHATSAPP_API_VERSION", "v24.0").strip()
 template_name = os.getenv("WHATSAPP_APPLICATION_TEMPLATE_NAME", "").strip()
 template_language = os.getenv("WHATSAPP_TEMPLATE_LANGUAGE", "en_US").strip()
 max_score = int(os.getenv("WHATSAPP_MIN_SCORE", "65"))
+require_opt_in = os.getenv("WHATSAPP_REQUIRE_OPT_IN", "true").lower() == "true"
 require_document_header = os.getenv("WHATSAPP_TEMPLATE_DOCUMENT_HEADER", "true").lower() == "true"
 test_mode = os.getenv("WHATSAPP_TEST_MODE", "false").lower() == "true"
 test_recipient = os.getenv("WHATSAPP_TEST_RECIPIENT", "").strip()
@@ -80,6 +81,11 @@ if test_mode:
 
 for item in eligible_items:
     if not test_mode and not item.get("whatsapp_ready"):
+        continue
+    # Production WhatsApp outreach is allowed only where explicit recipient opt-in
+    # is recorded. A public job phone number alone is not treated as opt-in.
+    if not test_mode and require_opt_in and not item.get("whatsapp_opt_in"):
+        skipped += 1
         continue
     if (item.get("score") or 0) < max_score:
         continue
