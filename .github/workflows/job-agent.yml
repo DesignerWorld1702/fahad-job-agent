@@ -51,7 +51,7 @@ jobs:
 
       - name: WhatsApp Cloud API delivery
         env:
-          WHATSAPP_ENABLED: "false"
+          WHATSAPP_ENABLED: "true"
           WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
           WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
           WHATSAPP_WABA_ID: ${{ secrets.WHATSAPP_WABA_ID }}
@@ -60,6 +60,7 @@ jobs:
           WHATSAPP_TEMPLATE_LANGUAGE: "en"
           WHATSAPP_TEMPLATE_DOCUMENT_HEADER: "true"
           WHATSAPP_MIN_SCORE: "65"
+          WHATSAPP_REQUIRE_OPT_IN: "true"
         run: python src/whatsapp_sender.py
 
       - name: Build report
