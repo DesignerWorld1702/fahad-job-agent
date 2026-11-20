@@ -5,15 +5,15 @@ import re
 
 def explicit_whatsapp_application_invitation(text):
     """True only when the hiring post invites applicants to use WhatsApp."""
-    text = re.sub(r"\\s+", " ", (text or "").lower())
+    text = re.sub(r"\s+", " ", (text or "").lower())
     invitation_patterns = [
-        r"whatsapp\\s+(?:your\\s+)?(?:cv|resume|application)",
-        r"(?:send|share|submit)\\s+(?:your\\s+)?(?:cv|resume|application)\\s+(?:on|via|through|to)\\s+whatsapp",
-        r"(?:apply|application)\\s+(?:via|through|on|by)\\s+whatsapp",
-        r"whatsapp\\s+(?:us|me|hr|the\\s+hr|to\\s+apply|for\\s+application)",
-        r"contact\\s+(?:us|hr|the\\s+hr)\\s+(?:on|via|through)\\s+whatsapp",
-        r"(?:call|message|text)\\s+(?:us|hr|the\\s+hr)\\s+(?:on|via|through)\\s+whatsapp",
-        r"for\\s+(?:job\\s+)?(?:details|application)\\s+(?:contact|whatsapp)\\s+(?:us|hr)",
+        r"whatsapp\s+(?:your\s+)?(?:cv|resume|application)",
+        r"(?:send|share|submit)\s+(?:your\s+)?(?:cv|resume|application)\s+(?:on|via|through|to)\s+whatsapp",
+        r"(?:apply|application)\s+(?:via|through|on|by)\s+whatsapp",
+        r"whatsapp\s+(?:us|me|hr|the\s+hr|to\s+apply|for\s+application)",
+        r"contact\s+(?:us|hr|the\s+hr)\s+(?:on|via|through)\s+whatsapp",
+        r"(?:call|message|text)\s+(?:us|hr|the\s+hr)\s+(?:on|via|through)\s+whatsapp",
+        r"for\s+(?:job\s+)?(?:details|application)\s+(?:contact|whatsapp)\s+(?:us|hr)",
     ]
     return any(re.search(pattern, text) for pattern in invitation_patterns)
 
@@ -43,7 +43,7 @@ for job in jobs:
     # explicitly asks candidates to apply, send a CV, or contact HR on WhatsApp.
     whatsapp_opt_in = explicit_whatsapp_application_invitation(combined_post_text)
 
-    if emails and phones and has_whatsapp_signal:
+    if emails and phones and has_whatsapp_signal and whatsapp_opt_in:
         mode = "EMAIL_AND_WHATSAPP_READY"
         priority = "automatic when Yahoo SMTP and WhatsApp Cloud API are configured"
         action = "Send the tailored application by email and WhatsApp when both channels are configured."
@@ -51,7 +51,7 @@ for job in jobs:
         mode = "EMAIL_READY"
         priority = "automatic when Yahoo SMTP is configured"
         action = "Send tailored email with selected CV after email-sending secrets are configured."
-    elif phones and has_whatsapp_signal:
+    elif phones and has_whatsapp_signal and whatsapp_opt_in:
         mode = "WHATSAPP_READY"
         priority = "automatic when WhatsApp Cloud API is configured"
         action = "Send through the configured WhatsApp Business/Cloud API using an approved message template."
