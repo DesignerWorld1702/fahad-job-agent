@@ -36,14 +36,14 @@ def make_record(job):
         )
 
     short_cover = (
-        f"Dear Hiring Team,\\n\\n"
+        f"Dear Hiring Team,\n\n"
         f"I am pleased to apply for the {name} position. {intro} "
         "In my recent roles, I have worked with teams, handled day-to-day deadlines, "
         "and delivered practical work aligned with business and brand requirements. "
         "I am dependable, quick to learn, and comfortable adapting to new tools and workflows. "
-        "I would value the opportunity to bring my experience to your organisation.\\n\\n"
+        "I would value the opportunity to bring my experience to your organisation.\n\n"
         "My CV is attached for your review. I would be glad to discuss the role and "
-        "how my background could support your team.\\n\\n"
+        "how my background could support your team.\n\n"
         f"Portfolio: {PORTFOLIO}"
     )
 
