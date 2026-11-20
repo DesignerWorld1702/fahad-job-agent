@@ -1,6 +1,21 @@
 import json
 from pathlib import Path
 from urllib.parse import quote
+import re
+
+def explicit_whatsapp_application_invitation(text):
+    """True only when the hiring post invites applicants to use WhatsApp."""
+    text = re.sub(r"\\s+", " ", (text or "").lower())
+    invitation_patterns = [
+        r"whatsapp\\s+(?:your\\s+)?(?:cv|resume|application)",
+        r"(?:send|share|submit)\\s+(?:your\\s+)?(?:cv|resume|application)\\s+(?:on|via|through|to)\\s+whatsapp",
+        r"(?:apply|application)\\s+(?:via|through|on|by)\\s+whatsapp",
+        r"whatsapp\\s+(?:us|me|hr|the\\s+hr|to\\s+apply|for\\s+application)",
+        r"contact\\s+(?:us|hr|the\\s+hr)\\s+(?:on|via|through)\\s+whatsapp",
+        r"(?:call|message|text)\\s+(?:us|hr|the\\s+hr)\\s+(?:on|via|through)\\s+whatsapp",
+        r"for\\s+(?:job\\s+)?(?:details|application)\\s+(?:contact|whatsapp)\\s+(?:us|hr)",
+    ]
+    return any(re.search(pattern, text) for pattern in invitation_patterns)
 
 ROOT = Path(__file__).resolve().parents[1]
 jobs = json.loads((ROOT / "data/jobs.json").read_text()).get("jobs", [])
@@ -18,10 +33,15 @@ for job in jobs:
     search_context = (job.get("query") or "").lower()
     region = "pakistan" if "pakistan" in search_context else "international"
 
+    combined_post_text = (job.get("title") or "") + " " + (job.get("description") or "")
     has_whatsapp_signal = any(
         marker in description
         for marker in ("whatsapp", "wa.me", "whatsapp.com")
     )
+    # A public phone number alone is not permission to initiate WhatsApp.
+    # Treat a hiring post as inviting WhatsApp applications only when its text
+    # explicitly asks candidates to apply, send a CV, or contact HR on WhatsApp.
+    whatsapp_opt_in = explicit_whatsapp_application_invitation(combined_post_text)
 
     if emails and phones and has_whatsapp_signal:
         mode = "EMAIL_AND_WHATSAPP_READY"
@@ -56,7 +76,8 @@ for job in jobs:
         "score": job.get("match_score"),
         "cv": job.get("cv"),
         "mode": mode,
-        "whatsapp_ready": bool(phones and has_whatsapp_signal),
+        "whatsapp_ready": bool(phones and has_whatsapp_signal and whatsapp_opt_in),
+        "whatsapp_opt_in": whatsapp_opt_in,
         "priority": priority,
         "action": action,
         "emails": emails,
