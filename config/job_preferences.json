@@ -8,8 +8,9 @@
     "Visa sponsorship jobs",
     "Relocation assistance jobs",
     "International jobs accepting overseas applicants",
-    "Small and newly established employers with suitable roles",
-    "Remote jobs as a secondary option"
+    "Remote jobs open to applicants based in Pakistan and international remote opportunities",
+    "FlexJobs listings where publicly accessible",
+    "Small and newly established employers with suitable roles"
   ],
   "countries": [
     "Pakistan",
@@ -100,7 +101,10 @@
     "Workday",
     "SmartRecruiters",
     "Ashby",
-    "iCIMS"
+    "iCIMS",
+    "FlexJobs public/indexed listings",
+    "Remote-first company career pages",
+    "Work-from-home and worldwide remote vacancies"
   ],
   "application_methods": [
     "application_url",
@@ -122,6 +126,8 @@
     "google_discovery": "Use Google-indexed web results to discover current vacancies on employer-owned career pages and direct application pages, not only job boards.",
     "company_websites": "Search national Pakistani companies, multinational companies, international employers, and their ATS/career domains directly through Google-indexed results.",
     "direct_application": "Prefer the employer's own application URL when a vacancy is found on a company career site; otherwise use the source's application method.",
-    "google_jobs": "Include Google Jobs/Search discovery alongside Indeed, Rozee.pk, Glassdoor, Pakistani job boards, social posts, and direct employer career pages."
+    "google_jobs": "Include Google Jobs/Search discovery alongside Indeed, Rozee.pk, Glassdoor, Pakistani job boards, social posts, and direct employer career pages.",
+    "remote_jobs": "Actively search remote and work-from-home roles in Pakistan and internationally; verify location eligibility because remote does not always mean worldwide.",
+    "flexjobs": "Discover publicly indexed FlexJobs listings; if a listing requires FlexJobs membership, login, or a protected application flow, save it for manual review rather than bypassing access controls."
   }
 }
