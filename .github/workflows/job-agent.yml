@@ -1,6 +1,13 @@
 name: Fahad Job Agent
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "config/**"
+      - ".github/workflows/job-agent.yml"
+      - "cvs/**"
   workflow_dispatch:
   schedule:
     - cron: "0 5 * * *"
