@@ -27,7 +27,7 @@ GitHub Actions (runs while the PC is off)
 
 ## Application modes
 
-- **EMAIL_READY** — employer email detected; email content is prepared. Actual Yahoo sending is disabled by default.
+- **EMAIL_READY** — employer email detected; email content is prepared. Yahoo sending is enabled for high-match jobs when the configured secrets are available.
 - **WHATSAPP_READY** — a WhatsApp contact and message are prepared. Production WhatsApp sending remains disabled until recipient opt-in and Meta production requirements are verified; a number appearing in a job advertisement alone is not treated as permission.
 - **PHONE_ACTION** — phone number and application details are prepared.
 - **WEB_APPLICATION** — direct URL is saved; login/CAPTCHA/2FA steps remain manual when required.
