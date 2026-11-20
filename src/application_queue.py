@@ -70,8 +70,8 @@ for job in jobs:
         action = "Call the listed number using the prepared application details."
     elif url:
         mode = "WEB_APPLICATION"
-        priority = "manual/protected as required"
-        action = "Open the listing/application URL. If login, CAPTCHA or 2FA appears, complete that step manually."
+        priority = "automatic where the public form is supported; manual for protected or unknown steps"
+        action = "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers."
     else:
         mode = "REVIEW"
         priority = "manual"
