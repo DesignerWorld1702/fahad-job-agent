@@ -14,7 +14,7 @@ test_mode = os.getenv("EMAIL_TEST_MODE", "false").lower() == "true"
 test_recipient = os.getenv("EMAIL_TEST_RECIPIENT", "").strip()
 sender = os.getenv("YAHOO_EMAIL", PROFILE["email"]).strip()
 app_password = os.getenv("YAHOO_APP_PASSWORD", "").strip()
-max_score = int(os.getenv("AUTO_EMAIL_MIN_SCORE", "85"))
+max_score = int(os.getenv("AUTO_EMAIL_MIN_SCORE", "65"))
 
 STATUS_PATH = ROOT / "data" / "sent_applications.json"
 if STATUS_PATH.exists():
@@ -126,9 +126,9 @@ for record in status.get("sent", []):
 
 with connect_yahoo() as smtp:
     for item in QUEUE:
-        if item.get("mode") not in ("EMAIL_READY", "EMAIL_AND_WHATSAPP_READY") or (item.get("score") or 0) < max_score:
+        if (item.get("score") or 0) < max_score or not item.get("email_application_invited"):
             continue
-        recipients = item.get("emails", [])
+        recipients = list(dict.fromkeys((item.get("emails") or []) + (item.get("page_emails") or [])))
         cv_path = cv_paths.get(item.get("cv"))
         if not recipients or not cv_path or not cv_path.exists():
             skipped += 1
