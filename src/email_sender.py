@@ -1,6 +1,7 @@
 import json
 import os
 import smtplib
+from datetime import datetime, timezone
 from email.message import EmailMessage
 from pathlib import Path
 
@@ -116,6 +117,13 @@ if test_mode:
 
 sent = 0
 skipped = 0
+today = datetime.now(timezone.utc).date().isoformat()
+daily_counts = {"pakistan": 0, "international": 0}
+for record in status.get("sent", []):
+    if record.get("channel") == "email" and record.get("sent_date") == today:
+        region = record.get("region", "international")
+        daily_counts[region if region in daily_counts else "international"] += 1
+
 with connect_yahoo() as smtp:
     for item in QUEUE:
         if item.get("mode") not in ("EMAIL_READY", "EMAIL_AND_WHATSAPP_READY") or (item.get("score") or 0) < max_score:
@@ -123,6 +131,13 @@ with connect_yahoo() as smtp:
         recipients = item.get("emails", [])
         cv_path = cv_paths.get(item.get("cv"))
         if not recipients or not cv_path or not cv_path.exists():
+            skipped += 1
+            continue
+        region = item.get("region", "international")
+        if region not in ("pakistan", "international"):
+            region = "international"
+        daily_limit = 30 if region == "pakistan" else 20
+        if daily_counts[region] >= daily_limit:
             skipped += 1
             continue
         recipient = recipients[0].strip().lower()
@@ -139,10 +154,12 @@ with connect_yahoo() as smtp:
         smtp.send_message(msg)
         status["sent"].append({
             "key": key, "channel": "email", "recipient": recipient,
-            "url": item.get("url"), "title": item.get("title"), "score": item.get("score")
+            "url": item.get("url"), "title": item.get("title"), "score": item.get("score"),
+            "region": region, "sent_date": today
         })
         sent_keys.add(key)
         save_status()
         sent += 1
+        daily_counts[region] += 1
 
-print(f"Yahoo email sender: sent={sent}, skipped={skipped}")
+print(f"Yahoo email sender: sent={sent}, skipped={skipped}, today Pakistan={daily_counts['pakistan']}/30, international={daily_counts['international']}/20")
