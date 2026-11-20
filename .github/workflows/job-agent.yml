@@ -41,12 +41,25 @@ jobs:
       - name: Build compliant application queue
         run: python src/application_queue.py
 
-      - name: Optional Yahoo email delivery
+      - name: Install browser automation
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          playwright install chromium --with-deps
+
+      - name: Inspect and apply through public employer forms
+        env:
+          WEB_AUTO_APPLY_ENABLED: "true"
+          WEB_AUTO_APPLY_MIN_SCORE: "65"
+          WEB_AUTO_APPLY_MAX_PER_RUN: "30"
+        run: python src/web_apply.py
+
+      - name: Yahoo email applications
         env:
           AUTO_EMAIL_ENABLED: "true"
           YAHOO_EMAIL: ${{ secrets.YAHOO_EMAIL }}
           YAHOO_APP_PASSWORD: ${{ secrets.YAHOO_APP_PASSWORD }}
-          AUTO_EMAIL_MIN_SCORE: "85"
+          AUTO_EMAIL_MIN_SCORE: "65"
         run: python src/email_sender.py
 
       - name: WhatsApp Cloud API delivery
@@ -94,7 +107,7 @@ jobs:
               "",
               "## Top matches",
               "",
-              "| Score | CV | Mode | Job | Source | Link |",
+              "| Score | CV | Mode | Web status | Job | Source | Link |",
               "|---:|---|---|---|---|---|"
           ]
 
