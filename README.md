@@ -6,7 +6,7 @@ Automated job discovery, matching, application preparation and tracking for Faha
 
 GitHub Actions (runs while the PC is off)
 → public job discovery
-→ Pakistan + international relocation/sponsorship search
+→ Pakistan + international relocation/sponsorship + remote/FlexJobs search
 → duplicate filtering
 → job scoring
 → Graphic Designer CV vs Business/Computer CV selection
@@ -23,6 +23,8 @@ GitHub Actions (runs while the PC is off)
 - Google job/news-indexed public listings
 - Pakistani job boards and public vacancy pages
 - International public listings
+- FlexJobs publicly indexed listings (membership/login-protected applications remain manual)
+- Remote-first and work-from-home vacancies in Pakistan and internationally
 - Email / WhatsApp / phone contact opportunities when the listing exposes them
 
 ## Application modes
@@ -35,7 +37,7 @@ GitHub Actions (runs while the PC is off)
 
 ## Security / platform rules
 
-The agent does not bypass CAPTCHA, 2FA, anti-bot systems, login walls, rate limits, or platform restrictions. It automates everything around those protected steps and places protected applications into a clear action queue.
+FlexJobs listings are discovered where publicly indexed; the agent does not claim to access paid/member-only listings or submit applications behind FlexJobs login. The agent does not bypass CAPTCHA, 2FA, anti-bot systems, login walls, rate limits, or platform restrictions. Remote roles are checked for location eligibility; 'remote' does not necessarily mean worldwide. It automates everything around those protected steps and places protected applications into a clear action queue.
 
 ## Yahoo email
 
