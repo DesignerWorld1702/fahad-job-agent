@@ -58,11 +58,9 @@ Fahad Asif
 
     whatsapp_message = (
         f"Hello! My name is Fahad Asif, and I’m contacting you regarding the "
-        f"{name} opportunity. I have 4+ years of experience in graphic design, "
-        "branding, social media creatives and packaging, along with experience in "
-        "coordination, reporting and office support. I’m keen to contribute, learn "
-        "your team’s requirements and discuss how my experience matches this role. "
-        "I’ve attached my CV for your review. Thank you for considering my application."
+        f"{name} opportunity. {intro} I’m keen to contribute, learn your team’s "
+        "requirements and discuss how my experience matches this role. I’ve attached "
+        "my CV for your review. Thank you for considering my application."
     )
 
     return {
