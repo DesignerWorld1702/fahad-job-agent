@@ -231,6 +231,14 @@ def main():
                     if re.search(r"(?:career|recruit|hr|hiring|jobs?|talent|apply)", e) or re.search(r"(?:apply|send|email|resume|cv|hiring|recruit|career)", norm(body_text)):
                         relevant.append(e)
                 item["page_emails"] = list(dict.fromkeys(relevant))[:5]
+                email_invite = re.search(
+                    r"(?:send|email|submit|share)\\s+(?:your\\s+)?(?:cv|resume|application)|"
+                    r"(?:apply|application)\\s+(?:by|via|through|to)\\s+email|"
+                    r"email\\s+(?:your\\s+)?(?:cv|resume|application)",
+                    body_text, re.I
+                )
+                if email_invite and item.get("page_emails"):
+                    item["email_application_invited"] = True
 
                 form_count = page.locator("form").count()
                 if not form_count:
