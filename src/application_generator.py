@@ -36,27 +36,33 @@ def make_record(job):
         )
 
     short_cover = (
-        f"Dear Hiring Team,\n\n"
-        f"I am writing to apply for the {name} position. {intro} "
-        "I would welcome the opportunity to contribute to your team and discuss my suitability for the role."
+        f"Dear Hiring Team,\\n\\n"
+        f"I am pleased to apply for the {name} position. {intro} "
+        "In my recent roles, I have worked with teams, handled day-to-day deadlines, "
+        "and delivered practical work aligned with business and brand requirements. "
+        "I am dependable, quick to learn, and comfortable adapting to new tools and workflows. "
+        "I would value the opportunity to bring my experience to your organisation.\\n\\n"
+        "My CV is attached for your review. I would be glad to discuss the role and "
+        "how my background could support your team.\\n\\n"
+        f"Portfolio: {PORTFOLIO}"
     )
 
     email_body = f"""{short_cover}
 
-Portfolio: {PORTFOLIO}
-
-Phone: {PROFILE["phone"]}
-Email: {PROFILE["email"]}
+Thank you for your time and consideration.
 
 Kind regards,
-Fahad Asif"""
+Fahad Asif
+{PROFILE["phone"]}
+{PROFILE["email"]}"""
 
     whatsapp_message = (
-        f"Hello, I’m Fahad Asif. I’m interested in the {name} position. "
-        f"I have relevant professional experience and would be grateful for the opportunity to be considered. "
-        f"Portfolio: {PORTFOLIO} "
-        f"CV: {CV_LINKS.get(cv, '')} "
-        f"Thank you."
+        f"Hello! My name is Fahad Asif, and I’m contacting you regarding the "
+        f"{name} opportunity. I have 4+ years of experience in graphic design, "
+        "branding, social media creatives and packaging, along with experience in "
+        "coordination, reporting and office support. I’m keen to contribute, learn "
+        "your team’s requirements and discuss how my experience matches this role. "
+        "I’ve attached my CV for your review. Thank you for considering my application."
     )
 
     return {
