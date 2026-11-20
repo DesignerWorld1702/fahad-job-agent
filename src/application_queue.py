@@ -44,6 +44,13 @@ for job in jobs:
     # Treat a hiring post as inviting WhatsApp applications only when its text
     # explicitly asks candidates to apply, send a CV, or contact HR on WhatsApp.
     whatsapp_opt_in = explicit_whatsapp_application_invitation(combined_post_text)
+    email_application_invited = bool(re.search(
+        r"(?:send|email|submit|share)\s+(?:your\s+)?(?:cv|resume|application)|"
+        r"(?:apply|application)\s+(?:by|via|through|to)\s+email|"
+        r"email\s+(?:your\s+)?(?:cv|resume|application)|"
+        r"send\s+(?:your\s+)?application\s+to\s+[a-z0-9._%+-]+@",
+        combined_post_text, re.I
+    ))
 
     if emails and phones and has_whatsapp_signal and whatsapp_opt_in:
         mode = "EMAIL_AND_WHATSAPP_READY"
@@ -84,6 +91,7 @@ for job in jobs:
         "action": action,
         "emails": emails,
         "phones": phones,
+        "email_application_invited": email_application_invited,
         "email_subject": app.get("email_subject"),
         "email_body": app.get("email_body"),
         "whatsapp_message": app.get("whatsapp_message"),
