@@ -125,8 +125,8 @@ jobs:
               title = (j.get("title") or "").replace("|", "/")
               src = (j.get("source") or "").replace("|", "/")
               lines.append(
-                  f'| {j.get("score","")} | {j.get("cv","")} | {j.get("mode","")} | '
-                  f'{title} | {src} | [Open]({j.get("url","")}) |'
+                  f'| {j.get("score","")} | {j.get("cv","")} | {j.get("mode","")} | {j.get("web_apply_status","not_checked")} | '
+                  f'{title} | {src} | [Open]({j.get("application_url") or j.get("url","")}) |'
               )
 
           Path("JOB_REPORT.md").write_text("\n".join(lines), encoding="utf-8")
