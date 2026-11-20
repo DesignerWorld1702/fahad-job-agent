@@ -3,6 +3,7 @@ import os
 import urllib.error
 import urllib.request
 from pathlib import Path
+from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE = json.loads((ROOT / "data/application_queue.json").read_text()).get("queue", [])
@@ -58,6 +59,12 @@ endpoint = f"https://graph.facebook.com/{api_version}/{phone_number_id}/messages
 sent = 0
 skipped = 0
 failed = 0
+today = datetime.now(timezone.utc).date().isoformat()
+daily_counts = {"pakistan": 0, "international": 0}
+for record in status.get("sent", []):
+    if record.get("channel") in ("email", "web_form", "whatsapp") and record.get("sent_date") == today:
+        region = record.get("region", "international")
+        daily_counts[region if region in daily_counts else "international"] += 1
 
 if test_mode:
     # A safe test uses the configured test recipient, so it does not require
@@ -95,14 +102,23 @@ for item in eligible_items:
         skipped += 1
         continue
 
+    region = item.get("region", "international")
+    if region not in ("pakistan", "international"):
+        region = "international"
+    daily_limit = 30 if region == "pakistan" else 20
     for raw_phone in dict.fromkeys(recipients):
+        if not test_mode and daily_counts[region] >= daily_limit:
+            skipped += 1
+            continue
         recipient = "".join(ch for ch in raw_phone if ch.isdigit())
         if recipient.startswith("03") and len(recipient) == 11:
             recipient = "92" + recipient[1:]
         elif recipient.startswith("92") and len(recipient) == 12:
             pass
-        elif recipient.startswith("+92"):
-            recipient = recipient[1:]
+        elif recipient.startswith("00"):
+            recipient = recipient[2:]
+        elif 10 <= len(recipient) <= 15:
+            pass
         if not recipient:
             skipped += 1
             continue
@@ -179,10 +195,14 @@ for item in eligible_items:
                 "url": item.get("url"),
                 "title": item.get("title"),
                 "score": item.get("score"),
+                "region": region,
+                "sent_date": today if not test_mode else None,
                 "message_id": message_id,
             })
             sent_keys.add(key)
             sent += 1
+            if not test_mode:
+                daily_counts[region] += 1
             save_status()
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", errors="replace")
@@ -192,4 +212,4 @@ for item in eligible_items:
             print(f"WhatsApp send failed for {recipient}: {exc}")
             failed += 1
 
-print(f"WhatsApp sender: sent={sent}, skipped={skipped}, failed={failed}, WABA={waba_id or 'not set'}")
+print(f"WhatsApp sender: sent={sent}, skipped={skipped}, failed={failed}, today Pakistan={daily_counts['pakistan']}/30, international={daily_counts['international']}/20, WABA={waba_id or 'not set'}")
