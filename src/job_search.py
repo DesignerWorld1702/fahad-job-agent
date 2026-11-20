@@ -43,7 +43,38 @@ def build_queries():
         for role in roles[:12]:
             qs.append(f'"{role}" "{country}"')
             qs.append(f'"{role}" "{country}" ("visa sponsorship" OR relocation OR "overseas applicants")')
+    # FlexJobs discovery and dedicated remote-work searches.
+    # FlexJobs may require membership/login; only publicly accessible listings are indexed here.
     qs += [
+        'site:flexjobs.com "graphic designer" remote',
+        'site:flexjobs.com "visual designer" remote',
+        'site:flexjobs.com "social media designer" remote',
+        'site:flexjobs.com "marketing designer" remote',
+        'site:flexjobs.com "packaging designer" remote',
+        'site:flexjobs.com "business coordinator" remote',
+        'site:flexjobs.com "sales coordinator" remote',
+        'site:flexjobs.com "administrative assistant" remote',
+        'site:flexjobs.com "data entry" remote',
+        '"remote graphic designer" "work from anywhere" hiring',
+        '"remote visual designer" "work from anywhere" hiring',
+        '"remote social media designer" hiring',
+        '"remote marketing designer" hiring',
+        '"remote packaging designer" hiring',
+        '"remote business coordinator" hiring',
+        '"remote sales coordinator" hiring',
+        '"remote administrative assistant" hiring',
+        '"remote computer operator" Pakistan hiring',
+        '"remote data entry" Pakistan hiring',
+        '"work from home" graphic designer Pakistan hiring',
+        '"work from home" social media designer Pakistan hiring',
+        '"remote graphic designer" Pakistan',
+        '"remote business support" Pakistan',
+        '"remote graphic designer" UAE OR Saudi Arabia OR Qatar',
+        '"remote graphic designer" UK OR Germany OR Netherlands OR Ireland',
+        '"remote graphic designer" Canada OR Australia OR New Zealand',
+        '"remote jobs" "visa sponsorship" graphic designer',
+        '"remote jobs" "overseas applicants" graphic designer',
+        '"remote jobs" "international applicants" graphic designer',
         # Pakistan job boards and social/direct-employer sources
         'site:mustakbil.com "graphic designer" Pakistan',
         'site:brightspyre.com "graphic designer" Pakistan',
