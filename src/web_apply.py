@@ -261,6 +261,9 @@ def main():
                 )
                 if email_invite and item.get("page_emails"):
                     item["email_application_invited"] = True
+                if item.get("email_application_invited") and (item.get("emails") or item.get("page_emails")):
+                    item["web_apply_status"] = "email_route_available"
+                    continue
 
                 form_count = page.locator("form").count()
                 if not form_count:
@@ -313,6 +316,14 @@ def main():
                     daily_counts[region] += 1
                 else:
                     item["web_apply_status"] = "submitted_unconfirmed_check_manually"
+                    STATUS.setdefault("sent", []).append({
+                        "key": key, "channel": "web_form_attempt", "sent_date": TODAY,
+                        "url": item.get("url"), "application_url": page.url,
+                        "title": item.get("title"), "score": item.get("score"),
+                        "cv": item.get("cv"), "region": region,
+                        "confirmation": "not_detected"
+                    })
+                    done.add(key)
                     review += 1
             except PlaywrightTimeoutError:
                 item["web_apply_status"] = "page_timeout"
