@@ -269,28 +269,54 @@ def main():
                     continue
 
                 emails = re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", body_text)
+                email_invite = re.search(
+                    r"(?:send|email|submit|share)\s+(?:your\s+)?(?:cv|resume|application)|"
+                    r"(?:apply|application)\s+(?:by|via|through|to)\s+email|"
+                    r"email\s+(?:your\s+)?(?:cv|resume|application)|"
+                    r"send\s+(?:your\s+)?application\s+to\s+[a-z0-9._%+-]+@",
+                    body_text, re.I
+                )
                 relevant = []
                 for email in emails:
                     e = email.lower()
                     if any(x in e for x in ("noreply", "no-reply", "donotreply", "example.com")):
                         continue
-                    if re.search(r"(?:career|recruit|hr|hiring|jobs?|talent|apply)", e):
+                    if email_invite or re.search(r"(?:career|recruit|hr|hiring|jobs?|talent|apply)", e):
                         relevant.append(e)
-                item["page_emails"] = list(dict.fromkeys(relevant))[:5]
-                email_invite = re.search(
-                    r"(?:send|email|submit|share)\s+(?:your\s+)?(?:cv|resume|application)|"
-                    r"(?:apply|application)\s+(?:by|via|through|to)\s+email|"
-                    r"email\s+(?:your\s+)?(?:cv|resume|application)",
-                    body_text, re.I
+                item["page_emails"] = list(dict.fromkeys((item.get("page_emails") or []) + relevant))[:8]
+
+                # Capture phone numbers published in the public hiring post/page too.
+                raw_phones = re.findall(
+                    r"(?<!\w)(?:\+\d{1,3}|00\d{1,3})[\s().-]?(?:\d[\s().-]?){7,14}(?!\w)|"
+                    r"(?<!\w)(?:\+?92|0)\s?3\d{2}[-\s]?\d{3}[-\s]?\d{4}(?!\w)",
+                    body_text
                 )
-                # A recruiting/careers/HR address published directly on a job page
-                # is treated as a job-application contact even when the wording
-                # does not explicitly repeat "send your CV".
+                page_phones = []
+                for raw_phone in raw_phones:
+                    digits = re.sub(r"\D", "", raw_phone)
+                    if 10 <= len(digits) <= 15 and digits not in page_phones:
+                        page_phones.append(digits)
+                item["page_phones"] = page_phones[:8]
+                item["phones"] = list(dict.fromkeys((item.get("phones") or []) + page_phones))[:8]
+
                 if item.get("page_emails") and (
                     email_invite or any(re.search(r"(?:career|recruit|hr|hiring|jobs?|talent|apply)", e)
                                         for e in item["page_emails"])
                 ):
                     item["email_application_invited"] = True
+
+                whatsapp_invite = re.search(
+                    r"whatsapp\s+(?:your\s+)?(?:cv|resume|application)|"
+                    r"whatsapp\s+(?:contact|number|no\.?)|"
+                    r"(?:send|share|submit)\s+(?:your\s+)?(?:cv|resume|application)\s+(?:on|via|through|to)\s+whatsapp|"
+                    r"(?:apply|application)\s+(?:via|through|on|by)\s+whatsapp|"
+                    r"whatsapp\s+(?:us|me|hr|the\s+hr|to\s+apply|for\s+application)|"
+                    r"(?:call|message|text)\s+(?:us|hr|the\s+hr)\s+(?:on|via|through)\s+whatsapp",
+                    body_text, re.I
+                )
+                if whatsapp_invite and item.get("phones"):
+                    item["whatsapp_opt_in"] = True
+                    item["whatsapp_ready"] = True
                 if item.get("email_application_invited") and (item.get("emails") or item.get("page_emails")):
                     item["web_apply_status"] = "email_route_available"
                     continue
