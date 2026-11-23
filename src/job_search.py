@@ -45,6 +45,29 @@ def parse_rss(data):
 
 def build_queries():
     qs=[]
+    # Forbes Global 2000 target discovery from the synced company list.
+    targets_path = ROOT / "data" / "forbes_targets.json"
+    state_path = ROOT / "data" / "forbes_state.json"
+    if targets_path.exists():
+        try:
+            targets = json.loads(targets_path.read_text()).get("companies", [])
+            state = json.loads(state_path.read_text()) if state_path.exists() else {}
+            active = state.get("active_company")
+            ordered = [x for x in targets if x.get("company") == active] + [x for x in targets if x.get("company") != active]
+            for company in ordered[:20]:
+                name = company.get("company", "").strip()
+                if not name: continue
+                qs.extend([
+                    f'"{name}" "graphic designer" jobs',
+                    f'"{name}" "visual designer" jobs',
+                    f'"{name}" "marketing designer" jobs',
+                    f'"{name}" "business coordinator" jobs',
+                    f'"{name}" "sales coordinator" jobs',
+                    f'"{name}" careers apply'
+                ])
+        except Exception as e:
+            print("Forbes target load failed:", e)
+    
     roles=PREF["graphic_roles"]+PREF["business_roles"]
     for role in roles[:16]:
         qs.append(f'"{role}" Pakistan')
