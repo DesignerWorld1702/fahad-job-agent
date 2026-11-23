@@ -42,6 +42,9 @@ jobs:
       - name: Validate Python syntax
         run: python -m py_compile src/*.py
 
+      - name: Sync Forbes Global 2000 targets
+        run: python src/forbes_global2000.py
+
       - name: Search jobs
         run: python src/job_search.py
 
