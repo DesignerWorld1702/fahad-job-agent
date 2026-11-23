@@ -92,7 +92,12 @@ def normalize_contact_list(values, phone=False):
             digits = re.sub(r"\D", "", value)
             if not 10 <= len(digits) <= 15:
                 continue
-            value = digits
+            if digits.startswith("92") and len(digits) == 12:
+                value = "+" + digits
+            elif digits.startswith("0") and len(digits) == 11:
+                value = digits
+            else:
+                value = "+" + digits
         else:
             if not re.fullmatch(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", value):
                 continue
