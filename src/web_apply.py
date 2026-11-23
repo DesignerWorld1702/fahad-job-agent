@@ -228,6 +228,13 @@ def main():
             try:
                 page.goto(item["url"], wait_until="domcontentloaded", timeout=30000)
                 page.wait_for_timeout(1200)
+                # Search/news aggregators can wrap the real listing in a redirect page.
+                # Follow the first same-page link that points to the actual employer/job board.
+                if "news.google.com" in page.url:
+                    target = click_application_link(page)
+                    if target:
+                        page.goto(target, wait_until="domcontentloaded", timeout=30000)
+                        page.wait_for_timeout(1000)
                 block = is_blocked(page)
                 if block:
                     item["web_apply_status"] = block
