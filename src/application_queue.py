@@ -33,6 +33,7 @@ for job in jobs:
     url = job.get("url", "")
     description = (job.get("description") or "").lower()
     search_context = (job.get("query") or "").lower()
+    source = job.get("source") or ""
     region = "pakistan" if "pakistan" in search_context else "international"
 
     combined_post_text = (job.get("title") or "") + " " + (job.get("description") or "")
@@ -40,15 +41,19 @@ for job in jobs:
         marker in combined_post_text.lower()
         for marker in ("whatsapp", "wa.me", "whatsapp.com")
     )
-    # A public phone number alone is not permission to initiate WhatsApp.
-    # Treat a hiring post as inviting WhatsApp applications only when its text
-    # explicitly asks candidates to apply, send a CV, or contact HR on WhatsApp.
     whatsapp_opt_in = explicit_whatsapp_application_invitation(combined_post_text)
     email_application_invited = bool(re.search(
         r"(?:send|email|submit|share)\s+(?:your\s+)?(?:cv|resume|application)|"
         r"(?:apply|application)\s+(?:by|via|through|to)\s+email|"
         r"email\s+(?:your\s+)?(?:cv|resume|application)|"
         r"send\s+(?:your\s+)?application\s+to\s+[a-z0-9._%+-]+@",
+        combined_post_text, re.I
+    ))
+    social_source = any(site in source.lower() for site in ("facebook", "instagram"))
+    social_dm_invited = social_source and bool(re.search(
+        r"(?:send|share|submit)\s+(?:your\s+)?(?:cv|resume|portfolio|application)\s+(?:via|through|in|by)\s+(?:instagram\s+)?dm|"
+        r"apply\s+(?:via|through|in)\s+(?:instagram\s+)?dm|"
+        r"(?:message|dm)\s+(?:us|the\s+page|our\s+page|hr)",
         combined_post_text, re.I
     ))
 
@@ -58,8 +63,8 @@ for job in jobs:
         action = "Send the tailored application by email and WhatsApp when both channels are configured."
     elif emails:
         mode = "EMAIL_READY"
-        priority = "automatic when Yahoo SMTP is configured"
-        action = "Send tailored email with selected CV after email-sending secrets are configured."
+        priority = "automatic only when the employer explicitly invites email applications and Yahoo SMTP is configured"
+        action = "Email the tailored CV only when the employer explicitly invites email applications."
     elif phones and has_whatsapp_signal and whatsapp_opt_in:
         mode = "WHATSAPP_READY"
         priority = "automatic when WhatsApp Cloud API is configured"
@@ -68,6 +73,10 @@ for job in jobs:
         mode = "PHONE_ACTION"
         priority = "manual"
         action = "Call the listed number using the prepared application details."
+    elif social_dm_invited:
+        mode = "SOCIAL_DM_REVIEW"
+        priority = "manual"
+        action = "The post invites a social-media DM. Review the original post and send the application manually; the agent does not send social DMs."
     elif url:
         mode = "WEB_APPLICATION"
         priority = "automatic where the public form is supported; manual for protected or unknown steps"
@@ -80,13 +89,14 @@ for job in jobs:
     queue.append({
         "title": job.get("title"),
         "region": region,
-        "source": job.get("source"),
+        "source": source,
         "url": url,
         "score": job.get("match_score"),
         "cv": job.get("cv"),
         "mode": mode,
         "whatsapp_ready": bool(phones and has_whatsapp_signal and whatsapp_opt_in),
         "whatsapp_opt_in": whatsapp_opt_in,
+        "social_dm_invited": social_dm_invited,
         "priority": priority,
         "action": action,
         "emails": emails,
