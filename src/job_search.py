@@ -81,6 +81,25 @@ def build_queries():
         for role in roles[:12]:
             qs.append(f'"{role}" "{country}"')
             qs.append(f'"{role}" "{country}" ("visa sponsorship" OR relocation OR "overseas applicants")')
+    # Publicly indexed social-media hiring posts. These searches target posts/pages
+    # where small employers often publish direct CV email, phone or WhatsApp details.
+    social_roles = roles[:16]
+    for role in social_roles:
+        qs.extend([
+            f'site:facebook.com "{role}" Pakistan (hiring OR vacancy OR "send CV" OR WhatsApp)',
+            f'site:linkedin.com/posts "{role}" Pakistan (hiring OR vacancy OR "send CV" OR apply)',
+            f'site:instagram.com "{role}" Pakistan (hiring OR vacancy OR "send CV" OR WhatsApp)'
+        ])
+    qs += [
+        'site:facebook.com "jobs in Lahore" "send CV" OR WhatsApp',
+        'site:facebook.com "hiring in Lahore" "graphic designer" OR "office assistant"',
+        'site:facebook.com "vacancy" Pakistan "email your CV"',
+        'site:facebook.com "WhatsApp your CV" Pakistan job',
+        'site:linkedin.com/posts Pakistan hiring "graphic designer" email OR WhatsApp',
+        'site:linkedin.com/posts Pakistan hiring "sales coordinator" OR "business coordinator"',
+        'site:instagram.com Pakistan "we are hiring" "graphic designer"',
+        'site:instagram.com Pakistan "send your CV" jobs OR vacancy'
+    ]
     # FlexJobs discovery and dedicated remote-work searches.
     # FlexJobs may require membership/login; only publicly accessible listings are indexed here.
     qs += [
