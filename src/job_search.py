@@ -15,20 +15,20 @@ def google_news_rss(query):
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126.0 Safari/537.36",
         "Accept": "application/rss+xml, application/xml, text/xml, */*"
     }
-    for attempt in range(2):
+    for attempt in range(4):
         url = "https://news.google.com/rss/search?" + urllib.parse.urlencode(params)
         req = urllib.request.Request(url, headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=20) as response:
                 return response.read()
         except urllib.error.HTTPError as exc:
-            if exc.code == 429 and attempt == 0:
-                time.sleep(3)
-                # Retry with the global English feed; country-specific terms remain in the query.
-                params = {"q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"}
+            if exc.code == 429:
+                time.sleep(5 * (attempt + 1))
+                if attempt == 1:
+                    params = {"q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"}
                 continue
             raise
-    raise RuntimeError("Google News RSS request failed after retry")
+    raise RuntimeError("Google News RSS request failed after retries")
 
 def parse_rss(data):
     root=ET.fromstring(data)
