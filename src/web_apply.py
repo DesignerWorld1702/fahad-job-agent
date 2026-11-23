@@ -268,22 +268,28 @@ def main():
                     review += 1
                     continue
 
-                emails = re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", body_text)
+                emails = re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", body_text)
                 relevant = []
                 for email in emails:
                     e = email.lower()
                     if any(x in e for x in ("noreply", "no-reply", "donotreply", "example.com")):
                         continue
-                    if re.search(r"(?:career|recruit|hr|hiring|jobs?|talent|apply)", e) or re.search(r"(?:apply|send|email|resume|cv|hiring|recruit|career)", norm(body_text)):
+                    if re.search(r"(?:career|recruit|hr|hiring|jobs?|talent|apply)", e):
                         relevant.append(e)
                 item["page_emails"] = list(dict.fromkeys(relevant))[:5]
                 email_invite = re.search(
-                    r"(?:send|email|submit|share)\s+(?:your\s+)?(?:cv|resume|application)|"
-                    r"(?:apply|application)\s+(?:by|via|through|to)\s+email|"
-                    r"email\s+(?:your\s+)?(?:cv|resume|application)",
+                    r"(?:send|email|submit|share)\\s+(?:your\\s+)?(?:cv|resume|application)|"
+                    r"(?:apply|application)\\s+(?:by|via|through|to)\\s+email|"
+                    r"email\\s+(?:your\\s+)?(?:cv|resume|application)",
                     body_text, re.I
                 )
-                if email_invite and item.get("page_emails"):
+                # A recruiting/careers/HR address published directly on a job page
+                # is treated as a job-application contact even when the wording
+                # does not explicitly repeat "send your CV".
+                if item.get("page_emails") and (
+                    email_invite or any(re.search(r"(?:career|recruit|hr|hiring|jobs?|talent|apply)", e)
+                                        for e in item["page_emails"])
+                ):
                     item["email_application_invited"] = True
                 if item.get("email_application_invited") and (item.get("emails") or item.get("page_emails")):
                     item["web_apply_status"] = "email_route_available"
