@@ -127,9 +127,12 @@ jobs:
           for j in queue[:100]:
               title = (j.get("title") or "").replace("|", "/")
               src = (j.get("source") or "").replace("|", "/")
+              contacts = ", ".join(dict.fromkeys(
+                  (j.get("emails") or []) + (j.get("page_emails") or []) + (j.get("phones") or [])
+              )).replace("|", "/")
               lines.append(
                   f'| {j.get("score","")} | {j.get("cv","")} | {j.get("mode","")} | {j.get("web_apply_status","not_checked")} | '
-                  f'{title} | {src} | [Open]({j.get("application_url") or j.get("url","")}) |'
+                  f'{title} | {src} | {contacts} | [Open]({j.get("application_url") or j.get("url","")}) |'
               )
 
           Path("JOB_REPORT.md").write_text("\n".join(lines), encoding="utf-8")
