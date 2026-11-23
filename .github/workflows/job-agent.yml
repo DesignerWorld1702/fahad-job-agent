@@ -130,7 +130,7 @@ jobs:
               "| EMAIL_READY | Employer email found; email automation still requires an explicit invitation |",
               "| WHATSAPP_READY | WhatsApp contact and explicit application invitation found |",
               "| PHONE_ACTION | Phone number found; call details prepared |",
-              "| WEB_APPLICATION | Public forms are inspected; protected steps remain manual |",
+              "| WEB_APPLICATION | Public forms are inspected; protected steps remain manual |\n              | SOCIAL_DM_REVIEW | Social-media DM invitation; manual review and sending only |",
               "| REVIEW | Needs review |",
               "",
               "## Top matches",
