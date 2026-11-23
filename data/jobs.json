@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T11:56:45.037043+00:00",
+  "generated_at": "2026-11-23T14:26:57.289958+00:00",
   "recent_window_days": 20,
   "salary_preference_pkr": 60000,
   "company_size_policy": "Do not reject small, local, startup, newly established, or lesser-known employers merely because of company size. Also actively target established national companies and international multinationals.",
@@ -22,7 +22,7 @@
       "source": "Instagram",
       "match_score": 75,
       "cv": "graphic_designer_cv",
-      "query": "site:instagram.com \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+      "query": "site:instagram.com \"Visual Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
     },
     {
       "title": "Now Hiring Graphic Designer Lahore | Office-Based Role Requirements 1️⃣ Strong creativity & design skills. 2️⃣ Proficiency in Photoshop, Illustrator & Canva. 3️⃣ Ability to create social media & marketing designs. 4️⃣ Attention to detail & willingness to le - Instagram",
@@ -42,7 +42,7 @@
       "source": "LinkedIn",
       "match_score": 70,
       "cv": "graphic_designer_cv",
-      "query": "site:linkedin.com/posts Pakistan hiring \"graphic designer\" email OR WhatsApp"
+      "query": "site:linkedin.com/posts \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR apply)"
     },
     {
       "title": "🎨 We’re hiring a Graphic Designer in Thodupuzha! 💡 Bring your creative thinking and strong design sense. 💻 Photoshop and Illustrator skills required. 💰 Salary: Best in Industry, as advertised. 📩 Send your CV to +91 95670 28745 and join the Intelligen team! # - Instagram",
@@ -62,7 +62,7 @@
       "source": "LinkedIn",
       "match_score": 70,
       "cv": "graphic_designer_cv",
-      "query": "site:linkedin.com/posts Pakistan hiring \"graphic designer\" email OR WhatsApp"
+      "query": "site:linkedin.com/posts \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR apply)"
     },
     {
       "title": "🌟 WE ARE HIRING 🌟 📌 Graphic Designer Needed 💰 Best Salary 🏠 Work From Home / Online Work ⏰ Flexible Hours Work: Social Media Posts, Branding, Ads 📞 Apply Now on WhatsApp: +92 322 0393049 - Facebook",
@@ -72,7 +72,17 @@
       "source": "Facebook",
       "match_score": 70,
       "cv": "graphic_designer_cv",
-      "query": "site:facebook.com \"Creative Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+      "query": "site:facebook.com \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+    },
+    {
+      "title": "If a wrong CGPA on a transcript would bother you, keep reading. We are hiring a full-time Administrative Support Officer in Malaysia. You will join Myglobaledu Management Services (MMS) and support IOU Malaysia Operations and the IOU Registrar. The role - Facebook",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOLVBHbldlMDRuS3RzTGotSFFRY2RYVWg3VlpSWGpvUEc3aUxnZmxZazd5cnYwZFhsU0RtTElBOGYzSGlRVG9xMlBkd2c4MzlBNEY0RnFhcXZxTlZMMEcycnQ1X2NHU3JmOVdpNkhsWXdrNlNnWk15QWx2emtuYVRFb2FINTVpNWRiZWRwWjJZUV9oaElKT21iNFpVbTBpZ0hkMmFrUG5xV0hHUVRMTUFoRUNZZ0ljblg1SEQ3bnNDdEJrckxRM2ZjMFV0RzktdzNlaDNKb3JKVDNHLXBCZXdxY1R1S2lJbzVIY1E?oc=5",
+      "published": "Mon, 16 Nov 2026 17:45:45 GMT",
+      "description": "If a wrong CGPA on a transcript would bother you, keep reading. We are hiring a full-time Administrative Support Officer in Malaysia. You will join Myglobaledu Management Services (MMS) and support IOU Malaysia Operations and the IOU Registrar. The role &nbsp;&nbsp; Facebook",
+      "source": "Facebook",
+      "match_score": 70,
+      "cv": "business_computer_cv",
+      "query": "site:facebook.com \"Administrative Assistant\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
     },
     {
       "title": "HIRING | GRAPHIC DESIGNER Location: Remote Experience: 1–2 Years Salary Budget: PKR 50,000–70,000/month Trajital is looking for a creative and detail-oriented Graphic Designer to join our team remotely. Candidates must have prior experience worki - Facebook",
@@ -83,6 +93,16 @@
       "match_score": 70,
       "cv": "graphic_designer_cv",
       "query": "site:facebook.com \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+    },
+    {
+      "title": "Good news for creatives: we’re hiring! 🎉🎉🎉 Regions Healthcare is looking for a Graphic Designer and Video Editor. We want a creative who can turn health messages into visuals people actually want to watch and share, across our websites and social media - Facebook",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNaVJjMjg0SVY0cHB0X2ZkZnJhY0JxcENFaUhFU2dieGl0YjFULWFhdUVHdjdKbUxoYUk5Yy1WeUFINmVTbm5QWkVDWnY1R1FYUzdZWnZ2WFZfdjlidUpnTDJJRmVYWHozMHktNUpJc2NBbEdoS0NOWU9fY3RqaG1VMFAtMEp6NXNJMER4OVNhMjZKT01abXZJY2oyV3kzS1J3LUxTLUtZUFd4bTNYNUd5LUtycm1OSmN0eks5aDdfZngzbkJrQ3l1OUhJdzlSbG9HMmFCMG5yb2FwZw?oc=5",
+      "published": "Fri, 13 Nov 2026 11:00:16 GMT",
+      "description": "Good news for creatives: we’re hiring! 🎉🎉🎉 Regions Healthcare is looking for a Graphic Designer and Video Editor. We want a creative who can turn health messages into visuals people actually want to watch and share, across our websites and social media &nbsp;&nbsp; Facebook",
+      "source": "Facebook",
+      "match_score": 70,
+      "cv": "graphic_designer_cv",
+      "query": "site:facebook.com \"Creative Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
     },
     {
       "title": "Sales Coordinator Job at Pilot Fiber - FlexJobs",
@@ -145,6 +165,16 @@
       "query": "site:mustakbil.com \"graphic designer\" Pakistan"
     },
     {
+      "title": "(Kindly repost this and help us find the right creative talent) HIRING ON BEHALF OF A FRIEND 𝗚𝗿𝗮𝗽𝗵𝗶𝗰 𝗗𝗲𝘀𝗶𝗴𝗻𝗲𝗿 (Night Shift) Creativity meets opportunity! We're looking for a talented and creative Graphic Designer with a strong design sense, attention - LinkedIn",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbTJMeHBJYm9KWlo0OTVWRHFyejYyc0htVEJMV1JIN003VWhjcDRwNU9DRXppMzZ4S1ozMW5UTENJUGw5S2dRZjhnVlFfTDdxaG05S245WUtYYUZKQmhsa0thWkZkS2oyamRpdWNGck8xbnFzT2liUzFrZ2ZVazB4NU9kbThUeVBoaHkydHNITHJVTW1VT1c1M1U3TFVZb1pGdlhPTnNJX3FHRkRkOHVMTXJzTGFjMDhiMzdjU1FhWTZwUm90?oc=5",
+      "published": "Wed, 11 Nov 2026 17:33:33 GMT",
+      "description": "(Kindly repost this and help us find the right creative talent) HIRING ON BEHALF OF A FRIEND 𝗚𝗿𝗮𝗽𝗵𝗶𝗰 𝗗𝗲𝘀𝗶𝗴𝗻𝗲𝗿 (Night Shift) Creativity meets opportunity! We're looking for a talented and creative Graphic Designer with a strong design sense, attention &nbsp;&nbsp; LinkedIn",
+      "source": "LinkedIn",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:linkedin.com/posts \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR apply)"
+    },
+    {
       "title": "Designify360 is HIRING! Ready to turn your creativity into something bigger? We’re expanding our team and looking for passionate, talented individuals to join us! 🔥 Open Positions: • Media Buyer / Digital Marketer • SEO Specialist • Graphic Designer 📍 Karac - Facebook",
       "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNanViVEpaWFByc0JkMU1CUEdOZ09Ha25UeEE4TElFQWVUR3dFUkh1TlVJeUpkX2VKdHR0X3lMbERzcC1NcVQxdlBNMTZWR1dfS0FwTXk3cmkwdWs1OEdLSnVQNTBBRHotR3dUckdPQzlscDFmdm9rV1RHbGl5Q3BFSG1fLVUxeVU1dGdGZGw2TFlxdGNmQmhRZ2UxZm16TDUzUmxtUzlZdFVkeXgwSm55VzNlVVpkXzRIdlZZVjRvT2dEcmZ3QnhCMGw0NUFUZDhCXzlj?oc=5",
       "published": "Wed, 11 Nov 2026 16:33:42 GMT",
@@ -152,7 +182,7 @@
       "source": "Facebook",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:facebook.com \"Creative Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+      "query": "site:facebook.com \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
     },
     {
       "title": "Data Entry & Administrative Assistant Job, Faisalabad, Hwits - Rozee.pk",
@@ -172,7 +202,7 @@
       "source": "Facebook",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:facebook.com \"Marketing Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+      "query": "site:facebook.com \"Creative Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
     },
     {
       "title": "Express Media Group Jobs Graphic Designer - Careerjoin",
@@ -183,16 +213,6 @@
       "match_score": 65,
       "cv": "graphic_designer_cv",
       "query": "site:careerjoin.com \"graphic designer\" Pakistan"
-    },
-    {
-      "title": "Graphic Designer Job, Lahore, Standard Salts - Rozee.pk",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5FV2piU2tyekNWdXhnclUwT3JMSTFqakctRzBCRXE5MEVaSy01U0prWWJTOHk5MmRIM0NvWWpLbS15alFXVDRXdHNManlCdUlpQ29QbGZ6VVVQQmZMQ0N1ZTUxRERCTzl0OXdnLXMycWQyZXc?oc=5",
-      "published": "Wed, 04 Nov 2026 08:00:00 GMT",
-      "description": "Graphic Designer Job, Lahore, Standard Salts &nbsp;&nbsp; Rozee.pk",
-      "source": "Rozee.pk",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
     },
     {
       "title": "Operations Coordinator Job, Wesecure - Rozee.pk",
@@ -245,6 +265,16 @@
       "query": "site:linkedin.com/posts \"Graphic Design\" Pakistan (hiring OR vacancy OR \"send CV\" OR apply)"
     },
     {
+      "title": "🚀 Hiring a Graphic Designer! We’re looking for a creative mind who can turn ideas into compelling visual stories. What We’re Looking For: * Strong creative mindset and storytelling ability. * Quick understanding of briefs and creative execution. * Good visual co - Facebook",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPMEtnMkdOYkxGNkR3UXZmV1VfSGZsX2ZackVYSGZPRG9QVks5QmtNeDMzenpRVzJRay12RmJLdURNVzhuRjlXakJ6eTQ0cWt2U0VRWG9FX09iRHRMRGJjcHhwZzVxLW1IbUQ0UUtHY2ZJdGw3cE56ZF9zaXBHSDlEeWpvOGZVU19mWkVTcHBxa2VMSElQR0tOV1laTjVPYWN0bERSQ3BPT0gzZ0F4WUU5QktyQzBzR1ZFOW5KNklKbnJlS0EyUGZQYmpKazNYSTFlV20tVU1EY2hMQQ?oc=5",
+      "published": "Tue, 10 Nov 2026 08:00:00 GMT",
+      "description": "🚀 Hiring a Graphic Designer! We’re looking for a creative mind who can turn ideas into compelling visual stories. What We’re Looking For: * Strong creative mindset and storytelling ability. * Quick understanding of briefs and creative execution. * Good visual co &nbsp;&nbsp; Facebook",
+      "source": "Facebook",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:facebook.com \"Creative Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+    },
+    {
       "title": "@shihlinsnacksid is hiring. Check our profile to get more jobs Shihlin is hiring Graphic Designer Send your application through this link: bit.ly/Tribina2026 Wanna post job vacancy or media partnership? DM us - Instagram",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE55Ujh0RTAtNlprWkx4ejBpdmttVHBqdzZGT1M3eU5ua01SeTRtRVZUNnNGTnZvZWZudVRtckFycWhyUk12QlRKY3JyOE5VNUxiU2c?oc=5",
       "published": "Tue, 10 Nov 2026 08:00:00 GMT",
@@ -262,7 +292,7 @@
       "source": "LinkedIn",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:linkedin.com/posts \"Creative Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR apply)"
+      "query": "site:linkedin.com/posts \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR apply)"
     },
     {
       "title": "Graphic Designer and Social Media Executive Job, Karachi, Moti Estate & Builders - Rozee.pk",
@@ -315,6 +345,16 @@
       "query": "site:linkedin.com/posts \"Sales Coordinator\" Pakistan (hiring OR vacancy OR \"send CV\" OR apply)"
     },
     {
+      "title": "We’re hiring a Graphic Designer at Waaw. Fully remote, work from anywhere. Someone who notices the space between two letters, and fixes it before anyone asks. DM us your CV and portfolio. Show us how you think. #graphicdesign #designjobs #remotejob - Instagram",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5UTFJmS1A1WllYUU5LQkVBNGVJYkxjTjZ3dEdQemx5TzU0WHNtQ09WQUo0VzRZazhldzZ5MmRrT1hFVmp0eWViX3ZLZzQ0bk5hcHhKUGp3?oc=5",
+      "published": "Thu, 12 Nov 2026 08:00:00 GMT",
+      "description": "We’re hiring a Graphic Designer at Waaw. Fully remote, work from anywhere. Someone who notices the space between two letters, and fixes it before anyone asks. DM us your CV and portfolio. Show us how you think. #graphicdesign #designjobs #remotejob &nbsp;&nbsp; Instagram",
+      "source": "Instagram",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:instagram.com \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+    },
+    {
       "title": "Junior Graphic Designer Job at Murj - FlexJobs",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUXI2THRlaDd0YzN5djYxaXBxM0V4SUg3VzNPQ290d3RtNGkzUUVhU2F2cWd6akVYdmttbldrUFpJODJsZmpZS216TV9kTDM0bC1hNnpjR25NOGt0VjNjMmMzQlJQWl91SUh0MUJoN01RbmRwSkVpUjF2SXBJeUN2OHFMX1pRRjNjdGU5WWduaE9BVkpXLVBUd3VtdVlsSUVUTWg0bHhXVEtndWJm?oc=5",
       "published": "Thu, 05 Nov 2026 09:05:38 GMT",
@@ -365,6 +405,16 @@
       "query": "site:mustakbil.com \"graphic designer\" Pakistan"
     },
     {
+      "title": "Sarah Ali is Hiring Graphic Designer (Print & Signage Production), FASTSIGNS, Remote, Pakistan Do your designs stop traffic? We're looking for a print production graphic designer with real signage experience to help FASTSIGNS franchise clients get noticed - LinkedIn",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOYzhIaDJOMklzUHdpazg1LUNzUzYzV2haNmxlTVpZNFc1TkpJT0FUbVhDSnhXeHVnbmNBbVRPX2wzUTRldmRjN2dNQlZ6ZHNfWkY2TGgyLTdueUFlMlRLcnBCbmxIc3ZfT2ROeVNyM0hvbWhrbGNfQjBFX3VDZU14bGNLNWx3NmhzLXdmRTA2bURYWUVyZXR5UjJtaVM4R2V2aXlUakxGVEZPenZTYXVMZ1QxT05FU3VvV21ZeQ?oc=5",
+      "published": "Sun, 22 Nov 2026 12:52:24 GMT",
+      "description": "Sarah Ali is Hiring Graphic Designer (Print & Signage Production), FASTSIGNS, Remote, Pakistan Do your designs stop traffic? We're looking for a print production graphic designer with real signage experience to help FASTSIGNS franchise clients get noticed &nbsp;&nbsp; LinkedIn",
+      "source": "LinkedIn",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:linkedin.com/posts \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR apply)"
+    },
+    {
       "title": "**We’re hiring a Canva Graphic Designer | Remote** WMWebs is looking for a skilled Canva designer to create social media posts, stories, and ad graphics. Open to applicants across Pakistan. Islamabad and Rawalpindi candidates preferred. **To apply, Wha - Facebook",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPS3VURWxRWU1QanJwT09obnBhdWw2d2MtaDN1SUxqaHRjVGxJY01qSVdSRFc0dks0RUJhd05GNVp5X1N1R1FpMlNLSy1RNV9rT2ZLQ0lJVFlzekVJR1RIOThjVHhHR2pacm5feVFjb3FPVTZWMjV3REV1YWtmV2UzY21BUmdiMG9UM29lT25xTTBrQQ?oc=5",
       "published": "Sun, 15 Nov 2026 10:28:56 GMT",
@@ -372,7 +422,7 @@
       "source": "Facebook",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:facebook.com \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+      "query": "site:facebook.com \"Social Media Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
     },
     {
       "title": "Graphic Designer and Content Creator Job, Islamabad, Digital Solutions - Rozee.pk",
@@ -393,16 +443,6 @@
       "match_score": 65,
       "cv": "graphic_designer_cv",
       "query": "site:flexjobs.com \"graphic designer\" remote"
-    },
-    {
-      "title": "GRAPHIC DESIGNER & VIDEO Editor Job, Gujranwala, Waqas Electronics - Rozee.pk",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPWUxPWHFveVA2Ykg3b1dwTS1GT2RDMDlfdFNnZHVwTXdHNjdHblFXZGtBM0hwdVJyV1NPU1BfbHkwTWYxd1JSUWRid3FtQ29GSGlmcUhNNW9wNm0zenNBbGtXOWgyS2RLdXNjZUd6cjZHLXpQNGFIZFZKLXJMdEtzVmsxV1FUMFUt?oc=5",
-      "published": "Sat, 21 Nov 2026 14:00:15 GMT",
-      "description": "GRAPHIC DESIGNER & VIDEO Editor Job, Gujranwala, Waqas Electronics &nbsp;&nbsp; Rozee.pk",
-      "source": "Rozee.pk",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
     },
     {
       "title": "DentistFind hiring Sales Operations Coordinator Job in - Glassdoor",
@@ -429,6 +469,16 @@
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBFUUFrZ19mMjVENkxuUm5YRS1EaGZTUFF0QW1yMzdQMGNLS0JydTVybjc1VjBDS0FkSVQtb0VXbzVGMGh1ZXN5dFlUanN5WGlKZlp4aXhrY0VIbFhMUHdaMlRjM1NJaXV4TWNJWDRWMA?oc=5",
       "published": "Sat, 14 Nov 2026 10:29:57 GMT",
       "description": "Graphic Designer Job, Jaranwala, Skills Plus &nbsp;&nbsp; Rozee.pk",
+      "source": "Rozee.pk",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
+    },
+    {
+      "title": "Junior Graphic Designer & Video Editor Job, Lahore, YESHINE Global - Rozee.pk",
+      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxPVVFGcVdqcTRqVFNuTExQT05nSUtZTm96ektoaUN2Wm44OWdMRXl3Y3RlMXF6RG03cThwbWhNOVBDb1hCLUdkQlF3dnNielMzUkZVbmtwR3NOeEszemVwMjBjeHhmZS1KZjdmZ3h4cG5fSE93ZnJubEZ2dnBkRlVEQzlLcE1OWTNEbHZIRHBIbEozTTFuVWw1dllQZ0w1aFM2bEh6MDN5V1N4SlZlblVpZWpaZGZFeGlDbTMzS21oWDNFWDBkWW1JajR2cDNYdTduWFhGUEE3N09KRHE4dnNzQkplcjh5WXk2Z1I2YTVzdjZYNm1UN3hUSXpjXzNRNnJROHJKM0ljQmVfQmFXaTdKaUdyanIyWG8?oc=5",
+      "published": "Mon, 23 Nov 2026 11:27:11 GMT",
+      "description": "Junior Graphic Designer & Video Editor Job, Lahore, YESHINE Global &nbsp;&nbsp; Rozee.pk",
       "source": "Rozee.pk",
       "match_score": 65,
       "cv": "graphic_designer_cv",
@@ -462,7 +512,7 @@
       "source": "LinkedIn",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:linkedin.com/posts Pakistan hiring \"graphic designer\" email OR WhatsApp"
+      "query": "site:linkedin.com/posts \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR apply)"
     },
     {
       "title": "Groups Sales Coordinator Job at Engine - FlexJobs",
@@ -512,7 +562,7 @@
       "source": "Facebook",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:facebook.com \"Creative Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+      "query": "site:facebook.com \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
     },
     {
       "title": "Senior Digital Visual Designer Job at Velir - FlexJobs",
@@ -602,7 +652,7 @@
       "source": "Instagram",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:instagram.com \"Creative Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+      "query": "site:instagram.com \"Graphic Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
     },
     {
       "title": "Specialist Employment Marketing - Graphic Designer Job at Home Depot - FlexJobs",
@@ -665,16 +715,6 @@
       "query": "site:facebook.com \"Marketing Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
     },
     {
-      "title": "🚨 We’re Hiring 🚨 📍 DHA Phase 6 Raya, Lahore. (Full time onsite role) 💼 Job Type: Full-time | Onsite 1-Executive Assistant Experience in executive-level administrative support, managing schedules, coordinating meetings, and handling confidential matters. Ye - LinkedIn",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQNEtPcGlLbGR1VkxiTkVHUm1LempnYm5GR3l4YnRnaHNmVjZ4VURvd3NVMWpvX2t1ZHY1QmdOUXVIbTV6R0pTU3J6a2ZNcHJ1VWNwQ19JS0FZOUlKc2lxdW0tcndHc19rTWFWSnBUc2tnSl9LVEJrYzJOQ0l6OHdLWmFRNmg4cEdaTVp6dUhPUmJLN3BfbG04UXctTXZlQVhwY21lM0VBVFVKcnl4MVFDR2R3?oc=5",
-      "published": "Thu, 05 Nov 2026 08:09:14 GMT",
-      "description": "🚨 We’re Hiring 🚨 📍 DHA Phase 6 Raya, Lahore. (Full time onsite role) 💼 Job Type: Full-time | Onsite 1-Executive Assistant Experience in executive-level administrative support, managing schedules, coordinating meetings, and handling confidential matters. Ye &nbsp;&nbsp; LinkedIn",
-      "source": "LinkedIn",
-      "match_score": 60,
-      "cv": "business_computer_cv",
-      "query": "site:linkedin.com/posts Pakistan hiring \"graphic designer\" email OR WhatsApp"
-    },
-    {
       "title": "Senior Brand Marketing Designer Job at Aquent - FlexJobs",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeDZZdGhVOERQZWFRV1lmMUk4alpZTnpwYS1lTTRqRzFwWjZwa2NacE83QjNIWEhOUU1keHhIT0NWbVVBZGJ3U1pPV3h6ZUhTR3RGRmQ2SHFWdU44SWpsRDI2cDItUV9qRlUxZy1GbzRQbVpjLXlMb1Q3MkhxYnA3N1VONkItdTZZNmZjM1N6bDhlYmtyYTRZNnBrdVhHcVJBSmZ5aEhjV1Z6QUlkWHo1cGxVbERqSzlJOVE?oc=5",
       "published": "Sat, 07 Nov 2026 07:20:38 GMT",
@@ -693,6 +733,16 @@
       "match_score": 60,
       "cv": "graphic_designer_cv",
       "query": "site:instagram.com \"Creative Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
+    },
+    {
+      "title": "Your creative journey starts with the right skills! 🎨✨ From Graphic Design and Video Editing to Motion Graphics, Animation, and 3D Visual Effects, explore your interests and turn your creativity into a career. 🚀 Discover your potential with Frameboxx Nepal! 📍 B - Facebook",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOSzRfUkdRamdkUENNSmpBanoxcUJwRmRLdWk3QkJ2c1VxQ2FjdUNmZWNzNTdyQVA0MlFmbjg4NHJ5TkRyYi1PMWpCbTVNQ0dnZkJiSm9PMzFScFltNWlfOVYzaE9ZRDJhbnZTem03aDlLMUNhNm0wRHB5Vzd0bHF0RU9hdVNyOHNBcDMxc1E5UmR6dXBQdVlDZlozaWdCbWtfVkp3M3JBdWRGclBMZnJ0dGItVVg3NmFjUGNvV1UxNEV4Qmo0RTZUVndDQ3pWOU9zdy1paE02d2x2VVNvRlhJM0Nlb3A?oc=5",
+      "published": "Fri, 20 Nov 2026 00:15:39 GMT",
+      "description": "Your creative journey starts with the right skills! 🎨✨ From Graphic Design and Video Editing to Motion Graphics, Animation, and 3D Visual Effects, explore your interests and turn your creativity into a career. 🚀 Discover your potential with Frameboxx Nepal! 📍 B &nbsp;&nbsp; Facebook",
+      "source": "Facebook",
+      "match_score": 60,
+      "cv": "graphic_designer_cv",
+      "query": "site:facebook.com \"Creative Designer\" Pakistan (hiring OR vacancy OR \"send CV\" OR WhatsApp)"
     },
     {
       "title": "We’re excited to spotlight Hayan Kaleem Qurexhi, an AI Corporate Trainer, Visual Content Designer, and AI UGC Video Creator from Karachi, Pakistan. With over 7 years of experience, Hayan has built his career around visual storytelling, brand identity, digital - Facebook",
