@@ -45,8 +45,15 @@ jobs:
       - name: Sync Forbes Global 2000 targets
         run: python src/forbes_global2000.py
 
-      - name: Search jobs
+      - name: Search public job sources
         run: python src/job_search.py
+
+      - name: Search signed-in Facebook and Instagram (optional TinyFish)
+        env:
+          TINYFISH_SOCIAL_SEARCH_ENABLED: ${{ secrets.TINYFISH_SOCIAL_SEARCH_ENABLED }}
+          TINYFISH_API_KEY: ${{ secrets.TINYFISH_API_KEY }}
+          TINYFISH_PROFILE_ID: ${{ secrets.TINYFISH_PROFILE_ID }}
+        run: python src/social_media_search.py
 
       - name: Prepare applications
         run: python src/application_generator.py
@@ -95,13 +102,21 @@ jobs:
           import json
           from pathlib import Path
 
-          jobs = json.loads(Path("data/jobs.json").read_text())["jobs"]
+          jobs_data = json.loads(Path("data/jobs.json").read_text())
+          jobs = jobs_data["jobs"]
           queue = json.loads(Path("data/application_queue.json").read_text())["queue"]
 
           lines = [
               "# Fahad Job Agent Report",
               "",
               "Generated matches: **%d**" % len(jobs),
+              "",
+              "Signed-in social search: **%s**" % (
+                  "TinyFish Facebook + Instagram enabled; %d posts added this run" %
+                  jobs_data.get("signed_in_social_search", {}).get("added_this_run", 0)
+                  if jobs_data.get("signed_in_social_search", {}).get("enabled")
+                  else "not enabled (publicly indexed social searches still run)"
+              ),
               "",
               "## CVs in use",
               "",
@@ -112,16 +127,16 @@ jobs:
               "",
               "| Mode | Meaning |",
               "|---|---|",
-              "| EMAIL_READY | Employer email found; ready for permitted email automation |",
-              "| WHATSAPP_READY | WhatsApp number found; click-to-chat message prepared |",
+              "| EMAIL_READY | Employer email found; email automation still requires an explicit invitation |",
+              "| WHATSAPP_READY | WhatsApp contact and explicit application invitation found |",
               "| PHONE_ACTION | Phone number found; call details prepared |",
-              "| WEB_APPLICATION | Public forms are inspected and submitted when all required answers are known; protected steps remain manual |",
+              "| WEB_APPLICATION | Public forms are inspected; protected steps remain manual |",
               "| REVIEW | Needs review |",
               "",
               "## Top matches",
               "",
-              "| Score | CV | Mode | Web status | Job | Source | Link |",
-              "|---:|---|---|---|---|---|"
+              "| Score | CV | Mode | Web status | Job | Source | Contacts | Link |",
+              "|---:|---|---|---|---|---|---|---|"
           ]
 
           for j in queue[:100]:
