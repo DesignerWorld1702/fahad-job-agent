@@ -268,7 +268,7 @@ def main():
                     review += 1
                     continue
 
-                emails = re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", body_text)
+                emails = re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", body_text)
                 relevant = []
                 for email in emails:
                     e = email.lower()
@@ -278,9 +278,9 @@ def main():
                         relevant.append(e)
                 item["page_emails"] = list(dict.fromkeys(relevant))[:5]
                 email_invite = re.search(
-                    r"(?:send|email|submit|share)\\s+(?:your\\s+)?(?:cv|resume|application)|"
-                    r"(?:apply|application)\\s+(?:by|via|through|to)\\s+email|"
-                    r"email\\s+(?:your\\s+)?(?:cv|resume|application)",
+                    r"(?:send|email|submit|share)\s+(?:your\s+)?(?:cv|resume|application)|"
+                    r"(?:apply|application)\s+(?:by|via|through|to)\s+email|"
+                    r"email\s+(?:your\s+)?(?:cv|resume|application)",
                     body_text, re.I
                 )
                 # A recruiting/careers/HR address published directly on a job page
