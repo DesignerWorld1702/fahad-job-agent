@@ -320,10 +320,18 @@ def main():
                 if item.get("email_application_invited") and (item.get("emails") or item.get("page_emails")):
                     item["web_apply_status"] = "email_route_available"
                     continue
+                if item.get("whatsapp_ready") and item.get("phones"):
+                    item["mode"] = "WHATSAPP_READY"
+                    item["web_apply_status"] = "whatsapp_route_available"
+                    continue
 
                 form_count = page.locator("form").count()
                 if not form_count:
-                    item["web_apply_status"] = "no_public_form_found"
+                    if item.get("phones"):
+                        item["mode"] = "PHONE_ACTION"
+                        item["web_apply_status"] = "phone_contact_found_manual_call"
+                    else:
+                        item["web_apply_status"] = "no_public_form_found"
                     review += 1
                     continue
 
