@@ -43,29 +43,31 @@ def main():
         raise
 
     now = datetime.now(timezone.utc)
-    state = json.loads(STATE_PATH.read_text()) if STATE_PATH.exists() else {
-        "cycle": 1, "format_index": 0, "last_company_index": -1, "last_applied_at": {}
-    }
-    # A company is eligible again after 10 days. The list is traversed in order;
-    # after the last company, the next pass increments the application-format cycle.
-    last_index = int(state.get("last_company_index", -1))
-    eligible = []
-    cooldown = state.setdefault("last_applied_at", {})
-    for idx, row in enumerate(rows):
-        last = cooldown.get(row["company"])
-        if not last or now - datetime.fromisoformat(last) >= timedelta(days=10):
-            eligible.append((idx, row))
-    if eligible:
-        idx, active = eligible[0]
-        state["last_company_index"] = idx
-        state["active_company"] = active["company"]
-        state["active_forbes_url"] = active["forbes_url"]
-    state["source_url"] = URL
-    state["synced_at"] = now.isoformat()
-    state["companies_count"] = len(rows)
-    TARGETS_PATH.write_text(json.dumps({"source_url":URL,"synced_at":now.isoformat(),"companies":rows}, indent=2, ensure_ascii=False))
+    state = json.loads(STATE_PATH.read_text()) if STATE_PATH.exists() else {}
+    cycle_start = datetime.fromisoformat(state["cycle_start"]) if state.get("cycle_start") else now
+    elapsed_days = max(0, (now - cycle_start).days)
+    cycle_number = elapsed_days // 10
+    index = cycle_number % len(rows)
+    format_index = cycle_number % 3
+
+    active = rows[index]
+    state.update({
+        "cycle": cycle_number + 1,
+        "format_index": format_index,
+        "active_company_index": index,
+        "active_company": active["company"],
+        "active_forbes_url": active["forbes_url"],
+        "cycle_start": cycle_start.isoformat(),
+        "source_url": URL,
+        "synced_at": now.isoformat(),
+        "companies_count": len(rows),
+        "application_rule": "Each Forbes company is the active target for 10 days; after the full list is traversed, the application-format cycle rotates."
+    })
+    TARGETS_PATH.write_text(
+        json.dumps({"source_url":URL,"synced_at":now.isoformat(),"companies":rows}, indent=2, ensure_ascii=False)
+    )
     STATE_PATH.write_text(json.dumps(state, indent=2, ensure_ascii=False))
-    print(f"Forbes Global 2000 sync: {len(rows)} companies. Active target: {state.get('active_company','none')}. Format cycle: {state.get('format_index',0)+1}")
+    print(f"Forbes Global 2000 sync: {len(rows)} companies. Active target: {active['company']} (index {index}). Format cycle: {format_index+1}.")
 
 if __name__ == "__main__":
     main()
