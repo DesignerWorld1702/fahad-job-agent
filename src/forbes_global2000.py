@@ -41,8 +41,9 @@ def main():
         print("Forbes sync failed:", e)
         if TARGETS_PATH.exists():
             print("Keeping the last successful Forbes target list.")
-            return
-        raise
+        else:
+            print("No cached Forbes list is available; continuing without Forbes targets.")
+        return
 
     now = datetime.now(timezone.utc)
     state = json.loads(STATE_PATH.read_text()) if STATE_PATH.exists() else {}
