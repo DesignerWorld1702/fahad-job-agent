@@ -26,11 +26,41 @@ def contact_method(text):
             normalized.append(digits)
     return list(dict.fromkeys(emails)), normalized
 
+def clean_role_title(raw_title):
+    """Extract a concise role name; never reuse a pasted hiring-ad headline."""
+    raw = re.sub(r"\\s+", " ", str(raw_title or "")).strip()
+    configured = []
+    prefs_path = ROOT / "config" / "job_preferences.json"
+    if prefs_path.exists():
+        prefs = json.loads(prefs_path.read_text(encoding="utf-8"))
+        configured = prefs.get("graphic_roles", []) + prefs.get("business_roles", [])
+    # Prefer a known role phrase that actually appears in the source headline.
+    for role in sorted(configured, key=len, reverse=True):
+        if re.search(r"(?<![A-Za-z])" + re.escape(role) + r"(?![A-Za-z])", raw, re.I):
+            return role
+    # Catch reasonable role titles not yet in the preference list, including
+    # titles embedded after generic social-media announcement wording.
+    patterns = [
+        r"([A-Z][A-Za-z/&(),'-]*(?:\\s+[A-Z][A-Za-z/&(),'-]*){0,5}\\s+(?:Coordinator|Designer|Assistant|Executive|Operator|Clerk|Controller|Specialist|Officer|Administrator|Analyst))",
+        r"([A-Z][A-Za-z/&(),'-]*(?:\\s+[A-Z][A-Za-z/&(),'-]*){0,5}\\s+Manager)"
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, raw)
+        if match:
+            candidate = match.group(1).strip(" -–—:|")
+            if 2 <= len(candidate.split()) <= 7:
+                return candidate
+    raw = re.sub(r"^(?:application\\s*[–-]\\s*)?", "", raw, flags=re.I)
+    raw = re.sub(r"[🚨🔶🔹📢📣✨⭐️]+", " ", raw)
+    raw = re.split(r"\\b(?:requirements|qualification|qualifications|responsibilities|we are pleased|we are hiring|send your cv)\\b", raw, maxsplit=1, flags=re.I)[0]
+    raw = re.sub(r"\\s+", " ", raw).strip(" -–—:|.")
+    return raw[:80] if raw else "the advertised position"
+
 def make_record(job):
     body = job.get("description", "")
     emails, phones = contact_method(body)
     cv = job.get("cv")
-    name = job.get("title", "the advertised role")
+    name = clean_role_title(job.get("title", ""))
 
     if cv == "graphic_designer_cv":
         intro = (
