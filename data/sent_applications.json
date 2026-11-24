@@ -49,6 +49,16 @@
       "score": 65,
       "region": "pakistan",
       "sent_date": "2026-11-24"
+    },
+    {
+      "key": "email|https://news.google.com/rss/articles/CBMiUkFVX3lxTE5YazdsQUJWdDBKcFFiRS1GOS0wYXFEVlFMdXZWTHVNakNNb3dKdzdlcnE1NlRnOHh4Zm9YMVNOeS1JOWxDMjBTQ0VnaGlLeDQwTFE?oc=5|hr@fujifilm.com.pk",
+      "channel": "email",
+      "recipient": "hr@fujifilm.com.pk",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5YazdsQUJWdDBKcFFiRS1GOS0wYXFEVlFMdXZWTHVNakNNb3dKdzdlcnE1NlRnOHh4Zm9YMVNOeS1JOWxDMjBTQ0VnaGlLeDQwTFE?oc=5",
+      "title": "Graphic Designer",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-24"
     }
   ]
 }

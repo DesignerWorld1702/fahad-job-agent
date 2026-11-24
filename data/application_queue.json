@@ -257,6 +257,36 @@
       "web_apply_status": "login_or_password_required"
     },
     {
+      "title": "Graphic Designer",
+      "source_title": "Good news for creatives: we’re hiring! 🎉🎉🎉 Regions Healthcare is looking for a Graphic Designer and Video Editor. We want a creative who can turn health messages into visuals people actually want to watch and share, across our websites and social media - Facebook",
+      "region": "pakistan",
+      "source": "Facebook",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNaVJjMjg0SVY0cHB0X2ZkZnJhY0JxcENFaUhFU2dieGl0YjFULWFhdUVHdjdKbUxoYUk5Yy1WeUFINmVTbm5QWkVDWnY1R1FYUzdZWnZ2WFZfdjlidUpnTDJJRmVYWHozMHktNUpJc2NBbEdoS0NOWU9fY3RqaG1VMFAtMEp6NXNJMER4OVNhMjZKT01abXZJY2oyV3kzS1J3LUxTLUtZUFd4bTNYNUd5LUtycm1OSmN0eks5aDdfZngzbkJrQ3l1OUhJdzlSbG9HMmFCMG5yb2FwZw?oc=5",
+      "score": 70,
+      "cv": "graphic_designer_cv",
+      "mode": "WEB_APPLICATION",
+      "whatsapp_ready": false,
+      "whatsapp_opt_in": false,
+      "social_dm_invited": false,
+      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
+      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
+      "emails": [],
+      "phones": [],
+      "email_application_invited": false,
+      "email_subject": "Application – Graphic Designer – Fahad Asif",
+      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Graphic Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
+      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Graphic Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
+      "portfolio_url": "https://www.behance.net/zubairkhan1",
+      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
+      "whatsapp_template_variables": [
+        "Good news for creatives: we’re hiring! 🎉🎉🎉 Regions Healthcare is looking for a Graphic Designer and Video Editor. We want a creative who can turn health messages into visuals people actually want to watch and share, across our websites and social media - Facebook",
+        "https://www.behance.net/zubairkhan1",
+        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
+      ],
+      "whatsapp_links": [],
+      "web_apply_status": "login_or_password_required"
+    },
+    {
       "title": "Sales Coordinator",
       "source_title": "Sales Coordinator Job at Pilot Fiber - FlexJobs",
       "region": "international",
@@ -390,36 +420,49 @@
     },
     {
       "title": "Graphic Designer",
-      "source_title": "Graphic Designer & Video Editor Intern Job, Lahore, Techinoid - Rozee.pk",
+      "source_title": "(Kindly repost this and help us find the right creative talent) HIRING ON BEHALF OF A FRIEND 𝗚𝗿𝗮𝗽𝗵𝗶𝗰 𝗗𝗲𝘀𝗶𝗴𝗻𝗲𝗿 (Night Shift) Creativity meets opportunity! We're looking for a talented and creative Graphic Designer with a strong design sense, attention - LinkedIn",
       "region": "pakistan",
-      "source": "Rozee.pk",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQckVLckl1QWk2N0Nxam0wME44N2pkVWpuaTNPdWU4X3RzOWNsM1dwU2RDWDRmREdLSEVwVW1OYV9LVE5fUlM1am1hN1dCT0NKWVIxWE5mLVpiTFMxampxQndkeUI3cDlDYkkxREdQWjhHTmtkRXhCU3MxN2ktMHFudlh3OG1DNjQ?oc=5",
+      "source": "LinkedIn",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbTJMeHBJYm9KWlo0OTVWRHFyejYyc0htVEJMV1JIN003VWhjcDRwNU9DRXppMzZ4S1ozMW5UTENJUGw5S2dRZjhnVlFfTDdxaG05S245WUtYYUZKQmhsa0thWkZkS2oyamRpdWNGck8xbnFzT2liUzFrZ2ZVazB4NU9kbThUeVBoaHkydHNITHJVTW1VT1c1M1U3TFVZb1pGdlhPTnNJX3FHRkRkOHVMTXJzTGFjMDhiMzdjU1FhWTZwUm90?oc=5",
       "score": 65,
       "cv": "graphic_designer_cv",
       "mode": "WEB_APPLICATION",
-      "whatsapp_ready": false,
-      "whatsapp_opt_in": false,
+      "whatsapp_ready": true,
+      "whatsapp_opt_in": true,
       "social_dm_invited": false,
       "priority": "automatic where the public form is supported; manual for protected or unknown steps",
       "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
       "emails": [],
-      "phones": [],
-      "email_application_invited": false,
+      "phones": [
+        "03458889035",
+        "03373714560"
+      ],
+      "email_application_invited": true,
       "email_subject": "Application – Graphic Designer – Fahad Asif",
       "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Graphic Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
       "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Graphic Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
       "portfolio_url": "https://www.behance.net/zubairkhan1",
       "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
       "whatsapp_template_variables": [
-        "Graphic Designer & Video Editor Intern Job, Lahore, Techinoid - Rozee.pk",
+        "(Kindly repost this and help us find the right creative talent) HIRING ON BEHALF OF A FRIEND 𝗚𝗿𝗮𝗽𝗵𝗶𝗰 𝗗𝗲𝘀𝗶𝗴𝗻𝗲𝗿 (Night Shift) Creativity meets opportunity! We're looking for a talented and creative Graphic Designer with a strong design sense, attention - LinkedIn",
         "https://www.behance.net/zubairkhan1",
         "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
       ],
       "whatsapp_links": [],
-      "web_apply_status": "no_public_form_found",
-      "application_url": "https://www.rozee.pk/techinoid-graphic-designer-video-editor-intern-jobs-1951679",
-      "page_emails": [],
-      "page_phones": []
+      "web_apply_status": "email_route_available",
+      "application_url": "https://www.linkedin.com/posts/tooba-khan-950653283_hiring-graphicdesigner-graphicdesignjobs-activity-7526336329069178880-1kC4",
+      "page_emails": [
+        "alex@creativesolutionss.com",
+        "hraliahmedkhan@gmail.com",
+        "hr@trajital.com",
+        "hr@expando.com.pk",
+        "hr@astrozon.us",
+        "hamzatalentacquisition@gmail.com"
+      ],
+      "page_phones": [
+        "03458889035",
+        "03373714560"
+      ]
     },
     {
       "title": "Administrative Assistant",
@@ -450,7 +493,40 @@
       ],
       "whatsapp_links": [],
       "web_apply_status": "no_public_form_found",
-      "application_url": "https://www.rozee.pk/hwits-data-entry-administrative-assistant-jobs-1951703",
+      "application_url": "https://www.rozeegpt.ai/seeker/hwits-data-entry-administrative-assistant-163087?currency=PKR&utm_source=rozee&utm_medium=web&utm_suggested=Y&utm_campaign=rozeeweb&utm_content=job_163087&d=b5LtGJ8Gqbdd4p9FI-yS4oRxqUHOQMoDRTgRdW7G4798SJyshg2D7rC9Lwt7_Bd-O3ULNpBL_En8RINTLTMfOg62nqse9kkXGqnC_1SL1ueJ21EzKh-Gcq7TsE5LFFzSb4eYEHQMaBHZFH8Ppg2QSw&cf=1",
+      "page_emails": [],
+      "page_phones": []
+    },
+    {
+      "title": "Graphic Designer",
+      "source_title": "Graphic Designer & Video Editor Intern Job, Lahore, Techinoid - Rozee.pk",
+      "region": "pakistan",
+      "source": "Rozee.pk",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQckVLckl1QWk2N0Nxam0wME44N2pkVWpuaTNPdWU4X3RzOWNsM1dwU2RDWDRmREdLSEVwVW1OYV9LVE5fUlM1am1hN1dCT0NKWVIxWE5mLVpiTFMxampxQndkeUI3cDlDYkkxREdQWjhHTmtkRXhCU3MxN2ktMHFudlh3OG1DNjQ?oc=5",
+      "score": 65,
+      "cv": "graphic_designer_cv",
+      "mode": "WEB_APPLICATION",
+      "whatsapp_ready": false,
+      "whatsapp_opt_in": false,
+      "social_dm_invited": false,
+      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
+      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
+      "emails": [],
+      "phones": [],
+      "email_application_invited": false,
+      "email_subject": "Application – Graphic Designer – Fahad Asif",
+      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Graphic Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
+      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Graphic Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
+      "portfolio_url": "https://www.behance.net/zubairkhan1",
+      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
+      "whatsapp_template_variables": [
+        "Graphic Designer & Video Editor Intern Job, Lahore, Techinoid - Rozee.pk",
+        "https://www.behance.net/zubairkhan1",
+        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
+      ],
+      "whatsapp_links": [],
+      "web_apply_status": "no_public_form_found",
+      "application_url": "https://www.rozeegpt.ai/seeker/techinoid-graphic-designer-video-editor-intern-163055?currency=PKR&utm_source=rozee&utm_medium=web&utm_suggested=Y&utm_campaign=rozeeweb&utm_content=job_163055&d=Q-iBsogLZnpXkBwvK1MEAiAldzI6ZfL_8fgCWxsrgnQLk4nI_5OHQZq5P1n2LMd0qpY6jZ48lWLOh-MKx1MiqtUyGYkwVfFFWeYELbdwyJFYi4PLCAAGczlwcckV66moBlZMy6TfHqFu8Ef49oCkdQ&cf=1",
       "page_emails": [],
       "page_phones": []
     },
@@ -584,6 +660,39 @@
       "page_phones": []
     },
     {
+      "title": "Operations Coordinator",
+      "source_title": "Data Operations Coordinator Job at Arthur J. Gallagher & Co. - FlexJobs",
+      "region": "international",
+      "source": "FlexJobs",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPS3ZjS1U3WDJtUmptd3VHZXVIcGE4SEtFa0ZMZG1CQVhrQU12M0JGWDVKbEFJbTNHVkFyYnZCQ0s0V2ZVUm14ZkY2UlEwWDl5SWZtcU96M0xUcGZiX1FUYmc3SFpzZ3hSa2NCd2NsNGg1Q2lQZFpOQUV0Sy1lRWhTc1NMTkN3Qk1keVZfWWo3X282dHBoX2UzVlgwZExQdlRMU0NiM0hHRTdxUjA5bG5NZmViQVhNYVFmU2MzbjZSa0ZGeUlsdXlzLQ?oc=5",
+      "score": 65,
+      "cv": "business_computer_cv",
+      "mode": "WEB_APPLICATION",
+      "whatsapp_ready": false,
+      "whatsapp_opt_in": false,
+      "social_dm_invited": false,
+      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
+      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
+      "emails": [],
+      "phones": [],
+      "email_application_invited": false,
+      "email_subject": "Application – Operations Coordinator – Fahad Asif",
+      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Operations Coordinator position. I am a business and computer-focused professional with a B.Com background and experience in sales coordination, production planning, reporting, records management and digital marketing support. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
+      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Operations Coordinator opportunity. I am a business and computer-focused professional with a B.Com background and experience in sales coordination, production planning, reporting, records management and digital marketing support. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
+      "portfolio_url": "https://www.behance.net/zubairkhan1",
+      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/business_computer_cv.pdf",
+      "whatsapp_template_variables": [
+        "Data Operations Coordinator Job at Arthur J. Gallagher & Co. - FlexJobs",
+        "https://www.behance.net/zubairkhan1",
+        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/business_computer_cv.pdf"
+      ],
+      "whatsapp_links": [],
+      "web_apply_status": "no_public_form_found",
+      "application_url": "chrome-error://chromewebdata/",
+      "page_emails": [],
+      "page_phones": []
+    },
+    {
       "title": "Business Coordinator",
       "source_title": "Executive Officer- Business Coordinator Job, Karachi, EFU Life Assurance Ltd. - Rozee.pk",
       "region": "pakistan",
@@ -612,7 +721,7 @@
       ],
       "whatsapp_links": [],
       "web_apply_status": "no_public_form_found",
-      "application_url": "https://www.rozee.pk/efu-life-assurance-ltd-executive-officer-business-coordinator-jobs-1964609",
+      "application_url": "https://www.rozeegpt.ai/seeker/efu-life-assurance-ltd-executive-officer-business-coordinator-163831?currency=PKR&utm_source=rozee&utm_medium=web&utm_suggested=Y&utm_campaign=rozeeweb&utm_content=job_163831&d=2zgPQrDNmxu5Z7cs8ftSQIOxUeGdT5L626OuAxR_p3rZ2ZRpGfuXnrOKMf66ijiwuqwWRto3RhEo7BnJT-UazmpQpC9D47NgIaaeKgc_ggpA7Jjd2HxczsIoELJdEAtd9CjW1jRGcZJyCpx_RLqZT4QgbTqE4B4E6gLfonRcIibYoQFyAens_Owvo5FcAIDw7k66xvtr99ru4CWXXVsy50nkY_0ekTZdBo44DK2r8mc&cf=1",
       "page_emails": [],
       "page_phones": []
     },
@@ -737,7 +846,7 @@
       ],
       "whatsapp_links": [],
       "web_apply_status": "no_public_form_found",
-      "application_url": "https://www.rozee.pk/moti-estate-builders-graphic-designer-and-social-media-executive-jobs-1974303",
+      "application_url": "https://www.rozeegpt.ai/seeker/moti-estate-builders-graphic-designer-and-social-media-executive-164291?currency=PKR&utm_source=rozee&utm_medium=web&utm_suggested=Y&utm_campaign=rozeeweb&utm_content=job_164291&d=Q-iBsogLZnpXkBwvK1MEAqF_NgdbBOyj3rPCyFf3p3HP_p7zh0T_M0CdWtl2zQfD_r-a6iSb0tMohRjXSLRMzOBkbfqcq988xWwOI5JTj9vijEuD46Ps2DzP6UOGk3e2WzAUCvo2RKRpcvWBX82uE2gvFTYTXmAmwXNdEONS6xk&cf=1",
       "page_emails": [],
       "page_phones": []
     },
@@ -757,7 +866,7 @@
       "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
       "emails": [],
       "phones": [],
-      "email_application_invited": true,
+      "email_application_invited": false,
       "email_subject": "Application – Graphic Designer – Fahad Asif",
       "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Graphic Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
       "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Graphic Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
@@ -769,72 +878,44 @@
         "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
       ],
       "whatsapp_links": [],
-      "web_apply_status": "email_route_available",
-      "application_url": "https://www.linkedin.com/posts/coretechpakistan_coretech-wearehiring-graphicdesigner-activity-7529140432564350976-Z_jr",
-      "page_emails": [
-        "career@coretech.pk"
-      ],
-      "page_phones": []
+      "web_apply_status": "captcha_or_bot_check"
     },
     {
       "title": "Graphic Designer",
-      "source_title": "📢 WE'RE HIRING – GRAPHIC DESIGNER! 🎨 VIP Flags is looking for a creative and skilled Graphic Designer with practical knowledge of fabric printing and production designing. 📍 Location: Karachi, Pakistan 💰 Salary: PKR 40,000 – 45,000 🎁 Benefits: Travel - Facebook",
+      "source_title": "We are hiring! Join our growing team in Karachi! FUJI Creative Printing is expanding and we're looking for an exceptional Sales Representative & Graphic Designer. Location: Karachi Apply: hr@fujifilm.com.pk #fujicreativeprinting #fujifilm #hiring #recruitment - Instagram",
       "region": "pakistan",
-      "source": "Facebook",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNRXlXQ0pkcXJHcE9ad2t0Z1Qzd29EbFNydnVYUzc3NklLdGRCMHFjNVpGZjRfSTJ0ZzdiclZXU0xReGJCTGF0Ymd6bzM1QUQycjNlcHRMOWltcF9DR2ZlLW1vTllMbDU3QktzY0VpYUNSbGctYUFEWWdSbWZBa3ZBOTBGaFZGaFJyUXJUMC1IcFRjSEJ6Tno2QTJvUkc0QWhFemhlOFRPVDQ5b1Y5MTBNY2tpNHZOX0FoanJIM3lPSExQRTBXQk9KRnljWmIySVhNb2haRQ?oc=5",
+      "source": "Instagram",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5YazdsQUJWdDBKcFFiRS1GOS0wYXFEVlFMdXZWTHVNakNNb3dKdzdlcnE1NlRnOHh4Zm9YMVNOeS1JOWxDMjBTQ0VnaGlLeDQwTFE?oc=5",
       "score": 65,
       "cv": "graphic_designer_cv",
-      "mode": "WEB_APPLICATION",
+      "mode": "EMAIL_READY",
       "whatsapp_ready": false,
       "whatsapp_opt_in": false,
       "social_dm_invited": false,
-      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
-      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
-      "emails": [],
+      "priority": "automatic only when the employer explicitly invites email applications and Yahoo SMTP is configured",
+      "action": "Email the tailored CV only when the employer explicitly invites email applications.",
+      "emails": [
+        "hr@fujifilm.com.pk"
+      ],
       "phones": [],
-      "email_application_invited": false,
+      "email_application_invited": true,
       "email_subject": "Application – Graphic Designer – Fahad Asif",
       "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Graphic Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
       "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Graphic Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
       "portfolio_url": "https://www.behance.net/zubairkhan1",
       "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
       "whatsapp_template_variables": [
-        "📢 WE'RE HIRING – GRAPHIC DESIGNER! 🎨 VIP Flags is looking for a creative and skilled Graphic Designer with practical knowledge of fabric printing and production designing. 📍 Location: Karachi, Pakistan 💰 Salary: PKR 40,000 – 45,000 🎁 Benefits: Travel - Facebook",
+        "We are hiring! Join our growing team in Karachi! FUJI Creative Printing is expanding and we're looking for an exceptional Sales Representative & Graphic Designer. Location: Karachi Apply: hr@fujifilm.com.pk #fujicreativeprinting #fujifilm #hiring #recruitment - Instagram",
         "https://www.behance.net/zubairkhan1",
         "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
       ],
       "whatsapp_links": [],
-      "web_apply_status": "login_or_password_required"
-    },
-    {
-      "title": "Data Entry and Web Research Full Time office Job in Valencia - Indeed",
-      "source_title": "Data Entry and Web Research Full Time office Job in Valencia - Indeed",
-      "region": "pakistan",
-      "source": "Indeed",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9hckloX2JLcU56bkhHcGc1MTlLX1J1cDdDaGJ5NGd1OFNkZVhSck1Qc3hDTlctV2NtQzFVWkJIUURPNW5VRHNCSGZsY2s2Q3NWY3lHN3JiZElFZ2ljRlE?oc=5",
-      "score": 65,
-      "cv": "business_computer_cv",
-      "mode": "WEB_APPLICATION",
-      "whatsapp_ready": false,
-      "whatsapp_opt_in": false,
-      "social_dm_invited": false,
-      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
-      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
-      "emails": [],
-      "phones": [],
-      "email_application_invited": false,
-      "email_subject": "Application – Data Entry and Web Research Full Time office Job in Valencia - Indeed – Fahad Asif",
-      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Data Entry and Web Research Full Time office Job in Valencia - Indeed position. I am a business and computer-focused professional with a B.Com background and experience in sales coordination, production planning, reporting, records management and digital marketing support. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
-      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Data Entry and Web Research Full Time office Job in Valencia - Indeed opportunity. I am a business and computer-focused professional with a B.Com background and experience in sales coordination, production planning, reporting, records management and digital marketing support. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
-      "portfolio_url": "https://www.behance.net/zubairkhan1",
-      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/business_computer_cv.pdf",
-      "whatsapp_template_variables": [
-        "Data Entry and Web Research Full Time office Job in Valencia - Indeed",
-        "https://www.behance.net/zubairkhan1",
-        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/business_computer_cv.pdf"
+      "web_apply_status": "email_route_available",
+      "application_url": "https://www.instagram.com/p/Df6pE6sEZHe/",
+      "page_emails": [
+        "hr@fujifilm.com.pk"
       ],
-      "whatsapp_links": [],
-      "web_apply_status": "login_required"
+      "page_phones": []
     },
     {
       "title": "Sales Coordinator",
@@ -865,38 +946,39 @@
       ],
       "whatsapp_links": [],
       "web_apply_status": "no_public_form_found",
-      "application_url": "https://www.rozee.pk/blesso-cosmetics-sales-coordinator-jobs-1953995?utm_source=jobSearch&utm_medium=website&utm_content=jobSearch_1953995&utm_campaign=rozee.pk_job_search",
+      "application_url": "https://www.rozeegpt.ai/seeker/blesso-cosmetics-sales-coordinator-163222?currency=PKR&utm_source=rozee&utm_medium=web&utm_suggested=Y&utm_campaign=rozeeweb&utm_content=job_163222&d=-Y8UyL2hF2_XWRuSJSIaaMUdEAxdhMv9ZC_EV1U4Ebn8e7U_iAM_c50frTb03y3iquua9UDSJx36mS_h1m3aYAqr2kX_ivk4zOILKcbp1wp6ppmLZvTSw3JqND2JUh44W9kcR3r5BM-MocuqQi7UZdOgwNclEN5iRZp9yT2w25vZ3KppdtUv_phnNcTAjd-aYidC7UHnnvOcdBSx0WF_UQ&cf=1",
       "page_emails": [],
       "page_phones": []
     },
     {
-      "title": "Graphic Designer",
-      "source_title": "We’re hiring a Graphic Designer at Waaw. Fully remote, work from anywhere. Someone who notices the space between two letters, and fixes it before anyone asks. DM us your CV and portfolio. Show us how you think. #graphicdesign #designjobs #remotejob - Instagram",
+      "title": "Data Entry and Web Research Full Time office Job in Valencia - Indeed",
+      "source_title": "Data Entry and Web Research Full Time office Job in Valencia - Indeed",
       "region": "pakistan",
-      "source": "Instagram",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5UTFJmS1A1WllYUU5LQkVBNGVJYkxjTjZ3dEdQemx5TzU0WHNtQ09WQUo0VzRZazhldzZ5MmRrT1hFVmp0eWViX3ZLZzQ0bk5hcHhKUGp3?oc=5",
+      "source": "Indeed",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9hckloX2JLcU56bkhHcGc1MTlLX1J1cDdDaGJ5NGd1OFNkZVhSck1Qc3hDTlctV2NtQzFVWkJIUURPNW5VRHNCSGZsY2s2Q3NWY3lHN3JiZElFZ2ljRlE?oc=5",
       "score": 65,
-      "cv": "graphic_designer_cv",
-      "mode": "SOCIAL_DM_REVIEW",
+      "cv": "business_computer_cv",
+      "mode": "WEB_APPLICATION",
       "whatsapp_ready": false,
       "whatsapp_opt_in": false,
-      "social_dm_invited": true,
-      "priority": "manual",
-      "action": "The post invites a social-media DM. Review the original post and send the application manually; the agent does not send social DMs.",
+      "social_dm_invited": false,
+      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
+      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
       "emails": [],
       "phones": [],
       "email_application_invited": false,
-      "email_subject": "Application – Graphic Designer – Fahad Asif",
-      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Graphic Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
-      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Graphic Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
+      "email_subject": "Application – Data Entry and Web Research Full Time office Job in Valencia - Indeed – Fahad Asif",
+      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Data Entry and Web Research Full Time office Job in Valencia - Indeed position. I am a business and computer-focused professional with a B.Com background and experience in sales coordination, production planning, reporting, records management and digital marketing support. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
+      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Data Entry and Web Research Full Time office Job in Valencia - Indeed opportunity. I am a business and computer-focused professional with a B.Com background and experience in sales coordination, production planning, reporting, records management and digital marketing support. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
       "portfolio_url": "https://www.behance.net/zubairkhan1",
-      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
+      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/business_computer_cv.pdf",
       "whatsapp_template_variables": [
-        "We’re hiring a Graphic Designer at Waaw. Fully remote, work from anywhere. Someone who notices the space between two letters, and fixes it before anyone asks. DM us your CV and portfolio. Show us how you think. #graphicdesign #designjobs #remotejob - Instagram",
+        "Data Entry and Web Research Full Time office Job in Valencia - Indeed",
         "https://www.behance.net/zubairkhan1",
-        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
+        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/business_computer_cv.pdf"
       ],
-      "whatsapp_links": []
+      "whatsapp_links": [],
+      "web_apply_status": "login_required"
     },
     {
       "title": "Graphic Designer",
@@ -958,9 +1040,7 @@
         "https://www.behance.net/zubairkhan1",
         "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
       ],
-      "whatsapp_links": [],
-      "web_apply_status": "inspection_error:Error",
-      "application_url": "https://www.mustakbil.com/jobs/job/1437812"
+      "whatsapp_links": []
     },
     {
       "title": "Graphic Designer",
@@ -989,8 +1069,7 @@
         "https://www.behance.net/zubairkhan1",
         "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
       ],
-      "whatsapp_links": [],
-      "web_apply_status": "inspection_error:TargetClosedError"
+      "whatsapp_links": []
     },
     {
       "title": "Graphic Designer",
@@ -1019,8 +1098,7 @@
         "https://www.behance.net/zubairkhan1",
         "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
       ],
-      "whatsapp_links": [],
-      "web_apply_status": "inspection_error:TargetClosedError"
+      "whatsapp_links": []
     },
     {
       "title": "Graphic Designer",
@@ -1104,6 +1182,35 @@
       "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
       "whatsapp_template_variables": [
         "Graphic Designer & Video Editor job (remote) - LAKS Partners - Mustakbil",
+        "https://www.behance.net/zubairkhan1",
+        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
+      ],
+      "whatsapp_links": []
+    },
+    {
+      "title": "Graphic Designer",
+      "source_title": "Sarah Ali is Hiring Graphic Designer (Print & Signage Production), FASTSIGNS, Remote, Pakistan Do your designs stop traffic? We're looking for a print production graphic designer with real signage experience to help FASTSIGNS franchise clients get noticed - LinkedIn",
+      "region": "pakistan",
+      "source": "LinkedIn",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOYzhIaDJOMklzUHdpazg1LUNzUzYzV2haNmxlTVpZNFc1TkpJT0FUbVhDSnhXeHVnbmNBbVRPX2wzUTRldmRjN2dNQlZ6ZHNfWkY2TGgyLTdueUFlMlRLcnBCbmxIc3ZfT2ROeVNyM0hvbWhrbGNfQjBFX3VDZU14bGNLNWx3NmhzLXdmRTA2bURYWUVyZXR5UjJtaVM4R2V2aXlUakxGVEZPenZTYXVMZ1QxT05FU3VvV21ZeQ?oc=5",
+      "score": 65,
+      "cv": "graphic_designer_cv",
+      "mode": "WEB_APPLICATION",
+      "whatsapp_ready": false,
+      "whatsapp_opt_in": false,
+      "social_dm_invited": false,
+      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
+      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
+      "emails": [],
+      "phones": [],
+      "email_application_invited": false,
+      "email_subject": "Application – Graphic Designer – Fahad Asif",
+      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Graphic Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
+      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Graphic Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
+      "portfolio_url": "https://www.behance.net/zubairkhan1",
+      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
+      "whatsapp_template_variables": [
+        "Sarah Ali is Hiring Graphic Designer (Print & Signage Production), FASTSIGNS, Remote, Pakistan Do your designs stop traffic? We're looking for a print production graphic designer with real signage experience to help FASTSIGNS franchise clients get noticed - LinkedIn",
         "https://www.behance.net/zubairkhan1",
         "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
       ],
@@ -1430,35 +1537,6 @@
     },
     {
       "title": "Graphic Designer",
-      "source_title": "📢 HIRING | SENIOR GRAPHIC DESIGNER International Advertising (Pvt.) Limited – Saatchi & Saatchi is looking for a talented, creative, and experienced Senior Graphic Designer to join its team in Karachi. Are you passionate about visual storytelling, creative - LinkedIn",
-      "region": "pakistan",
-      "source": "LinkedIn",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNc0FaemJ6X0JCdnctaXBZSXp1d08xLUdfRXZCeGhmenBsdEZPWE44aGIzS003T1BOVEs0QjRKa2xyNjJTd2hMMTNYRkprTXNnTW9YY1hNSTh4WTBwUHRTdkx3TDhiS1cwS2xkcmZDTG9WN2FTaFNzV3dwemhFZHAzcU5wQXFSTzdnYkszRUpIb0V0cmI0ZE4wNWwwVFRST2h1Y01oOEtYS0JqNU5BbDB3RVNGRWtTQ1cwcUtWQQ?oc=5",
-      "score": 65,
-      "cv": "graphic_designer_cv",
-      "mode": "WEB_APPLICATION",
-      "whatsapp_ready": false,
-      "whatsapp_opt_in": false,
-      "social_dm_invited": false,
-      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
-      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
-      "emails": [],
-      "phones": [],
-      "email_application_invited": false,
-      "email_subject": "Application – Graphic Designer – Fahad Asif",
-      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Graphic Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
-      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Graphic Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
-      "portfolio_url": "https://www.behance.net/zubairkhan1",
-      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
-      "whatsapp_template_variables": [
-        "📢 HIRING | SENIOR GRAPHIC DESIGNER International Advertising (Pvt.) Limited – Saatchi & Saatchi is looking for a talented, creative, and experienced Senior Graphic Designer to join its team in Karachi. Are you passionate about visual storytelling, creative - LinkedIn",
-        "https://www.behance.net/zubairkhan1",
-        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
-      ],
-      "whatsapp_links": []
-    },
-    {
-      "title": "Graphic Designer",
       "source_title": "Junior Graphic Designer & Video Editor Job, Lahore, YESHINE Global - Rozee.pk",
       "region": "pakistan",
       "source": "Rozee.pk",
@@ -1510,6 +1588,35 @@
       "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
       "whatsapp_template_variables": [
         "💙 **WE'RE HIRING | GRAPHIC DESIGNER** Are you creative, passionate about design, and looking for an opportunity to showcase your talent? Blue Family is welcoming creative minds to join our team as **Volunteer Graphic Designers!** 📌 **Please Note: T - Instagram",
+        "https://www.behance.net/zubairkhan1",
+        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
+      ],
+      "whatsapp_links": []
+    },
+    {
+      "title": "Graphic Designer",
+      "source_title": "I'm hiring a Creative Strategist / Graphic Designer for our e-comm clients. One person who can find the angle and design the ad. US OR LATIN AMERICA BASED. IDEALLY WORKING EST HOURS. If you love DTC, love Meta static ads, and want real upside as - LinkedIn",
+      "region": "pakistan",
+      "source": "LinkedIn",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNamR3YnY0NVZoVEMwQ2FOaGlEZG1zd3N3Q2hnemZUdkpQRFYzdTRmNWtrUzZVVDk2RHNsZFNDTlAzSzgyVXNkTGNYNGFfQ2wtWXBLbTJDUFp0b0ZKMFFiTWZ4clZwdFN2U3l6SURkT2YyVkE0blBkYmJ5bzZqR3ZBMXhtZjRhcUdNclR3QTY3TnVKckl4ZXIzdDhyd2l5bU9PR3NKUTk2LXh6NFlx?oc=5",
+      "score": 65,
+      "cv": "graphic_designer_cv",
+      "mode": "WEB_APPLICATION",
+      "whatsapp_ready": false,
+      "whatsapp_opt_in": false,
+      "social_dm_invited": false,
+      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
+      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
+      "emails": [],
+      "phones": [],
+      "email_application_invited": false,
+      "email_subject": "Application – Graphic Designer – Fahad Asif",
+      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Graphic Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
+      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Graphic Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
+      "portfolio_url": "https://www.behance.net/zubairkhan1",
+      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
+      "whatsapp_template_variables": [
+        "I'm hiring a Creative Strategist / Graphic Designer for our e-comm clients. One person who can find the angle and design the ad. US OR LATIN AMERICA BASED. IDEALLY WORKING EST HOURS. If you love DTC, love Meta static ads, and want real upside as - LinkedIn",
         "https://www.behance.net/zubairkhan1",
         "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
       ],
@@ -1662,6 +1769,35 @@
     },
     {
       "title": "Graphic Designer",
+      "source_title": "WE ARE HIRING The International Commission on Human Rights is expanding its team! Open Positions: Content Writer / Research Writer | Graphic Designer | Website Developer | International Relations Manager For: Interns & Permanent Staff Location: Karac - Instagram",
+      "region": "pakistan",
+      "source": "Instagram",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1sN002YWNIdWNYQW5DM3M1am95Q2RIQjF2NWdXdDd2WkdXcTRRdklpRjQ4NnRGSFBFS3c4SXNsM1J3dmtMTldBQjlUdEM2a3hXanc?oc=5",
+      "score": 65,
+      "cv": "graphic_designer_cv",
+      "mode": "WEB_APPLICATION",
+      "whatsapp_ready": false,
+      "whatsapp_opt_in": false,
+      "social_dm_invited": false,
+      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
+      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
+      "emails": [],
+      "phones": [],
+      "email_application_invited": false,
+      "email_subject": "Application – Graphic Designer – Fahad Asif",
+      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Graphic Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
+      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Graphic Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
+      "portfolio_url": "https://www.behance.net/zubairkhan1",
+      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
+      "whatsapp_template_variables": [
+        "WE ARE HIRING The International Commission on Human Rights is expanding its team! Open Positions: Content Writer / Research Writer | Graphic Designer | Website Developer | International Relations Manager For: Interns & Permanent Staff Location: Karac - Instagram",
+        "https://www.behance.net/zubairkhan1",
+        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
+      ],
+      "whatsapp_links": []
+    },
+    {
+      "title": "Graphic Designer",
       "source_title": "We’re Hiring – Graphic Designer! FIO Hospital Karachi is looking for a creative Graphic Designer to join our Media & Marketing Team. If you have a strong eye for design, a passion for creativity, and the ability to develop impactful visual content, we encourage - Facebook",
       "region": "pakistan",
       "source": "Facebook",
@@ -1684,35 +1820,6 @@
       "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
       "whatsapp_template_variables": [
         "We’re Hiring – Graphic Designer! FIO Hospital Karachi is looking for a creative Graphic Designer to join our Media & Marketing Team. If you have a strong eye for design, a passion for creativity, and the ability to develop impactful visual content, we encourage - Facebook",
-        "https://www.behance.net/zubairkhan1",
-        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
-      ],
-      "whatsapp_links": []
-    },
-    {
-      "title": "Graphic Designer",
-      "source_title": "AI Prompt Engineer And Graphic Designer Job - Indeed",
-      "region": "international",
-      "source": "Indeed",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5uYnZoMkt2YVJoUTRZWnBDUUFIU1EwQ3RyU05tWDk5T2RZVWtrck5BZnR2b1gtZEJ2Wjd1R2xtSFpHMzBFZy10TGFDUk5VSmhHbFltWUFjUWRRaU9ZSkE?oc=5",
-      "score": 65,
-      "cv": "graphic_designer_cv",
-      "mode": "WEB_APPLICATION",
-      "whatsapp_ready": false,
-      "whatsapp_opt_in": false,
-      "social_dm_invited": false,
-      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
-      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
-      "emails": [],
-      "phones": [],
-      "email_application_invited": false,
-      "email_subject": "Application – Graphic Designer – Fahad Asif",
-      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Graphic Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
-      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Graphic Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
-      "portfolio_url": "https://www.behance.net/zubairkhan1",
-      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
-      "whatsapp_template_variables": [
-        "AI Prompt Engineer And Graphic Designer Job - Indeed",
         "https://www.behance.net/zubairkhan1",
         "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
       ],
@@ -2102,7 +2209,7 @@
       "source_title": "Business Executive Officer Job, Karachi, Business Links International - Rozee.pk",
       "region": "pakistan",
       "source": "Rozee.pk",
-      "url": "https://news.google.com/rss/articles/CBMinAJBVV95cUxNNVp2d3BDejIwU2dyN0tzZ2JNeWdnQWR6cGdZQjZQUnR3NUJaM18wU2I2cVZwcEwyV0otTFJHd2ViQUJwWS1lekFJbEpNenRyeHc4NG1XLVI1aTR2MnkybVdIblBiMDgwWm53MWN1VHJkTmRtdWNMRjdfbkNaQk80X3JoU3VkSWxYRkVsVkxDR3BWeVRETUNxU3VQQlQ3ZDZYc3R3WFFtSFIteEZhZGgxN01QNHZfZkhpZWVvOTgyVmVLNVpEN1pmMWNjNU1STjFIODhaWkJ0UnZxRHhiTTI0NEF0cERNOWJ0d0RYSWFpb0ZZQVpuZjFMSjRlVmdMVHpFLW5yLUxoaWRUbTdaeGhkZ0RPekhndUMyZ3U1Qw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxON3hhRU9ucTlEYnhDUy1LWTZ3bDZVdXFTUUlfdi0yQ29kZjRXX3llRmYyMDhDZ2hLbzVfWW5NQ0hBTWt1d0pMY1FkNXRRWFZyNEM0TUNDZXlnVUJySThERU5CSjRjcnNLSUVIU0wyNV9OZDRreTRsd2szOXQwdEFUN0RmVWdEdFVXbEpmZVNyQW9lZVk?oc=5",
       "score": 55,
       "cv": "business_computer_cv",
       "mode": "WEB_APPLICATION",
@@ -2152,6 +2259,35 @@
         "Apply Now – International Sales & Customer Support Executive - Indeed",
         "https://www.behance.net/zubairkhan1",
         "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/business_computer_cv.pdf"
+      ],
+      "whatsapp_links": []
+    },
+    {
+      "title": "Marketing Designer",
+      "source_title": "Assistant Marketing Designer Job, Karachi, SZABIST - Rozee.pk",
+      "region": "pakistan",
+      "source": "Rozee.pk",
+      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOdTNxMWhQYnlYbUdyUUZaOEFqSGx0SHk0eTh2ZjIxUTFXSDN2UnV6OEJ0RjM5MFRtSFpWMHRobUVaOURtYWc3RTI4TXNVcElqZ2g2OEVHWm9jNE5JN0dpaXVMLURQWHBCUWNmc3ZpX2dZMzNhUndDYWlnNFVLWlJqWkZrWF90VFpqYktqdjAzcTR4clRiMzVmNUpjSHJVZTc0bnZWZ25GbGx4WUdRLTlWMTVVQ3BBb0VIS2Y1bklJWXp1by1zM3VoSVFsZVVpcVI5YUp0YjFnV2tkdjM1YnZiUG1PSFhkTzBzOENiUGlPMnFRRmtUcDZKZGlCVVZtcGEtdzd3?oc=5",
+      "score": 55,
+      "cv": "graphic_designer_cv",
+      "mode": "WEB_APPLICATION",
+      "whatsapp_ready": false,
+      "whatsapp_opt_in": false,
+      "social_dm_invited": false,
+      "priority": "automatic where the public form is supported; manual for protected or unknown steps",
+      "action": "The agent opens the public application page, fills known fields and uploads the selected CV; it stops for CAPTCHA, login, 2FA or unknown required answers.",
+      "emails": [],
+      "phones": [],
+      "email_application_invited": false,
+      "email_subject": "Application – Marketing Designer – Fahad Asif",
+      "email_body": "Dear Hiring Team,\n\nI am pleased to apply for the Marketing Designer position. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. In my recent roles, I have worked with teams, handled day-to-day deadlines, and delivered practical work aligned with business and brand requirements. I am dependable, quick to learn, and comfortable adapting to new tools and workflows. I would value the opportunity to bring my experience to your organisation.\n\nMy CV is attached for your review. I would be glad to discuss the role and how my background could support your team.\n\nPortfolio: https://www.behance.net/zubairkhan1\n\nThank you for your time and consideration.\n\nKind regards,\nFahad Asif\n+92 340 7301498\nFahadasif77@yahoo.com",
+      "whatsapp_message": "Hello! My name is Fahad Asif, and I’m contacting you regarding the Marketing Designer opportunity. I am a Graphic Designer with 4+ years of experience in branding, social media, packaging, print, marketing collateral and AI-assisted design. I’m keen to contribute, learn your team’s requirements and discuss how my experience matches this role. I’ve attached my CV for your review. Thank you for considering my application.",
+      "portfolio_url": "https://www.behance.net/zubairkhan1",
+      "cv_url": "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf",
+      "whatsapp_template_variables": [
+        "Assistant Marketing Designer Job, Karachi, SZABIST - Rozee.pk",
+        "https://www.behance.net/zubairkhan1",
+        "https://github.com/DesignerWorld1702/fahad-job-agent/raw/refs/heads/main/cvs/graphic_designer_cv.pdf"
       ],
       "whatsapp_links": []
     },
