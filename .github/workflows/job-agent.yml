@@ -105,11 +105,19 @@ jobs:
           jobs_data = json.loads(Path("data/jobs.json").read_text())
           jobs = jobs_data["jobs"]
           queue = json.loads(Path("data/application_queue.json").read_text())["queue"]
+          sent_data = json.loads(Path("data/sent_applications.json").read_text()) if Path("data/sent_applications.json").exists() else {"sent": []}
+          sent_rows = sent_data.get("sent", [])
+          whatsapp_sent = [x for x in sent_rows if x.get("channel") == "whatsapp"]
+          whatsapp_ready = [x for x in queue if x.get("whatsapp_ready") and x.get("whatsapp_opt_in")]
 
           lines = [
               "# Fahad Job Agent Report",
               "",
               "Generated matches: **%d**" % len(jobs),
+              "",
+              "WhatsApp delivery: **%d confirmed sends recorded**; **%d queue entries** currently have an explicit WhatsApp application invitation." % (len(whatsapp_sent), len(whatsapp_ready)),
+              "",
+              "WhatsApp sending requires the WhatsApp Cloud API secrets and an approved `job_application_cv` template. A public phone number alone is not sufficient.",
               "",
               "Signed-in social search: **%s**" % (
                   "TinyFish Facebook + Instagram enabled; %d posts added this run" %
