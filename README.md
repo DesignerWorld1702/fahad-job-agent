@@ -63,18 +63,11 @@ The script only reads hiring posts visible to the signed-in account. It does not
 
 The agent does not bypass CAPTCHA, 2FA, anti-bot systems, login walls, paid memberships, rate limits, or platform restrictions. It will not invent answers about work authorization, salary expectations, sponsorship eligibility, or other unknown personal facts. If a form requires information not present in the verified profile, it stops before submission and records the missing fields for review. After a submit click, it records a submission only when the page shows a confirmation; ambiguous outcomes are flagged so it does not blindly submit again. Remote roles are checked for location eligibility; 'remote' does not necessarily mean worldwide.
 
-## WhatsApp applications
+## WhatsApp applications (free click-to-send mode)
 
-WhatsApp sending is a separate, optional Cloud API channel. A vacancy is eligible only when the employer's post/page explicitly invites applications through WhatsApp, the contact number is published, the selected CV is available, and the score meets the threshold. A phone number by itself is never treated as permission.
+The free workflow does not send WhatsApp Cloud API messages and does not require Meta API credentials or approved templates. Instead, `JOB_REPORT.md` includes an **Open WhatsApp** link only when the employer's published post/page explicitly invites applications through WhatsApp and a phone number is available. A public phone number by itself is never treated as permission.
 
-The workflow expects these GitHub Actions secrets:
-- `WHATSAPP_TOKEN` — Meta WhatsApp Cloud API access token.
-- `WHATSAPP_PHONE_NUMBER_ID` — the sending WhatsApp Business phone-number ID.
-- `WHATSAPP_WABA_ID` — WhatsApp Business Account ID (used for reporting/configuration).
-
-It also expects an approved Meta message template named `job_application_cv`, in language `en`, with a document header and three body variables matching the sender's payload: role title, portfolio URL, and a short application message. If the template name, language, header type, or variable count differs from the approved template in Meta, Meta will reject the message. The sender logs configuration presence and queue eligibility without exposing secret values. Check the GitHub Actions log for the WhatsApp preflight and the final sent/skipped/failed counts.
-
-A successful API response is recorded with its WhatsApp message ID; it is not proof that the employer read or replied to the message. Do not enable bulk or unsolicited outreach. The agent only targets explicitly invited WhatsApp applications and deduplicates sent messages.
+Open the link, review the prefilled message, and press Send yourself. Attach the selected CV manually if the employer requests it. GitHub Actions cannot press Send inside your WhatsApp account. The Cloud API sender remains in the repository for possible future use, but the scheduled workflow explicitly disables it to avoid paid messaging and test-recipient restrictions.
 
 ## Yahoo email
 
@@ -107,6 +100,7 @@ The workflow runs automatically twice daily (10:00 AM and 6:00 PM Pakistan time)
 - `src/application_queue.py` — compliant action routing
 - `src/email_sender.py` — optional Yahoo SMTP delivery
 - `src/web_apply.py` — public application-page inspection, form filling and permitted submission
+- `src/report_generator.py` — report with employer-invited WhatsApp click-to-send links
 - `.github/workflows/job-agent.yml` — scheduled execution
 - `data/application_queue.json` — current application action queue
 - `JOB_REPORT.md` — latest human-readable report
