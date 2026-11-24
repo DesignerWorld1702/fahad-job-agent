@@ -21,11 +21,13 @@ def parse(html):
     for m in re.finditer(r'https?://(?:www\.)?forbes\.com/companies/([a-z0-9-]+)[^"<> ]*', html, re.I):
         slug = m.group(1).lower()
         found.setdefault(slug.replace("-", " ").title(), f"https://www.forbes.com/companies/{slug}/")
-    # Also collect common JSON company-name fields when present.
-    for m in re.finditer(r'"(?:organizationName|companyName|company_name|name)"\s*:\s*"([^"]{2,120})"', html):
-        name = re.sub(r'\\u[0-9a-fA-F]{4}', ' ', m.group(1)).strip()
-        if 2 <= len(name) <= 120 and not any(x in name.lower() for x in ("global 2000","forbes")):
-            found.setdefault(name, "")
+    # Do not scrape generic JSON "name" fields: they include people,
+    # page labels and placeholders (e.g. "Andrea Murphy", "city", "country").
+    # Only actual Forbes company-profile URLs are accepted as targets.
+    invalid_slugs = {"city", "country", "global-2000", "global2000", "forbes"}
+    found = {name: url for name, url in found.items()
+             if name.lower().replace(" ", "-") not in invalid_slugs
+             and url.startswith("https://www.forbes.com/companies/")}
     rows = [{"rank": i+1, "company": n, "forbes_url": u} for i,(n,u) in enumerate(found.items())]
     return rows
 
