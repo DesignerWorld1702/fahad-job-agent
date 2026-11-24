@@ -87,7 +87,10 @@ for job in jobs:
         action = "Review listing and decide whether to pursue it."
 
     queue.append({
-        "title": job.get("title"),
+        # Keep the raw source headline for traceability, but use the cleaned role
+        # title in outbound messages and the user-facing application queue.
+        "title": app.get("title") or job.get("title"),
+        "source_title": job.get("title"),
         "region": region,
         "source": source,
         "url": url,
