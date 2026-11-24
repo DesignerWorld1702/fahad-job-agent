@@ -74,6 +74,25 @@ def build_queries():
         qs.append(f'site:pk.indeed.com "{role}" Pakistan')
         qs.append(f'site:rozee.pk "{role}" Pakistan')
         qs.append(f'site:glassdoor.com/Job "{role}" Pakistan')
+    # Dedicated Rozee + Indeed discovery across BOTH design and business role families.
+    # Keep these as discovery searches: authenticated platform-only application steps remain manual.
+    board_roles = list(dict.fromkeys(PREF["graphic_roles"] + PREF["business_roles"]))
+    pakistan_cities = ["Lahore", "Karachi", "Islamabad", "Rawalpindi", "Faisalabad", "Multan", "Gujranwala", "Sialkot"]
+    for role in board_roles:
+        qs.extend([
+            f'site:pk.indeed.com/viewjob "{role}" Pakistan',
+            f'site:pk.indeed.com "{role}" Pakistan hiring',
+            f'site:rozee.pk/job "{role}"',
+            f'site:rozee.pk "{role}" Pakistan jobs'
+        ])
+    # City-level searches help surface smaller/local employers and regional vacancies.
+    for city in pakistan_cities:
+        for role in (PREF["graphic_roles"][:5] + PREF["business_roles"][:8]):
+            qs.extend([
+                f'site:pk.indeed.com "{role}" "{city}"',
+                f'site:rozee.pk "{role}" "{city}"'
+            ])
+
     # International search across the configured target countries.
     for country in PREF.get("countries", []):
         if country == "Pakistan":
