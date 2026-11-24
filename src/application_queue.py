@@ -115,10 +115,14 @@ for job in jobs:
             app.get("portfolio_url") or "",
             app.get("cv_url") or ""
         ],
-        "whatsapp_links": [
-            "https://wa.me/" + "".join(ch for ch in p if ch.isdigit()) + "?text=" + quote(app.get("whatsapp_message", ""))
-            for p in phones
-        ]
+        # Never expose a WhatsApp contact link unless the employer explicitly
+        # invited applications through WhatsApp in the published post.
+        "whatsapp_links": (
+            [
+                "https://wa.me/" + "".join(ch for ch in p if ch.isdigit()) + "?text=" + quote(app.get("whatsapp_message", ""))
+                for p in phones
+            ] if whatsapp_opt_in else []
+        )
     })
 
 queue.sort(key=lambda x: (x["score"] or 0), reverse=True)
