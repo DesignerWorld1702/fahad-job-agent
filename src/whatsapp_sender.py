@@ -54,6 +54,25 @@ if not template_name:
     )
     raise SystemExit(0)
 
+# Safe preflight diagnostics: report configuration presence and queue eligibility,
+# never secret values. This makes a zero-send run explainable in Actions logs.
+queue_total = len(QUEUE)
+ready_total = sum(1 for item in QUEUE if item.get("whatsapp_ready"))
+opted_in_total = sum(1 for item in QUEUE if item.get("whatsapp_opt_in"))
+score_total = sum(
+    1 for item in QUEUE
+    if item.get("whatsapp_ready")
+    and item.get("whatsapp_opt_in")
+    and (item.get("score") or 0) >= max_score
+)
+print(
+    "WhatsApp preflight: "
+    f"queue={queue_total}, whatsapp_ready={ready_total}, "
+    f"explicit_invitation={opted_in_total}, score_eligible={score_total}, "
+    f"token_configured={bool(token)}, phone_number_id_configured={bool(phone_number_id)}, "
+    f"template_configured={bool(template_name)}, test_mode={test_mode}."
+)
+
 endpoint = f"https://graph.facebook.com/{api_version}/{phone_number_id}/messages"
 
 sent = 0
