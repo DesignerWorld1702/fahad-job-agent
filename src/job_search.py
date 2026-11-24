@@ -15,20 +15,21 @@ def google_news_rss(query):
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126.0 Safari/537.36",
         "Accept": "application/rss+xml, application/xml, text/xml, */*"
     }
-    for attempt in range(4):
+    for attempt in range(3):
         url = "https://news.google.com/rss/search?" + urllib.parse.urlencode(params)
         req = urllib.request.Request(url, headers=headers)
         try:
-            with urllib.request.urlopen(req, timeout=20) as response:
+            with urllib.request.urlopen(req, timeout=15) as response:
                 return response.read()
         except urllib.error.HTTPError as exc:
-            if exc.code == 429:
-                time.sleep(5 * (attempt + 1))
-                if attempt == 1:
+            if exc.code in (429, 500, 502, 503, 504) and attempt < 2:
+                # Brief bounded retry; do not spend minutes retrying an unavailable provider.
+                time.sleep(2 + attempt * 3)
+                if exc.code == 429 and attempt == 0:
                     params = {"q": query, "hl": "en-US", "gl": "US", "ceid": "US:en"}
                 continue
             raise
-    raise RuntimeError("Google News RSS request failed after retries")
+    raise RuntimeError("Google News RSS request failed after bounded retries")
 
 def parse_rss(data):
     root=ET.fromstring(data)
@@ -54,7 +55,9 @@ def build_queries():
             state = json.loads(state_path.read_text()) if state_path.exists() else {}
             active = state.get("active_company")
             ordered = [x for x in targets if x.get("company") == active] + [x for x in targets if x.get("company") != active]
-            for company in ordered[:20]:
+            # The 10-day rotation means search only the active company, not
+            # twenty companies on every run.
+            for company in ordered[:1]:
                 name = company.get("company", "").strip()
                 if not name: continue
                 qs.extend([
@@ -97,12 +100,13 @@ def build_queries():
     for country in PREF.get("countries", []):
         if country == "Pakistan":
             continue
-        for role in roles[:12]:
-            qs.append(f'"{role}" "{country}"')
+        # Keep international coverage across every configured country while
+        # concentrating on the strongest transferable role families.
+        for role in ["Graphic Designer", "Business Coordinator"]:
             qs.append(f'"{role}" "{country}" ("visa sponsorship" OR relocation OR "overseas applicants")')
     # Publicly indexed social-media hiring posts. These searches target posts/pages
     # where small employers often publish direct CV email, phone or WhatsApp details.
-    social_roles = roles[:16]
+    social_roles = roles[:8]
     for role in social_roles:
         qs.extend([
             f'site:facebook.com "{role}" Pakistan (hiring OR vacancy OR "send CV" OR WhatsApp)',
@@ -236,7 +240,9 @@ def build_queries():
         '"graphic designer" Australia "relocation" "apply"',
         '"graphic designer" Canada "relocation" "apply"'
     ]
-    return qs
+    # Deduplicate and cap the RSS workload so a single run stays practical.
+    # All countries remain represented; broad role variants are prioritized first.
+    return list(dict.fromkeys(qs))[:250]
 
 def recent_enough(published):
     if not published:
@@ -335,9 +341,16 @@ def dedupe_key(row):
 def main():
     seen=set()
     jobs=[]
-    for q in build_queries():
+    successful_queries=0
+    consecutive_service_errors=0
+    queries=build_queries()
+    print(f"Starting {len(queries)} prioritized search queries.")
+    for q in queries:
         try:
-            for row in parse_rss(google_news_rss(q)):
+            rss_data=google_news_rss(q)
+            successful_queries += 1
+            consecutive_service_errors = 0
+            for row in parse_rss(rss_data):
                 key=dedupe_key(row)
                 if key in seen or not recent_enough(row["published"]) or not looks_like_job(row):
                     continue
@@ -347,9 +360,20 @@ def main():
                 if score >= PREF["min_match_score"]:
                     row.update({"match_score":score,"cv":cv,"query":q})
                     jobs.append(row)
-            time.sleep(0.2)
+            time.sleep(0.15)
+        except urllib.error.HTTPError as e:
+            print("Search failed:",q,e)
+            if e.code in (429, 500, 502, 503, 504):
+                consecutive_service_errors += 1
+                if consecutive_service_errors >= 4:
+                    print("Search provider circuit breaker opened after four consecutive service/rate-limit failures; stopping RSS queries to avoid wasting the workflow runtime.")
+                    break
         except Exception as e:
             print("Search failed:",q,e)
+    if successful_queries == 0 and (ROOT/"data"/"jobs.json").exists():
+        print("No search query succeeded; preserving the previous job dataset instead of overwriting it with an empty result.")
+        return
+    print(f"Search queries completed successfully: {successful_queries}/{len(queries)}")
     jobs.sort(key=lambda x:(x["match_score"],x["published"]),reverse=True)
     out=ROOT/"data"
     out.mkdir(exist_ok=True)
