@@ -109,5 +109,9 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data/jobs.json data/applications.json data/application_queue.json data/sent_applications.json JOB_REPORT.md
           git diff --cached --quiet || git commit -m "Update job matches and application queue"
-          git pull --rebase origin main
+          git fetch origin main
+          # The workflow's generated job data/report are the outputs of this run.
+          # If another commit updated those same generated files during the run,
+          # prefer this run's generated versions while replaying onto the latest main.
+          git rebase -X theirs origin/main
           git push
