@@ -82,84 +82,13 @@ jobs:
           AUTO_EMAIL_MIN_SCORE: "65"
         run: python src/email_sender.py
 
-      - name: WhatsApp Cloud API delivery
+      - name: WhatsApp Cloud API delivery (disabled in free mode)
         env:
-          WHATSAPP_ENABLED: "true"
-          WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
-          WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
-          WHATSAPP_WABA_ID: ${{ secrets.WHATSAPP_WABA_ID }}
-          WHATSAPP_API_VERSION: "v24.0"
-          WHATSAPP_APPLICATION_TEMPLATE_NAME: "job_application_cv"
-          WHATSAPP_TEMPLATE_LANGUAGE: "en"
-          WHATSAPP_TEMPLATE_DOCUMENT_HEADER: "true"
-          WHATSAPP_MIN_SCORE: "65"
-          WHATSAPP_REQUIRE_OPT_IN: "true"
+          WHATSAPP_ENABLED: "false"
         run: python src/whatsapp_sender.py
 
       - name: Build report
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          jobs_data = json.loads(Path("data/jobs.json").read_text())
-          jobs = jobs_data["jobs"]
-          queue = json.loads(Path("data/application_queue.json").read_text())["queue"]
-          sent_data = json.loads(Path("data/sent_applications.json").read_text()) if Path("data/sent_applications.json").exists() else {"sent": []}
-          sent_rows = sent_data.get("sent", [])
-          whatsapp_sent = [x for x in sent_rows if x.get("channel") == "whatsapp"]
-          whatsapp_ready = [x for x in queue if x.get("whatsapp_ready") and x.get("whatsapp_opt_in")]
-
-          lines = [
-              "# Fahad Job Agent Report",
-              "",
-              "Generated matches: **%d**" % len(jobs),
-              "",
-              "WhatsApp delivery: **%d confirmed sends recorded**; **%d queue entries** currently have an explicit WhatsApp application invitation." % (len(whatsapp_sent), len(whatsapp_ready)),
-              "",
-              "WhatsApp sending requires the WhatsApp Cloud API secrets and an approved `job_application_cv` template. A public phone number alone is not sufficient.",
-              "",
-              "Signed-in social search: **%s**" % (
-                  "TinyFish Facebook + Instagram enabled; %d posts added this run" %
-                  jobs_data.get("signed_in_social_search", {}).get("added_this_run", 0)
-                  if jobs_data.get("signed_in_social_search", {}).get("enabled")
-                  else "not enabled (publicly indexed social searches still run)"
-              ),
-              "",
-              "## CVs in use",
-              "",
-              "- Graphic Designer: `cvs/graphic_designer_cv.pdf`",
-              "- Business Support: `cvs/business_computer_cv.pdf`",
-              "",
-              "## Application modes",
-              "",
-              "| Mode | Meaning |",
-              "|---|---|",
-              "| EMAIL_READY | Employer email found; email automation still requires an explicit invitation |",
-              "| WHATSAPP_READY | WhatsApp contact and explicit application invitation found |",
-              "| PHONE_ACTION | Phone number found; call details prepared |",
-              "| WEB_APPLICATION | Public forms are inspected; protected steps remain manual |\n              | SOCIAL_DM_REVIEW | Social-media DM invitation; manual review and sending only |",
-              "| REVIEW | Needs review |",
-              "",
-              "## Top matches",
-              "",
-              "| Score | CV | Mode | Web status | Job | Source | Contacts | Link |",
-              "|---:|---|---|---|---|---|---|---|"
-          ]
-
-          for j in queue[:100]:
-              title = (j.get("title") or "").replace("|", "/")
-              src = (j.get("source") or "").replace("|", "/")
-              contacts = ", ".join(dict.fromkeys(
-                  (j.get("emails") or []) + (j.get("page_emails") or []) + (j.get("phones") or [])
-              )).replace("|", "/")
-              lines.append(
-                  f'| {j.get("score","")} | {j.get("cv","")} | {j.get("mode","")} | {j.get("web_apply_status","not_checked")} | '
-                  f'{title} | {src} | {contacts} | [Open]({j.get("application_url") or j.get("url","")}) |'
-              )
-
-          Path("JOB_REPORT.md").write_text("\n".join(lines), encoding="utf-8")
-          PY
+        run: python src/report_generator.py
 
       - name: Upload job report and application data
         uses: actions/upload-artifact@v4
