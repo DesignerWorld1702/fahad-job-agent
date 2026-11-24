@@ -28,7 +28,7 @@ def contact_method(text):
 
 def clean_role_title(raw_title):
     """Extract a concise role name; never reuse a pasted hiring-ad headline."""
-    raw = re.sub(r"\\s+", " ", str(raw_title or "")).strip()
+    raw = re.sub(r"\s+", " ", str(raw_title or "")).strip()
     configured = []
     prefs_path = ROOT / "config" / "job_preferences.json"
     if prefs_path.exists():
@@ -41,8 +41,8 @@ def clean_role_title(raw_title):
     # Catch reasonable role titles not yet in the preference list, including
     # titles embedded after generic social-media announcement wording.
     patterns = [
-        r"([A-Z][A-Za-z/&(),'-]*(?:\\s+[A-Z][A-Za-z/&(),'-]*){0,5}\\s+(?:Coordinator|Designer|Assistant|Executive|Operator|Clerk|Controller|Specialist|Officer|Administrator|Analyst))",
-        r"([A-Z][A-Za-z/&(),'-]*(?:\\s+[A-Z][A-Za-z/&(),'-]*){0,5}\\s+Manager)"
+        r"([A-Z][A-Za-z/&(),'-]*(?:\s+[A-Z][A-Za-z/&(),'-]*){0,5}\s+(?:Coordinator|Designer|Assistant|Executive|Operator|Clerk|Controller|Specialist|Officer|Administrator|Analyst))",
+        r"([A-Z][A-Za-z/&(),'-]*(?:\s+[A-Z][A-Za-z/&(),'-]*){0,5}\s+Manager)"
     ]
     for pattern in patterns:
         match = re.search(pattern, raw)
@@ -50,10 +50,10 @@ def clean_role_title(raw_title):
             candidate = match.group(1).strip(" -–—:|")
             if 2 <= len(candidate.split()) <= 7:
                 return candidate
-    raw = re.sub(r"^(?:application\\s*[–-]\\s*)?", "", raw, flags=re.I)
+    raw = re.sub(r"^(?:application\s*[–-]\s*)?", "", raw, flags=re.I)
     raw = re.sub(r"[🚨🔶🔹📢📣✨⭐️]+", " ", raw)
-    raw = re.split(r"\\b(?:requirements|qualification|qualifications|responsibilities|we are pleased|we are hiring|send your cv)\\b", raw, maxsplit=1, flags=re.I)[0]
-    raw = re.sub(r"\\s+", " ", raw).strip(" -–—:|.")
+    raw = re.split(r"\b(?:requirements|qualification|qualifications|responsibilities|we are pleased|we are hiring|send your cv)\b", raw, maxsplit=1, flags=re.I)[0]
+    raw = re.sub(r"\s+", " ", raw).strip(" -–—:|.")
     return raw[:80] if raw else "the advertised position"
 
 def make_record(job):
