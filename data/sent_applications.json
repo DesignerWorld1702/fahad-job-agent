@@ -1,3 +1,24 @@
 {
-  "sent": []
+  "sent": [
+    {
+      "key": "email|https://news.google.com/rss/articles/CBMixAFBVV95cUxPbTJMeHBJYm9KWlo0OTVWRHFyejYyc0htVEJMV1JIN003VWhjcDRwNU9DRXppMzZ4S1ozMW5UTENJUGw5S2dRZjhnVlFfTDdxaG05S245WUtYYUZKQmhsa0thWkZkS2oyamRpdWNGck8xbnFzT2liUzFrZ2ZVazB4NU9kbThUeVBoaHkydHNITHJVTW1VT1c1M1U3TFVZb1pGdlhPTnNJX3FHRkRkOHVMTXJzTGFjMDhiMzdjU1FhWTZwUm90?oc=5|alex@creativesolutionss.com",
+      "channel": "email",
+      "recipient": "alex@creativesolutionss.com",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbTJMeHBJYm9KWlo0OTVWRHFyejYyc0htVEJMV1JIN003VWhjcDRwNU9DRXppMzZ4S1ozMW5UTENJUGw5S2dRZjhnVlFfTDdxaG05S245WUtYYUZKQmhsa0thWkZkS2oyamRpdWNGck8xbnFzT2liUzFrZ2ZVazB4NU9kbThUeVBoaHkydHNITHJVTW1VT1c1M1U3TFVZb1pGdlhPTnNJX3FHRkRkOHVMTXJzTGFjMDhiMzdjU1FhWTZwUm90?oc=5",
+      "title": "(Kindly repost this and help us find the right creative talent) HIRING ON BEHALF OF A FRIEND 𝗚𝗿𝗮𝗽𝗵𝗶𝗰 𝗗𝗲𝘀𝗶𝗴𝗻𝗲𝗿 (Night Shift) Creativity meets opportunity! We're looking for a talented and creative Graphic Designer with a strong design sense, attention - LinkedIn",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-24"
+    },
+    {
+      "key": "email|https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWmRodTJUZnJleUJYT2FlVEhsNWZVSXE2a09rWlNvTDVJc294NUViQmpONjA2Z2tPV0ExLTV6OTQ2MC1hdFZ6a3JFaDdHVnVUeHZsZ3RfRlJEeTZHQXkxOGloUjhHR0J4Q1BCNXlpejlSVlA2QnljSkNkakRCYzJWMndfbkpuWlBGWlh4VjJMMHltaXF5aXlqNnFPbE4wcUwtYThmV2lJODk?oc=5|bayaania@gmail.com",
+      "channel": "email",
+      "recipient": "bayaania@gmail.com",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWmRodTJUZnJleUJYT2FlVEhsNWZVSXE2a09rWlNvTDVJc294NUViQmpONjA2Z2tPV0ExLTV6OTQ2MC1hdFZ6a3JFaDdHVnVUeHZsZ3RfRlJEeTZHQXkxOGloUjhHR0J4Q1BCNXlpejlSVlA2QnljSkNkakRCYzJWMndfbkpuWlBGWlh4VjJMMHltaXF5aXlqNnFPbE4wcUwtYThmV2lJODk?oc=5",
+      "title": "🚨 Job & Internship Opportunity 🚨 We are pleased to share an exciting job and internship opportunity with The Daily CPEC under the umbrella of The Pakistan Observer. 1. Editorial & Operations Coordinator 🔶 Requirements: -Bachelor's degree in Mass Comm - LinkedIn",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-24"
+    }
+  ]
 }
