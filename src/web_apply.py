@@ -104,7 +104,7 @@ def answer_for_application_field(ctx, region, body_text):
     if any(x in ctx for x in ("visa sponsorship", "sponsorship", "work permit sponsorship", "require sponsorship")):
         return "Yes"
     if any(x in ctx for x in ("authorized to work", "legally eligible to work", "right to work", "work authorization")):
-        return "Yes" if region == "pakistan" else "No"
+        return None if region == "pakistan" else "No"
     if any(x in ctx for x in ("willing to relocate", "open to relocation", "relocation")):
         return "Yes"
     if any(x in ctx for x in ("notice period", "how much notice", "notice required")):
@@ -172,6 +172,10 @@ def fill_form(form, cv_path, cover_letter, region, body_text):
                 continue
 
             value = answer_for_application_field(ctx, region, body_text)
+            if value == "Negotiable" and typ in ("number", "range"):
+                if required:
+                    unknown_required.append("international_numeric_salary_needs_review")
+                continue
             if value is None and any(k in ctx for k in ("email", "e-mail")):
                 value = PROFILE.get("email")
             elif value is None and any(k in ctx for k in ("phone", "mobile", "telephone")):
