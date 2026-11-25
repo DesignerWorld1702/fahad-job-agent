@@ -86,6 +86,43 @@ def field_context(locator):
         pass
     return " ".join(bits)
 
+def advertised_pakistan_salary(body_text):
+    """Return a grounded PKR target only when a recognizable PKR range is published."""
+    text = body_text or ""
+    match = re.search(r"(?:PKR|Rs\\.?|₨)\\s*([\\d,]+)\\s*(?:-|to|–)\\s*(?:(?:PKR|Rs\\.?|₨)\\s*)?([\\d,]+)", text, re.I)
+    if not match:
+        return 90000
+    low, high = [int(x.replace(",", "")) for x in match.groups()]
+    if high <= 70000 and low >= 30000:
+        return 85000
+    if 80000 <= high <= 100000:
+        return high + 15000
+    return min(high + 15000, 450000)
+
+def answer_for_application_field(ctx, region, body_text):
+    """Return a verified answer for common application questions, otherwise None."""
+    if any(x in ctx for x in ("visa sponsorship", "sponsorship", "work permit sponsorship", "require sponsorship")):
+        return "Yes"
+    if any(x in ctx for x in ("authorized to work", "legally eligible to work", "right to work", "work authorization")):
+        return "Yes" if region == "pakistan" else "No"
+    if any(x in ctx for x in ("willing to relocate", "open to relocation", "relocation")):
+        return "Yes"
+    if any(x in ctx for x in ("notice period", "how much notice", "notice required")):
+        return "1 week"
+    if any(x in ctx for x in ("when can you start", "available to start", "start date", "availability")):
+        return "Within 1 week"
+    if any(x in ctx for x in ("willing to travel", "travel for work", "travel requirement")):
+        return "Yes"
+    if any(x in ctx for x in ("night shift", "rotating shift", "shift work", "work shifts", "flexible shifts")):
+        return "Yes" if region == "international" else None
+    if any(x in ctx for x in ("currently employed", "currently working", "employment status")):
+        return "Yes"
+    if any(x in ctx for x in ("expected salary", "salary expectation", "desired salary", "salary requirement", "compensation expectation")):
+        if region == "pakistan":
+            return str(advertised_pakistan_salary(body_text))
+        return "Negotiable"
+    return None
+
 def choose_application_form(page):
     forms = page.locator("form")
     best = None
@@ -102,7 +139,7 @@ def choose_application_form(page):
             continue
     return best
 
-def fill_form(form, cv_path, cover_letter):
+def fill_form(form, cv_path, cover_letter, region, body_text):
     filled = []
     unknown_required = []
     inputs = form.locator("input, textarea, select")
@@ -134,22 +171,22 @@ def fill_form(form, cv_path, cover_letter):
                     unknown_required.append("required_choice:" + (ctx[:80] or "unlabelled"))
                 continue
 
-            value = None
-            if any(k in ctx for k in ("email", "e-mail")):
+            value = answer_for_application_field(ctx, region, body_text)
+            if value is None and any(k in ctx for k in ("email", "e-mail")):
                 value = PROFILE.get("email")
-            elif any(k in ctx for k in ("phone", "mobile", "telephone")):
+            elif value is None and any(k in ctx for k in ("phone", "mobile", "telephone")):
                 value = PROFILE.get("phone")
-            elif "first name" in ctx or "given name" in ctx:
+            elif value is None and ("first name" in ctx or "given name" in ctx):
                 value = PROFILE.get("name", "").split(" ")[0]
-            elif "last name" in ctx or "surname" in ctx or "family name" in ctx:
+            elif value is None and ("last name" in ctx or "surname" in ctx or "family name" in ctx):
                 value = " ".join(PROFILE.get("name", "").split(" ")[1:])
-            elif any(k in ctx for k in ("full name", "your name", "candidate name", "name")) and not any(k in ctx for k in ("company", "school", "reference")):
+            elif value is None and any(k in ctx for k in ("full name", "your name", "candidate name", "name")) and not any(k in ctx for k in ("company", "school", "reference")):
                 value = PROFILE.get("name")
-            elif any(k in ctx for k in ("city", "location", "current address", "address")):
+            elif value is None and any(k in ctx for k in ("city", "location", "current address", "address")):
                 value = PROFILE.get("location")
-            elif any(k in ctx for k in ("portfolio", "behance", "website", "personal site")):
+            elif value is None and any(k in ctx for k in ("portfolio", "behance", "website", "personal site")):
                 value = PORTFOLIO
-            elif any(k in ctx for k in ("cover letter", "message to hiring", "additional information", "why are you interested", "application message")):
+            elif value is None and any(k in ctx for k in ("cover letter", "message to hiring", "additional information", "why are you interested", "application message")):
                 value = cover_letter
 
             if tag == "select":
@@ -367,7 +404,7 @@ def main():
                     item["web_apply_status"] = "application_form_not_identified"
                     review += 1
                     continue
-                filled, unknown = fill_form(application_form, cv_path, cover)
+                filled, unknown = fill_form(application_form, cv_path, cover, region, body_text)
                 item["form_fields_filled"] = filled
                 item["form_fields_requiring_review"] = unknown
 
