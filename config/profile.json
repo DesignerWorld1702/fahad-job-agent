@@ -90,18 +90,21 @@
   "application_preferences": {
     "pakistan_salary": {
       "currency": "PKR",
-      "minimum_target_monthly": 90000,
-      "maximum_target_monthly": 450000,
-      "rule": "If the employer gives no salary range, state PKR 90,000-100,000 per month (or PKR 90,000 if a single numeric minimum is required). If the employer's stated maximum is around PKR 90,000, target PKR 100,000-110,000. If the stated range is roughly PKR 40,000-70,000, target PKR 80,000-90,000. For higher advertised ranges, target PKR 10,000-20,000 above the stated maximum, without exceeding PKR 450,000. If the form cannot accept a range or the posted salary context is unclear, leave for review rather than guess."
+      "target_monthly": 100000,
+      "preferred_minimum_monthly": 70000,
+      "urgent_job_flexible_floor_monthly": 60000,
+      "rule": "Aim for PKR 100,000/month or more. Because the user urgently needs work, consider suitable legitimate offers from PKR 60,000-70,000 upward, with PKR 70,000 preferred as the practical minimum. If an employer publishes a lower salary range, negotiate toward the top of its range and do not demand an unrealistic amount that would prevent an urgent opportunity. Never enter an expectation below PKR 60,000. If no salary is published, state PKR 100,000/month. If a range is published, use its upper end or a modest amount above it where realistic, while keeping the user's urgent-job flexibility."
     },
     "international_salary": {
       "rule": "Use the employer's published salary range and currency. If a range is published, target a reasonable amount near or modestly above its upper end when the form allows negotiation. If no salary is published, enter Negotiable / market-competitive where text is accepted; do not invent a numeric amount or convert currencies without a reliable posted range. Leave mandatory numeric salary fields for manual review."
     },
     "work_authorization": {
       "current_country": "Pakistan",
+      "citizenship": "Pakistan",
+      "authorized_in_pakistan": true,
       "outside_pakistan_authorized": false,
       "requires_sponsorship_now_or_future": true,
-      "rule": "For countries outside Pakistan, answer No to current legal work authorization and Yes to requiring employer visa/work-permit sponsorship. Do not claim existing work rights."
+      "rule": "For Pakistan jobs, answer Yes to legal authorization to work. For jobs in other countries, answer No to current work authorization and Yes to requiring employer visa/work-permit sponsorship."
     },
     "relocation": {
       "willing": true,
@@ -131,5 +134,10 @@
       "disclose_by_default": false,
       "rule": "Do not disclose hearing loss or infer limitations. If a required medical/disability/accommodation question cannot be skipped or answered truthfully without further user instruction, mark for manual review. Never use it to automatically reject an otherwise suitable role."
     }
+  },
+  "citizenship": "Pakistan",
+  "work_authorization": {
+    "country": "Pakistan",
+    "authorized": true
   }
 }
