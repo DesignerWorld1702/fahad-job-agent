@@ -34,7 +34,7 @@ lines = [
     "# Fahad Job Agent Report", "",
     "Generated matches: **%d**" % len(jobs), "",
     "Confirmed email applications: **%d**; confirmed web-form applications: **%d**." % (len(email_sent), len(web_sent)), "",
-    "WhatsApp-only opportunities are **not sent manually** in this free configuration. Click-to-send links are retained only as optional records; the agent does not require user action." , "",
+    "Email applications are sent automatically to the email address published in the hiring post. WhatsApp applications are prepared as free prefilled **one-click daily send** links; clicking opens WhatsApp with the message ready, then press Send." , "",
     "## CVs in use", "",
     "- Graphic Designer: `cvs/graphic_designer_cv.pdf`",
     "- Business Support: `cvs/business_computer_cv.pdf`", "",
@@ -42,18 +42,19 @@ lines = [
     "| Mode | Meaning |",
     "|---|---|",
     "| EMAIL_READY | Automatically email the tailored CV when a public hiring email is available and Yahoo SMTP is configured |",
-    "| WHATSAPP_READY | Free mode records eligible WhatsApp contacts but does not require manual sending |",
-    "| PHONE_ACTION | Phone-only route is skipped automatically; no manual call is required |",
+    "| WHATSAPP_READY | Prefilled free WhatsApp link for the daily one-click send; no API/payment required |",
+    "| PHONE_ACTION | Phone-only route is skipped automatically |",
     "| WEB_APPLICATION | Public forms are completed/submitted only when supported and all required answers are known |",
     "| REVIEW | Protected/unknown/unsupported route is skipped automatically; the agent continues with other jobs and email routes |", "",
     "## Top matches", "",
-    "| Score | CV | Mode | Web status | Job | Source | Contacts | WhatsApp | Application |",
+    "| Score | CV | Mode | Web status | Job | Source | Hiring email | Contacts | WhatsApp | Application |",
     "|---:|---|---|---|---|---|---|---|---|"
 ]
 for item in queue[:100]:
     title = (item.get("title") or "").replace("|", "/")
     source = (item.get("source") or "").replace("|", "/")
     contacts = ", ".join(dict.fromkeys((item.get("emails") or []) + (item.get("page_emails") or []) + (item.get("phones") or []))).replace("|", "/")
+    hiring_email = ", ".join(item.get("hiring_post_emails") or []) or item.get("email_destination") or "—"
     wa = whatsapp_link(item)
     wa_cell = "[Open WhatsApp](%s)" % wa if wa else "—"
     application_url = item.get("application_url") or item.get("url") or ""
@@ -61,7 +62,7 @@ for item in queue[:100]:
     lines.append("| %s | %s | %s | %s | %s | %s | %s | %s | %s |" % (
         item.get("score", ""), item.get("cv", ""), item.get("mode", ""),
         item.get("web_apply_status", "not_checked"), title, source,
-        contacts, wa_cell, application_cell
+        hiring_email, contacts, wa_cell, application_cell
     ))
 Path("JOB_REPORT.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 print("Report generated: %d matches, %d explicit WhatsApp click-to-send links." % (len(jobs), len(wa_ready)))
