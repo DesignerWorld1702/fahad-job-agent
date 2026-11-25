@@ -128,7 +128,12 @@ with connect_yahoo() as smtp:
     for item in QUEUE:
         if (item.get("score") or 0) < max_score or not item.get("email_application_invited"):
             continue
-        recipients = list(dict.fromkeys((item.get("emails") or []) + (item.get("page_emails") or [])))
+        recipients = list(dict.fromkeys(
+            (item.get("hiring_post_emails") or [])
+            + ([item.get("email_destination")] if item.get("email_destination") else [])
+            + (item.get("emails") or [])
+            + (item.get("page_emails") or [])
+        ))
         cv_path = cv_paths.get(item.get("cv"))
         if not recipients or not cv_path or not cv_path.exists():
             skipped += 1
