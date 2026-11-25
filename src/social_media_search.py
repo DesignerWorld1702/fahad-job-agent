@@ -108,21 +108,32 @@ def normalize_contact_list(values, phone=False):
 
 def run_platform(platform, url, api_key, profile_id):
     goal = (
-        f"Search {platform} using the saved signed-in browser session for Pakistan-based hiring posts "
-        f"published within the last {RECENT_DAYS} days. Search these roles: Graphic Designer, Visual "
-        "Designer, Creative Designer, Social Media Designer, Marketing Designer, Packaging Designer, "
-        "Business Coordinator, Sales Coordinator, Administrative Assistant, Office Assistant, "
-        "Computer Operator, Data Entry Operator and Business Support. Use the platform's native "
-        "search and relevant hiring hashtags. Inspect original posts, not just snippets. Return up to "
-        "15 genuinely relevant individual hiring posts. Include only dates, employer names, post URLs, "
-        "emails and phone numbers actually visible in the post/account. Capture exact application "
-        "instructions. Set whatsapp_application_invited true only if the post explicitly tells candidates "
-        "to apply/send a CV/contact HR via WhatsApp. Set email_application_invited true only if it "
-        "explicitly invites applications by email. Do not infer permission from a displayed contact alone. "
-        "Exclude posts older than 20 days when their date is visible; do not invent dates or contacts. "
-        "Do not send messages, apply, follow accounts, join groups, comment, or change account settings. "
-        "If search is blocked or the saved login has expired, return an empty posts array and explain that "
-        "in the description of the run result."
+        f"Search {platform} thoroughly using the saved signed-in browser session for Pakistan-based and "
+        f"remote hiring posts published within the last {RECENT_DAYS} days. This is a hiring-ad discovery "
+        "task, not a generic job-search task. Use the platform's native search repeatedly during this run "
+        "with multiple query phrases and hashtags, including: 'Graphic Designer required', 'Hiring Graphic "
+        "Designer', 'Graphic Designer vacancy', 'We are hiring Graphic Designer', 'Visual Designer required', "
+        "'Creative Designer required', 'Social Media Designer required', 'Marketing Designer required', "
+        "'Business Development Executive required', 'Business Coordinator required', 'Sales Coordinator "
+        "required', 'Administrative Assistant required', 'Office Assistant required', 'Computer Operator "
+        "required', 'Data Entry Operator required', 'remote graphic designer', 'remote designer hiring', "
+        "'send CV', 'email CV', 'WhatsApp CV', 'DM your CV', '#hiring', '#hiringnow', '#jobopening', "
+        "'#graphicdesigner', '#designerjobs', '#jobsinpakistan', and '#pakistanjobs'. Search both recent "
+        "posts and relevant business/page accounts. For Facebook, explicitly inspect public Pages, Groups "
+        "where accessible, and individual public hiring posts; for Instagram, use account/search/explore "
+        "results and inspect individual posts/reels captions when available. Do not stop after the first "
+        "empty search result. Deduplicate posts by canonical URL. Prefer genuine employer/recruiter hiring "
+        "ads over job-board reposts, memes, training ads, and unrelated service promotions. Inspect original "
+        "posts, not just snippets. Return up to 30 genuinely relevant individual hiring posts. Include only "
+        "dates, employer names, post URLs, emails and phone numbers actually visible in the post/caption or "
+        "public account. Capture exact application instructions and the relevant location. Set "
+        "whatsapp_application_invited true only if the post explicitly tells candidates to apply/send a CV/"
+        "contact HR via WhatsApp. Set email_application_invited true if the post explicitly asks applicants "
+        "to email a CV/application OR publishes an email as the hiring contact. Do not infer WhatsApp "
+        "permission from a phone number alone. Exclude posts older than 20 days when their date is visible; "
+        "do not invent dates or contacts. Do not send messages, apply, follow accounts, join groups, "
+        "comment, or change account settings. If search is blocked or the saved login has expired, continue "
+        "with any accessible public results; only return an empty posts array if no results can be accessed."
     )
     payload = {
         "url": url,
@@ -171,9 +182,12 @@ def main():
     seen_urls = {str(j.get("url", "")).rstrip("/") for j in jobs}
     from job_matcher import score_job
 
+    # Start each platform from a search surface, then let TinyFish perform multiple
+    # native searches inside the authenticated session as instructed above. The old
+    # single Facebook query + Instagram home page missed many hiring ads.
     sources = [
-        ("Facebook", "https://www.facebook.com/search/posts/?q=jobs%20hiring%20Pakistan"),
-        ("Instagram", "https://www.instagram.com/")
+        ("Facebook", "https://www.facebook.com/search/posts/?q=Graphic%20Designer%20required%20Pakistan"),
+        ("Instagram", "https://www.instagram.com/explore/search/")
     ]
     added = 0
     for platform, url in sources:
