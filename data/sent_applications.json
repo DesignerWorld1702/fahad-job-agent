@@ -59,6 +59,26 @@
       "score": 65,
       "region": "pakistan",
       "sent_date": "2026-11-24"
+    },
+    {
+      "key": "email|https://news.google.com/rss/articles/CBMiUkFVX3lxTE53WlU0dEl2R2Q5OHdIUHoxdFBxRmNic1k3cUVONUwzSkkyVWE3eUcxaDhaZ1ZkU0Y5OHJzWVJvZURRNEh3TDZOSUVSbE5UZE5GVmc?oc=5|hr@shalomonline.net",
+      "channel": "email",
+      "recipient": "hr@shalomonline.net",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE53WlU0dEl2R2Q5OHdIUHoxdFBxRmNic1k3cUVONUwzSkkyVWE3eUcxaDhaZ1ZkU0Y5OHJzWVJvZURRNEh3TDZOSUVSbE5UZE5GVmc?oc=5",
+      "title": "Graphic Designer",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-25"
+    },
+    {
+      "key": "email|https://news.google.com/rss/articles/CBMiUkFVX3lxTE4xcDJfV3BEcmJPWDY4LXluOE5NSU5IcHlqaE11TE5lZXhaODRRcWZJREdVUjJlMUdMd1RyX1hVOXJjbURhQ0lxZ3B2QVBrRnJ3ZlE?oc=5|cepilodhi@gmail.com",
+      "channel": "email",
+      "recipient": "cepilodhi@gmail.com",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4xcDJfV3BEcmJPWDY4LXluOE5NSU5IcHlqaE11TE5lZXhaODRRcWZJREdVUjJlMUdMd1RyX1hVOXJjbURhQ0lxZ3B2QVBrRnJ3ZlE?oc=5",
+      "title": "Graphic Designer",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-25"
     }
   ]
 }
