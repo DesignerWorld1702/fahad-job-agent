@@ -211,7 +211,7 @@ def main():
             region = item.get("region", "international")
             if region not in ("pakistan", "international"):
                 region = "international"
-            if daily_counts[region] >= (30 if region == "pakistan" else 20):
+            if daily_counts[region] >= 30:
                 continue
             if (item.get("score") or 0) < MIN_SCORE or not item.get("url"):
                 continue
@@ -430,7 +430,7 @@ def main():
         browser.close()
 
     QUEUE_PATH.write_text(json.dumps({"queue": QUEUE}, indent=2, ensure_ascii=False), encoding="utf-8")
-    log(f"inspected={attempted}, submitted_confirmed={submitted}, manual_review={review}, today_Pakistan={daily_counts['pakistan']}/30, international={daily_counts['international']}/20")
+    log(f"inspected={attempted}, submitted_confirmed={submitted}, manual_review={review}, today_Pakistan={daily_counts['pakistan']}/30, international={daily_counts['international']}/30")
 
 if __name__ == "__main__":
     main()
