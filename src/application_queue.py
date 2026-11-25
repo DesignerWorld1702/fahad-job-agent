@@ -42,13 +42,21 @@ for job in jobs:
         for marker in ("whatsapp", "wa.me", "whatsapp.com")
     )
     whatsapp_opt_in = explicit_whatsapp_application_invitation(combined_post_text)
-    email_application_invited = bool(re.search(
+    explicit_email_invite = bool(re.search(
         r"(?:send|email|submit|share)\s+(?:your\s+)?(?:cv|resume|application)|"
         r"(?:apply|application)\s+(?:by|via|through|to)\s+email|"
         r"email\s+(?:your\s+)?(?:cv|resume|application)|"
         r"send\s+(?:your\s+)?application\s+to\s+[a-z0-9._%+-]+@",
         combined_post_text, re.I
     ))
+    # A publicly published hiring/recruitment address is an actionable application
+    # route even when the post does not contain the words "apply by email".
+    hiring_email = any(
+        re.search(r"(?:career|recruit|hr|hiring|jobs?|talent|apply)", str(e).lower())
+        and not re.search(r"(?:noreply|no-reply|donotreply|example\\.com)", str(e).lower())
+        for e in emails
+    )
+    email_application_invited = explicit_email_invite or hiring_email
     social_source = any(site in source.lower() for site in ("facebook", "instagram"))
     social_dm_invited = social_source and bool(re.search(
         r"(?:send|share|submit)\s+(?:your\s+)?(?:cv|resume|portfolio|application)\s+(?:via|through|in|by)\s+(?:instagram\s+)?dm|"
