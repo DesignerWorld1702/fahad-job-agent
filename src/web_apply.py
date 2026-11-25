@@ -87,16 +87,20 @@ def field_context(locator):
     return " ".join(bits)
 
 def advertised_pakistan_salary(body_text):
-    """Return a grounded PKR target only when a recognizable PKR range is published."""
+    """Choose a realistic PKR expectation while preserving the user's urgent-job floor."""
     text = body_text or ""
-    match = re.search(r"(?:PKR|Rs\.?|₨)\s*([\d,]+)\s*(?:-|to|–)\s*(?:(?:PKR|Rs\.?|₨)\s*)?([\d,]+)", text, re.I)
+    match = re.search(r"(?:PKR|Rs\\.?|₨)\\s*([\\d,]+)\\s*(?:-|to|–)\\s*(?:(?:PKR|Rs\\.?|₨)\\s*)?([\\d,]+)", text, re.I)
     if not match:
-        return 90000
+        return 100000
     low, high = [int(x.replace(",", "")) for x in match.groups()]
-    if high <= 70000 and low >= 30000:
-        return 85000
-    if 80000 <= high <= 100000:
-        return high + 15000
+    if high < 60000:
+        return 60000
+    if high < 70000:
+        return 70000
+    if high < 90000:
+        return min(max(high + 5000, 70000), 100000)
+    if high <= 100000:
+        return 100000
     return min(high + 15000, 450000)
 
 def answer_for_application_field(ctx, region, body_text):
@@ -104,7 +108,7 @@ def answer_for_application_field(ctx, region, body_text):
     if any(x in ctx for x in ("visa sponsorship", "sponsorship", "work permit sponsorship", "require sponsorship")):
         return "Yes"
     if any(x in ctx for x in ("authorized to work", "legally eligible to work", "right to work", "work authorization")):
-        return None if region == "pakistan" else "No"
+        return "Yes" if region == "pakistan" else "No"
     if any(x in ctx for x in ("willing to relocate", "open to relocation", "relocation")):
         return "Yes"
     if any(x in ctx for x in ("notice period", "how much notice", "notice required")):
