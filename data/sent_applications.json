@@ -99,6 +99,26 @@
       "score": 70,
       "region": "pakistan",
       "sent_date": "2026-11-25"
+    },
+    {
+      "key": "email|https://news.google.com/rss/articles/CBMiUkFVX3lxTE5UMWhuMmlUeGtIa1FsUU9EQVJVd0drU09ZSUoxaG43MTQyVVpicVVzUnFRZnRIZC1jeURvQTVlaERyb1lyN0JyMXFKVENaNzVmZXc?oc=5|hr@shalomonline.net",
+      "channel": "email",
+      "recipient": "hr@shalomonline.net",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5UMWhuMmlUeGtIa1FsUU9EQVJVd0drU09ZSUoxaG43MTQyVVpicVVzUnFRZnRIZC1jeURvQTVlaERyb1lyN0JyMXFKVENaNzVmZXc?oc=5",
+      "title": "Graphic Designer",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-25"
+    },
+    {
+      "key": "email|https://news.google.com/rss/articles/CBMi4gFBVV95cUxPemhwelcxXzB5X3JlaE1EMTdkNUd2MmdPVk1BU1hNaFZtaXhMN1Y3XzZTNzQwZW9wUmJnT2tnM2lveWFXSFJ2VEtlZkdnTThESF9BNV9FVUJHLTlWblgwcjRuWEhCVDk2aDJQcGJGNUJHbUJ1cVpQbk5CVzh3QXRnN0F3cDFSQnhvZ2JBdW9ZVlpPcmZ5NXVFdGY0aDg4OFBMRXFwUVV4Y1JXZ3hwOGtqNFFMVjN6N3lEa0VwXy1qTVNnLUxNQmxPUWVFcU1ZaDZheFhneE1EMC1aSF9nZ1pPWHRn?oc=5|nextfastfood@gmail.com",
+      "channel": "email",
+      "recipient": "nextfastfood@gmail.com",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPemhwelcxXzB5X3JlaE1EMTdkNUd2MmdPVk1BU1hNaFZtaXhMN1Y3XzZTNzQwZW9wUmJnT2tnM2lveWFXSFJ2VEtlZkdnTThESF9BNV9FVUJHLTlWblgwcjRuWEhCVDk2aDJQcGJGNUJHbUJ1cVpQbk5CVzh3QXRnN0F3cDFSQnhvZ2JBdW9ZVlpPcmZ5NXVFdGY0aDg4OFBMRXFwUVV4Y1JXZ3hwOGtqNFFMVjN6N3lEa0VwXy1qTVNnLUxNQmxPUWVFcU1ZaDZheFhneE1EMC1aSF9nZ1pPWHRn?oc=5",
+      "title": "Graphic Designer",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-25"
     }
   ]
 }
