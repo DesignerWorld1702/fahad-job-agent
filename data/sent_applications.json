@@ -79,6 +79,16 @@
       "score": 65,
       "region": "pakistan",
       "sent_date": "2026-11-25"
+    },
+    {
+      "key": "email|https://news.google.com/rss/articles/CBMiW0FVX3lxTE0zWDdFZGk5WkozZlctLVhMalpKSThWaGlJcVFOdjlNTldEcUdzSDUxNEhkcXF5dGFFel9CN2tpMUNvcjhKQ3B0eHBoQ2ptZEtYbnlFZlR1dGd2NDA?oc=5|info@dynamicmavens.com",
+      "channel": "email",
+      "recipient": "info@dynamicmavens.com",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0zWDdFZGk5WkozZlctLVhMalpKSThWaGlJcVFOdjlNTldEcUdzSDUxNEhkcXF5dGFFel9CN2tpMUNvcjhKQ3B0eHBoQ2ptZEtYbnlFZlR1dGd2NDA?oc=5",
+      "title": "Graphic Designer",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-25"
     }
   ]
 }
