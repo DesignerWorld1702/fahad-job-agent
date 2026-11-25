@@ -49,14 +49,16 @@ for job in jobs:
         r"send\s+(?:your\s+)?application\s+to\s+[a-z0-9._%+-]+@",
         combined_post_text, re.I
     ))
-    # A publicly published hiring/recruitment address is an actionable application
-    # route even when the post does not contain the words "apply by email".
-    hiring_email = any(
-        re.search(r"(?:career|recruit|hr|hiring|jobs?|talent|apply)", str(e).lower())
-        and not re.search(r"(?:noreply|no-reply|donotreply|example\\.com)", str(e).lower())
-        for e in emails
-    )
-    email_application_invited = explicit_email_invite or hiring_email
+    # If the hiring post itself publishes an email address, use it as an
+    # application destination. Generic addresses such as info@ are allowed.
+    hiring_post_emails = [
+        str(e).strip().lower() for e in emails
+        if str(e).strip() and not re.search(
+            r"(?:noreply|no-reply|donotreply|example\\.com)", str(e).lower()
+        )
+    ]
+    hiring_email = bool(hiring_post_emails)
+    email_application_invited = bool(hiring_post_emails) or explicit_email_invite
     social_source = any(site in source.lower() for site in ("facebook", "instagram"))
     social_dm_invited = social_source and bool(re.search(
         r"(?:send|share|submit)\s+(?:your\s+)?(?:cv|resume|portfolio|application)\s+(?:via|through|in|by)\s+(?:instagram\s+)?dm|"
@@ -67,16 +69,16 @@ for job in jobs:
 
     if emails and phones and has_whatsapp_signal and whatsapp_opt_in:
         mode = "EMAIL_AND_WHATSAPP_READY"
-        priority = "automatic when Yahoo SMTP and WhatsApp Cloud API are configured"
-        action = "Send the tailored application by email and WhatsApp when both channels are configured."
+        priority = "email automatic; WhatsApp one-click daily send"
+        action = "Automatically email the tailored CV to the hiring-post email; also prepare a one-click WhatsApp link for the daily send."
     elif emails:
         mode = "EMAIL_READY"
-        priority = "automatic only when the employer explicitly invites email applications and Yahoo SMTP is configured"
-        action = "Email the tailored CV only when the employer explicitly invites email applications."
+        priority = "automatic when Yahoo SMTP is configured"
+        action = "Automatically email the tailored CV to the email address published in the hiring post."
     elif phones and has_whatsapp_signal and whatsapp_opt_in:
         mode = "WHATSAPP_READY"
-        priority = "automatic when WhatsApp Cloud API is configured"
-        action = "Send through the configured WhatsApp Business/Cloud API using an approved message template."
+        priority = "one-click daily WhatsApp send"
+        action = "Prepare a prefilled WhatsApp application link; one click opens WhatsApp and you press Send."
     elif phones:
         mode = "PHONE_ACTION"
         priority = "manual"
@@ -111,13 +113,16 @@ for job in jobs:
         "priority": priority,
         "action": action,
         "emails": emails,
+        "hiring_post_emails": hiring_post_emails,
         "phones": phones,
         "email_application_invited": email_application_invited,
+        "email_destination": (hiring_post_emails[0] if hiring_post_emails else ((emails or [None])[0])),
         "email_subject": app.get("email_subject"),
         "email_body": app.get("email_body"),
         "whatsapp_message": app.get("whatsapp_message"),
         "portfolio_url": app.get("portfolio_url"),
         "cv_url": app.get("cv_url"),
+        "whatsapp_daily_send": bool(phones and has_whatsapp_signal and whatsapp_opt_in),
         "whatsapp_template_variables": [
             job.get("title") or "",
             app.get("portfolio_url") or "",
