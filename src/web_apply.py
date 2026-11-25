@@ -89,7 +89,7 @@ def field_context(locator):
 def advertised_pakistan_salary(body_text):
     """Choose a realistic PKR expectation while preserving the user's urgent-job floor."""
     text = body_text or ""
-    match = re.search(r"(?:PKR|Rs\\.?|₨)\\s*([\\d,]+)\\s*(?:-|to|–)\\s*(?:(?:PKR|Rs\\.?|₨)\\s*)?([\\d,]+)", text, re.I)
+    match = re.search(r"(?:PKR|Rs\.?|₨)\s*([\d,]+)\s*(?:-|to|–)\s*(?:(?:PKR|Rs\.?|₨)\s*)?([\d,]+)", text, re.I)
     if not match:
         return 100000
     low, high = [int(x.replace(",", "")) for x in match.groups()]
