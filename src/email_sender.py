@@ -141,7 +141,7 @@ with connect_yahoo() as smtp:
         region = item.get("region", "international")
         if region not in ("pakistan", "international"):
             region = "international"
-        daily_limit = 30 if region == "pakistan" else 20
+        daily_limit = 30
         if daily_counts[region] >= daily_limit:
             skipped += 1
             continue
@@ -167,4 +167,4 @@ with connect_yahoo() as smtp:
         sent += 1
         daily_counts[region] += 1
 
-print(f"Yahoo email sender: sent={sent}, skipped={skipped}, today Pakistan={daily_counts['pakistan']}/30, international={daily_counts['international']}/20")
+print(f"Yahoo email sender: sent={sent}, skipped={skipped}, today Pakistan={daily_counts['pakistan']}/30, international={daily_counts['international']}/30")
