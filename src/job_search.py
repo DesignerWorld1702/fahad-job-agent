@@ -96,14 +96,62 @@ def build_queries():
                 f'site:rozee.pk "{role}" "{city}"'
             ])
 
-    # International search across the configured target countries.
+    # International relocation + remote search. These queries are deliberately
+    # broad across the configured countries so the 250-query cap does not spend
+    # the whole run on Pakistan-only searches.
+    international_roles = [
+        "Graphic Designer", "Visual Designer", "Creative Designer",
+        "Social Media Designer", "Marketing Designer", "Brand Designer",
+        "Packaging Designer", "Digital Designer", "Content Designer",
+        "Business Coordinator", "Sales Coordinator", "Marketing Coordinator",
+        "Administrative Assistant", "Office Assistant", "Business Support Executive",
+        "Data Entry Operator", "Computer Operator", "Customer Support Executive"
+    ]
     for country in PREF.get("countries", []):
         if country == "Pakistan":
             continue
-        # Keep international coverage across every configured country while
-        # concentrating on the strongest transferable role families.
-        for role in ["Graphic Designer", "Business Coordinator"]:
-            qs.append(f'"{role}" "{country}" ("visa sponsorship" OR relocation OR "overseas applicants")')
+        for role in international_roles[:6]:
+            qs.extend([
+                f'"{role}" "{country}" ("visa sponsorship" OR "visa sponsor" OR relocation OR "overseas applicants")',
+                f'"{role}" "{country}" ("international applicants" OR "foreign applicants" OR "work permit")',
+            ])
+
+    # Remote-first / worldwide roles. "Remote" is not assumed to mean worldwide;
+    # the listing must still be verified for applicant-location eligibility.
+    qs += [
+        '"graphic designer" remote "worldwide" hiring',
+        '"graphic designer" remote "work from anywhere" hiring',
+        '"visual designer" remote "worldwide" hiring',
+        '"creative designer" remote "worldwide" hiring',
+        '"social media designer" remote "worldwide" hiring',
+        '"marketing designer" remote "worldwide" hiring',
+        '"brand designer" remote "worldwide" hiring',
+        '"digital designer" remote "worldwide" hiring',
+        '"content designer" remote "worldwide" hiring',
+        '"graphic designer" remote "international applicants"',
+        '"graphic designer" remote "overseas applicants"',
+        '"graphic designer" remote "visa sponsorship"',
+        '"visual designer" remote "visa sponsorship"',
+        '"creative designer" remote "visa sponsorship"',
+        '"business coordinator" remote "worldwide" hiring',
+        '"sales coordinator" remote "worldwide" hiring',
+        '"administrative assistant" remote "worldwide" hiring',
+        '"customer support" remote "worldwide" hiring',
+        '"data entry" remote "worldwide" hiring',
+        'site:jobs.lever.co "graphic designer" remote',
+        'site:boards.greenhouse.io "graphic designer" remote',
+        'site:myworkdayjobs.com "graphic designer" remote',
+        'site:jobs.ashbyhq.com "graphic designer" remote',
+        'site:smartrecruiters.com "graphic designer" remote',
+        'site:jobs.lever.co "visual designer" remote',
+        'site:boards.greenhouse.io "visual designer" remote',
+        'site:myworkdayjobs.com "visual designer" remote',
+        'site:jobs.lever.co "marketing designer" remote',
+        'site:boards.greenhouse.io "marketing designer" remote',
+        'site:jobs.lever.co "business coordinator" remote',
+        'site:boards.greenhouse.io "business coordinator" remote',
+        'site:myworkdayjobs.com "administrative assistant" remote'
+    ]
     # Publicly indexed social-media hiring posts. These searches target posts/pages
     # where small employers often publish direct CV email, phone or WhatsApp details.
     social_roles = roles[:8]
@@ -242,7 +290,7 @@ def build_queries():
     ]
     # Deduplicate and cap the RSS workload so a single run stays practical.
     # All countries remain represented; broad role variants are prioritized first.
-    return list(dict.fromkeys(qs))[:250]
+    # Preserve broad international coverage while keeping the run bounded.\n    return list(dict.fromkeys(qs))[:250]
 
 def recent_enough(published):
     if not published:
