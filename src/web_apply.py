@@ -235,10 +235,32 @@ def main():
                     if target:
                         page.goto(target, wait_until="domcontentloaded", timeout=30000)
                         page.wait_for_timeout(1000)
+                # Extract public hiring contact details before challenge detection.
+                # This lets the email automation continue even when the listing page
+                # itself is protected by a CAPTCHA/login wall.
+                try:
+                    early_body = page.locator("body").inner_text(timeout=5000)
+                    early_emails = re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", early_body)
+                    early_relevant = []
+                    for email in early_emails:
+                        e = email.lower()
+                        if any(x in e for x in ("noreply", "no-reply", "donotreply", "example.com")):
+                            continue
+                        if re.search(r"(?:career|recruit|hr|hiring|jobs?|talent|apply)", e):
+                            early_relevant.append(e)
+                    if early_relevant:
+                        item["page_emails"] = list(dict.fromkeys((item.get("page_emails") or []) + early_relevant))[:8]
+                        item["email_application_invited"] = True
+                except Exception:
+                    pass
+
                 block = is_blocked(page)
                 if block:
-                    item["web_apply_status"] = block
-                    review += 1
+                    if item.get("page_emails"):
+                        item["web_apply_status"] = "protected_page_email_route_available"
+                    else:
+                        item["web_apply_status"] = block
+                        review += 1
                     continue
 
                 apply_url = click_application_link(page)
