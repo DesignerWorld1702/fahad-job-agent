@@ -59,7 +59,7 @@ for item in queue[:100]:
     wa_cell = "[Open WhatsApp](%s)" % wa if wa else "—"
     application_url = item.get("application_url") or item.get("url") or ""
     application_cell = "[Open application](%s)" % application_url if application_url else "—"
-    lines.append("| %s | %s | %s | %s | %s | %s | %s | %s | %s |" % (
+    lines.append("| %s | %s | %s | %s | %s | %s | %s | %s | %s | %s |" % (
         item.get("score", ""), item.get("cv", ""), item.get("mode", ""),
         item.get("web_apply_status", "not_checked"), title, source,
         hiring_email, contacts, wa_cell, application_cell
