@@ -129,6 +129,56 @@
       "score": 90,
       "region": "pakistan",
       "sent_date": "2026-11-25"
+    },
+    {
+      "key": "email|https://www.instagram.com/p/DgH5YoogGPN/|hr@dmarina.pk",
+      "channel": "email",
+      "recipient": "hr@dmarina.pk",
+      "url": "https://www.instagram.com/p/DgH5YoogGPN/",
+      "title": "Graphic Designer",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-28"
+    },
+    {
+      "key": "email|https://www.instagram.com/p/DgKZbTdIL9H/|careers@skyliftmarketing.com",
+      "channel": "email",
+      "recipient": "careers@skyliftmarketing.com",
+      "url": "https://www.instagram.com/p/DgKZbTdIL9H/",
+      "title": "Graphic Designer",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-28"
+    },
+    {
+      "key": "email|https://www.instagram.com/p/DdXDTwbjY8F/|careers@imtiaz.com.pk",
+      "channel": "email",
+      "recipient": "careers@imtiaz.com.pk",
+      "url": "https://www.instagram.com/p/DdXDTwbjY8F/",
+      "title": "Data Entry Operator",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-28"
+    },
+    {
+      "key": "email|https://www.instagram.com/p/Dd9KS-ziSTK/|hr@allahwalaytrust.org.pk",
+      "channel": "email",
+      "recipient": "hr@allahwalaytrust.org.pk",
+      "url": "https://www.instagram.com/p/Dd9KS-ziSTK/",
+      "title": "Data Entry Operator",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-28"
+    },
+    {
+      "key": "email|https://www.facebook.com/puredesigners/videos/creative-minds-this-could-be-your-next-move-pure-designers-is-hiring-if-youre-re/1150004890860428/|info@puredesigners.pk",
+      "channel": "email",
+      "recipient": "info@puredesigners.pk",
+      "url": "https://www.facebook.com/puredesigners/videos/creative-minds-this-could-be-your-next-move-pure-designers-is-hiring-if-youre-re/1150004890860428/",
+      "title": "Graphic Designer",
+      "score": 65,
+      "region": "pakistan",
+      "sent_date": "2026-11-28"
     }
   ]
 }
