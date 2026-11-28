@@ -290,7 +290,8 @@ def build_queries():
     ]
     # Deduplicate and cap the RSS workload so a single run stays practical.
     # All countries remain represented; broad role variants are prioritized first.
-    # Preserve broad international coverage while keeping the run bounded.\n    return list(dict.fromkeys(qs))[:250]
+    # Preserve broad international coverage while keeping the run bounded.
+    return list(dict.fromkeys(qs))[:250]
 
 def recent_enough(published):
     if not published:
