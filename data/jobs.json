@@ -1,39 +1,9 @@
 {
-  "generated_at": "2026-11-28T02:28:20.509122+00:00",
+  "generated_at": "2026-11-28T13:58:46.359805+00:00",
   "recent_window_days": 20,
   "salary_preference_pkr": 70000,
   "company_size_policy": "Do not reject small, local, startup, newly established, or lesser-known employers merely because of company size. Also actively target established national companies and international multinationals.",
   "jobs": [
-    {
-      "title": "Graphic Designer Job, Faisalabad, Anaya Sphere - Rozee.pk",
-      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPcGJnVnRzWllETGRJWjQySkdNMDVfQkRzMS1PSFBEckdjY0RzYkJDNXJwOHJHOTVYUGR1bF9rZ0N0aU13UXl5a2tIMVRjM2VNYV9ZbmxKdlVvYU5ydTRobENhenpmU1Uzc1RLVHJFRlF1b19iMHc0U3RCal9tLWpjQzBzc2hhZDhvQVIzTDRpZDFlYTBpTUFEdDA2bm9OeVUySXRsOTRWbHVQVmhPTHY5RjVoVXZ3MFhuTEZnU3dpQjRrMXBzR3JFYk5YU3ZvbEQxVzlTaTFGdTgzblVNc3h2T0swRFFwU2hCS3FVS1RFaklxTGJ2X0NfS2pPdnVxUE8wdnJ2MG01Qkw?oc=5",
-      "published": "Wed, 25 Nov 2026 21:32:17 GMT",
-      "description": "Graphic Designer Job, Faisalabad, Anaya Sphere &nbsp;&nbsp; Rozee.pk",
-      "source": "Rozee.pk",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
-    },
-    {
-      "title": "Graphic Designer & Video Editor Job, Rawalpindi, SP Builders - Rozee.pk",
-      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxOYWNCSW5XekFzTFVLSFJEbVZ3cGVWZXJlemdPOGdic2dSTW5CcnlPWENyLVhUN3pjc0ZZWTNwMVBJOFctQkZ6eGJoZW1ORnhVVGlQRXlrZFhlMDBHVEJ0ZXY3T0Vqd2hraEVRNTY5blgybHFfaFlnWWlOODlkZGFySWVFaGoyaE9MeWlGZVlXYnFWRl8yTU12Q0FTczRkNldHX0pCMk9kOEdUcDhSUlowT2JKVnlPVlVidmxBRXdaLVFPVHltU1BFeUtzcFV2b3I2LWtFWWpIdGdqRU5SZU1TTUtuM1lHZElhVVpnYzBPaXFMeERnRjFSTzkzaV8wVFRhZGRkRk82TW53Q3M?oc=5",
-      "published": "Wed, 25 Nov 2026 14:26:57 GMT",
-      "description": "Graphic Designer & Video Editor Job, Rawalpindi, SP Builders &nbsp;&nbsp; Rozee.pk",
-      "source": "Rozee.pk",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
-    },
-    {
-      "title": "Graphic Designer – & Social Media Design Job, Hamza World - Rozee.pk",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQNVo5MzNoR1FMSlB5TlI2WERsQ0ZoZDF3cmtyWW5fQUU4dDlwRm50aGhsTXJlSDJvLWFLdDYxMENZX3NhS0JLT2o4STZUMU1TTjVDVUg4WS1jaVE0M0diRVlQX2dSUk9qWm1FY3lhNjVDWWVfZTBNME1Db3NRR1JycThDa3RJaUJSWDVJMkhoUlNHQllHYUMw?oc=5",
-      "published": "Wed, 18 Nov 2026 14:13:56 GMT",
-      "description": "Graphic Designer – & Social Media Design Job, Hamza World &nbsp;&nbsp; Rozee.pk",
-      "source": "Rozee.pk",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
-    },
     {
       "title": "Graphic Designer & Video Editor Intern Job, Lahore, Techinoid - Rozee.pk",
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQckVLckl1QWk2N0Nxam0wME44N2pkVWpuaTNPdWU4X3RzOWNsM1dwU2RDWDRmREdLSEVwVW1OYV9LVE5fUlM1am1hN1dCT0NKWVIxWE5mLVpiTFMxampxQndkeUI3cDlDYkkxREdQWjhHTmtkRXhCU3MxN2ktMHFudlh3OG1DNjQ?oc=5",
@@ -42,7 +12,7 @@
       "source": "Rozee.pk",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
+      "query": "site:rozee.pk \"Graphic Designer\" \"Lahore\""
     },
     {
       "title": "Graphic Designer – Digital & Print Media Job, Karachi, U&I Traders - Rozee.pk",
@@ -52,7 +22,7 @@
       "source": "Rozee.pk",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
+      "query": "site:rozee.pk \"Graphic Designer\" \"Karachi\""
     },
     {
       "title": "Executive Officer- Business Coordinator Job, Karachi, EFU Life Assurance Ltd. - Rozee.pk",
@@ -75,10 +45,10 @@
       "query": "site:rozee.pk \"Administrative Assistant\" Pakistan"
     },
     {
-      "title": "Graphic Designer & Video Editor (On-site – Karachi) Job, Karachi, Najah Perfumes - Rozee.pk",
-      "url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxPZWJWRi1jVmpnUE9WRnJLcUUyN044WWRlbm8zUFNaZy01bjdJOEdwX1JJSl81VHZVa3JGaHZEMGQ3Q2ZsdFNtTVNWTkhkTnMwbC1kaWlORGZsU2VPRTd6cG5fUE5UMVZ2TXZQWGhaLTh2ZDlDbWU3OHJfSGNxTWtxdDByaUV4ODlvel9VWjRucVVPSlZ2Zk9FcEdxNUZMN21iSm52djZmODhwSlRiTVZuQXhnb1RFLXQybFpOcjd5dWswN3NCQ2Z3YmgydUxtYl9nWWhKclpzd2t1QTB0VE9obnNxVzlZZmQ3bjVFd2xlSGI0dVN5RXdNOXpubzFIR1pTTUZ5U3AzWmY5amN2WGRPb0ZtbUhuWXJicnRQSENWMzE5S0x0RXFYZnUzVEtnZGQz?oc=5",
-      "published": "Thu, 26 Nov 2026 04:54:50 GMT",
-      "description": "Graphic Designer & Video Editor (On-site – Karachi) Job, Karachi, Najah Perfumes &nbsp;&nbsp; Rozee.pk",
+      "title": "Graphic Designer & Video Editor Job, Rawalpindi, SP Builders - Rozee.pk",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOdjdVTmFZd3Fiekw3MjZQMURuT2FaMDlLZ0xlQ1FDNGZSTVVjSk93b2taT2R1RUZqcWhSNVgzU3FuMzV3Mi1jUzBwR0Y2ZXU2Mnc4bkdxaWM2dzFHWVFIbEI0ek1ES0NBbklORmZ2cWRtV3FDS1pJZ1FPNE5IRVlmNg?oc=5",
+      "published": "Thu, 26 Nov 2026 03:34:39 GMT",
+      "description": "Graphic Designer & Video Editor Job, Rawalpindi, SP Builders &nbsp;&nbsp; Rozee.pk",
       "source": "Rozee.pk",
       "match_score": 65,
       "cv": "graphic_designer_cv",
@@ -125,14 +95,14 @@
       "query": "site:rozee.pk \"Operations Coordinator\" Pakistan"
     },
     {
-      "title": "Graphic Designer and Content Creator Job, Islamabad, Digital Solutions - Rozee.pk",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUHV1c3h6V3BmaDUySkd0Y2ItUFI2Vjk0ek9oXzY3WDZuX045eDI4UTQ0UWUzX2JudGVmXzhiMC1XMTFCT2d5UTZaVGZaR0dGMUtFVE5aY3pfeWdPWWxvNm8xRmxfb1RKMVl1WEtmUDNwQ1ZzTmlqVXVVb3pXa0VhNVlRclJuSWFOZ0ZzNjM1Y2hoZw?oc=5",
-      "published": "Sun, 08 Nov 2026 08:00:00 GMT",
-      "description": "Graphic Designer and Content Creator Job, Islamabad, Digital Solutions &nbsp;&nbsp; Rozee.pk",
+      "title": "Graphic Designer Job, Lahore, Urban Developers (A Chartered Town Planner) - Rozee.pk",
+      "url": "https://news.google.com/rss/articles/CBMioAJBVV95cUxPVkdBTFVsOFZrVHRlUFNyZGRyaFM2Y3RHTG1UT3ZVQW9oazFHUHIwMmM5cTFVdmprYkVUNUczcTdNRmM3MHZxTmFsYVMzdHpSc1VTOHdwOUdYQk1DU25GaXZOSGxFdi1iS3QwcmVlanN5WnEwNV9fYWpKbWtDRy1Jd3kxbkkzbzhJOFZTMUticzdweVFEMXJqcXNQVWlGaUNDVFc0RHBEdVR3NzZGODREeWpRUW9lRUtkbzZJcE9OSTg3SHZYa1pMRUpJdjBBRlZhaUtTVGJRaXczN3NEMVdqYXRtOWItR0ZVX2RqREhyUGxtY3FTUXZjSHoxbmxXMmw1cGhKamlINl9zSEFEaUFPOURWNG5qeWJIVjdtYi13MU4?oc=5",
+      "published": "Sat, 28 Nov 2026 09:01:49 GMT",
+      "description": "Graphic Designer Job, Lahore, Urban Developers (A Chartered Town Planner) &nbsp;&nbsp; Rozee.pk",
       "source": "Rozee.pk",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
+      "query": "site:rozee.pk \"Graphic Designer\" \"Lahore\""
     },
     {
       "title": "GRAPHIC DESIGNER & VIDEO Editor Job, Gujranwala, Waqas Electronics - Rozee.pk",
@@ -145,6 +115,16 @@
       "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
     },
     {
+      "title": "AI Prompt Engineer And Graphic Designer Job - Indeed",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5uYnZoMkt2YVJoUTRZWnBDUUFIU1EwQ3RyU05tWDk5T2RZVWtrck5BZnR2b1gtZEJ2Wjd1R2xtSFpHMzBFZy10TGFDUk5VSmhHbFltWUFjUWRRaU9ZSkE?oc=5",
+      "published": "Fri, 20 Nov 2026 16:18:49 GMT",
+      "description": "AI Prompt Engineer And Graphic Designer Job &nbsp;&nbsp; Indeed",
+      "source": "Indeed",
+      "match_score": 65,
+      "cv": "graphic_designer_cv",
+      "query": "site:pk.indeed.com \"Graphic Designer\" \"Islamabad\""
+    },
+    {
       "title": "Graphic Designer & Social Media Manager Job, Islamabad, Islamabad Chamber of Commerce and Industry - Rozee.pk",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQcXJINFBNOW53em9mdzZ6VHpUMFpnbGx5ZWZnMWptMzQ2UGlJWEdwSUltM2Y4UTJKS2FUSmwyN3lTQlpGNkdzRlo0VkZmcGktZnphOWFLNmY1bTlTVEx4SDg3WDl5UDBoZDFCSlZSbkN5c2JfMnIzY0hzX1hMUUNxRDdSb1F1aGoxOFNqcFRya3AwYjhYYVlZM1doY2JsVmJnOWRsdHFWTExmX004M0ZUcWNKZzQ?oc=5",
       "published": "Fri, 20 Nov 2026 15:10:47 GMT",
@@ -152,7 +132,7 @@
       "source": "Rozee.pk",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
+      "query": "site:rozee.pk \"Graphic Designer\" \"Islamabad\""
     },
     {
       "title": "Graphic Designer & Video Editor Job, Lahore, Work Together - Rozee.pk",
@@ -162,7 +142,7 @@
       "source": "Rozee.pk",
       "match_score": 65,
       "cv": "graphic_designer_cv",
-      "query": "site:rozee.pk \"Graphic Designer\" Pakistan"
+      "query": "site:rozee.pk \"Graphic Design\" Pakistan"
     },
     {
       "title": "Sales Coordinator Job, Lahore, Business Oxide - Rozee.pk",
@@ -173,161 +153,6 @@
       "match_score": 65,
       "cv": "business_computer_cv",
       "query": "site:rozee.pk \"Sales Coordinator\" Pakistan"
-    },
-    {
-      "title": "Graphic Designer / Creative Content Designer — CEPI Pakistan",
-      "url": "https://www.instagram.com/p/DgH5YoogGPN/",
-      "published": "2026-11-20",
-      "description": "CEPI Pakistan is looking for a Graphic Designer / Creative Content Designer. Send your CV + Portfolio via DM or WhatsApp. Also applicable: hr@dmarina.pk\nEmployer: CEPI Pakistan\nLocation: Lahore\nPublished: 2026-11-20\nApplication instructions: Send your CV + Portfolio via DM or WhatsApp 0316-7018727\nPublished application email: cepilodhi@gmail.com, hr@dmarina.pk\nPublished phone: 03167018727\nThe post explicitly invites applications by email.\nThe post explicitly invites applications via WhatsApp.",
-      "source": "Instagram (TinyFish signed-in search)",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "authenticated Instagram hiring search Pakistan",
-      "social_platform": "Instagram",
-      "social_emails": [
-        "cepilodhi@gmail.com",
-        "hr@dmarina.pk"
-      ],
-      "social_phones": [
-        "03167018727"
-      ],
-      "application_instructions": "Send your CV + Portfolio via DM or WhatsApp 0316-7018727",
-      "date_unverified": false,
-      "email_application_invited": true,
-      "whatsapp_application_invited": true
-    },
-    {
-      "title": "Office Assistant — Office Assistant Hiring",
-      "url": "https://www.instagram.com/p/DgFz3wqlgPd/",
-      "published": "2026-11-20",
-      "description": "Fresh candidates welcome for Office Assistant position in Lahore. WhatsApp contact available.\nEmployer: Office Assistant Hiring\nLocation: Lahore\nPublished: 2026-11-20\nApplication instructions: Send CV via WhatsApp 0333-4091903\nPublished phone: 03334091903\nThe post explicitly invites applications via WhatsApp.",
-      "source": "Instagram (TinyFish signed-in search)",
-      "match_score": 65,
-      "cv": "business_computer_cv",
-      "query": "authenticated Instagram hiring search Pakistan",
-      "social_platform": "Instagram",
-      "social_emails": [],
-      "social_phones": [
-        "03334091903"
-      ],
-      "application_instructions": "Send CV via WhatsApp 0333-4091903",
-      "date_unverified": false,
-      "email_application_invited": false,
-      "whatsapp_application_invited": true
-    },
-    {
-      "title": "Graphic Designer — Skylift Marketing",
-      "url": "https://www.instagram.com/p/DgKZbTdIL9H/",
-      "published": "2026-11-15",
-      "description": "Skylift Marketing is hiring a Graphic Designer. On-site role in Islamabad.\nEmployer: Skylift Marketing\nLocation: Islamabad\nPublished: 2026-11-15\nApplication instructions: Send your CV & Portfolio to 0345 2061657 via WhatsApp or email careers@skyliftmarketing.com\nPublished application email: careers@skyliftmarketing.com\nPublished phone: 03452061657\nThe post explicitly invites applications by email.\nThe post explicitly invites applications via WhatsApp.",
-      "source": "Instagram (TinyFish signed-in search)",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "authenticated Instagram hiring search Pakistan",
-      "social_platform": "Instagram",
-      "social_emails": [
-        "careers@skyliftmarketing.com"
-      ],
-      "social_phones": [
-        "03452061657"
-      ],
-      "application_instructions": "Send your CV & Portfolio to 0345 2061657 via WhatsApp or email careers@skyliftmarketing.com",
-      "date_unverified": false,
-      "email_application_invited": true,
-      "whatsapp_application_invited": true
-    },
-    {
-      "title": "Data Entry Operator — Godrej Pakistan",
-      "url": "https://www.instagram.com/p/DdXDTwbjY8F/",
-      "published": "2026-11-15",
-      "description": "Godrej is hiring a Data Entry Operator. Send your CV via WhatsApp or email.\nEmployer: Godrej Pakistan\nLocation: Lahore\nPublished: 2026-11-15\nApplication instructions: Send your CV via WhatsApp 0336 000 1916 or email careers@imtiaz.com.pk\nPublished application email: careers@imtiaz.com.pk\nPublished phone: 03360001916\nThe post explicitly invites applications by email.\nThe post explicitly invites applications via WhatsApp.",
-      "source": "Instagram (TinyFish signed-in search)",
-      "match_score": 65,
-      "cv": "business_computer_cv",
-      "query": "authenticated Instagram hiring search Pakistan",
-      "social_platform": "Instagram",
-      "social_emails": [
-        "careers@imtiaz.com.pk"
-      ],
-      "social_phones": [
-        "03360001916"
-      ],
-      "application_instructions": "Send your CV via WhatsApp 0336 000 1916 or email careers@imtiaz.com.pk",
-      "date_unverified": false,
-      "email_application_invited": true,
-      "whatsapp_application_invited": true
-    },
-    {
-      "title": "Graphic Designer — Citizens Archive of Pakistan (CAP)",
-      "url": "https://www.instagram.com/p/DfomdJ1jR5M/",
-      "published": "2026-11-10",
-      "description": "The Citizens Archive of Pakistan (CAP) is looking for a Graphic Designer to join their team in Karachi. Send portfolio and CV via DM or WhatsApp.\nEmployer: Citizens Archive of Pakistan (CAP)\nLocation: Karachi\nPublished: 2026-11-10\nApplication instructions: Send your portfolio and CV via DM or WhatsApp\nThe post explicitly invites applications via WhatsApp.",
-      "source": "Instagram (TinyFish signed-in search)",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "authenticated Instagram hiring search Pakistan",
-      "social_platform": "Instagram",
-      "social_emails": [],
-      "social_phones": [],
-      "application_instructions": "Send your portfolio and CV via DM or WhatsApp",
-      "date_unverified": false,
-      "email_application_invited": false,
-      "whatsapp_application_invited": true
-    },
-    {
-      "title": "Data Entry Operator — Allah Wale Corporation",
-      "url": "https://www.instagram.com/p/Dd9KS-ziSTK/",
-      "published": "2026-11-10",
-      "description": "Allah Wale Corporation is hiring a Data Entry Operator.\nEmployer: Allah Wale Corporation\nLocation: Faisalabad\nPublished: 2026-11-10\nApplication instructions: Send your CV via WhatsApp 01683080590\nPublished phone: 01683080590\nThe post explicitly invites applications via WhatsApp.",
-      "source": "Instagram (TinyFish signed-in search)",
-      "match_score": 65,
-      "cv": "business_computer_cv",
-      "query": "authenticated Instagram hiring search Pakistan",
-      "social_platform": "Instagram",
-      "social_emails": [],
-      "social_phones": [
-        "01683080590"
-      ],
-      "application_instructions": "Send your CV via WhatsApp 01683080590",
-      "date_unverified": false,
-      "email_application_invited": false,
-      "whatsapp_application_invited": true
-    },
-    {
-      "title": "Canva Graphic Designer — WMWebs",
-      "url": "https://www.facebook.com/groups/thecapitalislamabad/posts/4918828208344013/",
-      "published": "15 November 2026",
-      "description": "WMWebs is looking for a skilled Canva designer to create stunning social media content for our brands. We're hiring a Canva Graphic Designer | Remote. Requirements: Proficiency in Canva, creativity, attention to detail, understanding of brand consistency.\nEmployer: WMWebs\nLocation: Remote - Islamabad/Pakistan\nPublished: 15 November 2026\nApplication instructions: DM your CV or email to WMWebs",
-      "source": "Facebook (TinyFish signed-in search)",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "authenticated Facebook hiring search Pakistan",
-      "social_platform": "Facebook",
-      "social_emails": [],
-      "social_phones": [],
-      "application_instructions": "DM your CV or email to WMWebs",
-      "date_unverified": false,
-      "email_application_invited": false,
-      "whatsapp_application_invited": false
-    },
-    {
-      "title": "Graphic Designer — Pure Designers",
-      "url": "https://www.facebook.com/puredesigners/videos/creative-minds-this-could-be-your-next-move-pure-designers-is-hiring-if-youre-re/1150004890860428/",
-      "published": "10 November 2026",
-      "description": "Creative minds, this could be your next move. Pure Designers is hiring! Interested in joining Pure Designers? Send your CV or portfolio.\nEmployer: Pure Designers\nLocation: Karachi\nPublished: 10 November 2026\nApplication instructions: Send your CV or portfolio to info@puredesigners.pk\nPublished application email: info@puredesigners.pk\nThe post explicitly invites applications by email.",
-      "source": "Facebook (TinyFish signed-in search)",
-      "match_score": 65,
-      "cv": "graphic_designer_cv",
-      "query": "authenticated Facebook hiring search Pakistan",
-      "social_platform": "Facebook",
-      "social_emails": [
-        "info@puredesigners.pk"
-      ],
-      "social_phones": [],
-      "application_instructions": "Send your CV or portfolio to info@puredesigners.pk",
-      "date_unverified": false,
-      "email_application_invited": true,
-      "whatsapp_application_invited": false
     },
     {
       "title": "Business Executive Officer Job, Karachi, Business Links International - Rozee.pk",
@@ -343,7 +168,7 @@
   "signed_in_social_search": {
     "provider": "TinyFish",
     "enabled": true,
-    "added_this_run": 8,
+    "added_this_run": 0,
     "platforms": [
       "Facebook",
       "Instagram"
